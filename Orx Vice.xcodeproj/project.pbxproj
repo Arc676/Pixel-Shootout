@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71ED0E5F1F6FF0950095D601 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E5E1F6FF0950095D601 /* main.c */; };
+		71ED0E691F6FF0F90095D601 /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
+		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,7 +25,9 @@
 
 /* Begin PBXFileReference section */
 		71ED0E5B1F6FF0950095D601 /* Orx Vice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Orx Vice"; sourceTree = BUILT_PRODUCTS_DIR; };
-		71ED0E5E1F6FF0950095D601 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		71ED0E681F6FF0F90095D601 /* liborx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborx.dylib; sourceTree = "<group>"; };
+		71ED0E6A1F6FF1920095D601 /* StandAlone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandAlone.h; sourceTree = "<group>"; };
+		71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StandAlone.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71ED0E691F6FF0F90095D601 /* liborx.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +45,9 @@
 		71ED0E521F6FF0950095D601 = {
 			isa = PBXGroup;
 			children = (
+				71ED0E651F6FF0F90095D601 /* bin */,
+				71ED0E661F6FF0F90095D601 /* inc */,
+				71ED0E671F6FF0F90095D601 /* lib */,
 				71ED0E5D1F6FF0950095D601 /* Orx Vice */,
 				71ED0E5C1F6FF0950095D601 /* Products */,
 			);
@@ -57,9 +64,32 @@
 		71ED0E5D1F6FF0950095D601 /* Orx Vice */ = {
 			isa = PBXGroup;
 			children = (
-				71ED0E5E1F6FF0950095D601 /* main.c */,
+				71ED0E6A1F6FF1920095D601 /* StandAlone.h */,
+				71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */,
 			);
 			path = "Orx Vice";
+			sourceTree = "<group>";
+		};
+		71ED0E651F6FF0F90095D601 /* bin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = bin;
+			sourceTree = "<group>";
+		};
+		71ED0E661F6FF0F90095D601 /* inc */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = inc;
+			sourceTree = "<group>";
+		};
+		71ED0E671F6FF0F90095D601 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				71ED0E681F6FF0F90095D601 /* liborx.dylib */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71ED0E5F1F6FF0950095D601 /* main.c in Sources */,
+				71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +250,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = T42F23M422;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/C-Stuff/C/Orx Vice/inc";
 			};
 			name = Debug;
 		};
@@ -228,7 +263,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = T42F23M422;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/lib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/C-Stuff/C/Orx Vice/inc";
 			};
 			name = Release;
 		};
