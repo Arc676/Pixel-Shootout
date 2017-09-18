@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71614D121F6FF78300932B46 /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
+		71614D131F6FF7C400932B46 /* Orx Vice.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Orx Vice.ini */; };
+		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; };
 		71ED0E691F6FF0F90095D601 /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
@@ -15,12 +18,15 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		71ED0E591F6FF0950095D601 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 16;
 			files = (
+				71614D131F6FF7C400932B46 /* Orx Vice.ini in CopyFiles */,
+				71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */,
+				71614D121F6FF78300932B46 /* liborx.dylib in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -108,7 +114,7 @@
 		71ED0E6A1F6FF1920095D601 /* StandAlone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandAlone.h; sourceTree = "<group>"; };
 		71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StandAlone.cpp; sourceTree = "<group>"; };
 		71ED0E6D1F6FF3400095D601 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
-		71ED0E6F1F6FF4030095D601 /* OrxVice.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OrxVice.ini; sourceTree = "<group>"; };
+		71ED0E6F1F6FF4030095D601 /* Orx Vice.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Orx Vice.ini"; sourceTree = "<group>"; };
 		71ED0E701F6FF4370095D601 /* MainMenu.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MainMenu.ini; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -369,7 +375,7 @@
 		71ED0E651F6FF0F90095D601 /* bin */ = {
 			isa = PBXGroup;
 			children = (
-				71ED0E6F1F6FF4030095D601 /* OrxVice.ini */,
+				71ED0E6F1F6FF4030095D601 /* Orx Vice.ini */,
 				71ED0E701F6FF4370095D601 /* MainMenu.ini */,
 			);
 			path = bin;
@@ -549,7 +555,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/C-Stuff/C/Orx Vice/inc";
+				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/C-Stuff/C/Orx\\ Vice/inc/**";
 			};
 			name = Debug;
 		};
@@ -564,7 +570,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/C-Stuff/C/Orx Vice/inc";
+				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/C-Stuff/C/Orx\\ Vice/inc/**";
 			};
 			name = Release;
 		};
