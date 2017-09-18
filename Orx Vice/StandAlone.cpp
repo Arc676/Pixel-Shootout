@@ -78,6 +78,15 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 	}
 }
 
+orxVECTOR orxFASTCALL StandAlone::GetMouseWorldPosition() {
+	orxVECTOR worldpos = {0,0,0};
+	orxVECTOR screenpos = {0,0,0};
+
+	orxRender_GetWorldPosition(orxMouse_GetPosition(&screenpos), orxNULL, &worldpos);
+
+	return worldpos;
+}
+
 orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 	// We could just use a direct cast, but in case we expand this function later to deal
 	//   with different event types, we're going to be careful and make sure we're in the
@@ -115,6 +124,23 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 //			orxLOG("Animation <%s>@<%s> has %s!", EventPayload->zAnimName, ObjectName, EventAct );
 			break;
 		case orxEVENT_TYPE_INPUT:
+			switch (currentEvent->eID) {
+				case orxINPUT_EVENT_ON:
+					orxVECTOR pos = GetMouseWorldPosition();
+					if (orxInput_IsActive("SpawnBox")) {
+						pos.fZ = 0;
+						orxOBJECT* obj = orxObject_CreateFromConfig("DynamicBox");
+						orxObject_SetPosition(obj, &pos);
+					} else if (orxInput_IsActive("DeleteBox")) {
+						orxOBJECT* obj = orxObject_Pick(&pos, orxU32_UNDEFINED);
+						if (obj != nullptr) {
+							std::string name = orxObject_GetName(obj);
+							if (name.compare("DynamicBox") == 0) {
+								orxObject_Delete(obj);
+							}
+						}
+					}
+			}
 			break;
 	}
 

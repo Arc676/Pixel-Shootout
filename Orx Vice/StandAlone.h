@@ -26,6 +26,8 @@ public:
 	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
 
 	static orxSTATUS orxFASTCALL EventHandler(const orxEVENT*);
+
+	static orxVECTOR orxFASTCALL GetMouseWorldPosition();
 protected:
 	StandAlone();
 	StandAlone(const StandAlone&);
