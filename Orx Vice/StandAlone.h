@@ -9,14 +9,23 @@
 #ifndef StandAlone_h
 #define StandAlone_h
 
+#include <string>
 #include "orx.h"
 
 class StandAlone {
 public:
 	static StandAlone* Instance();
+
 	static orxSTATUS orxFASTCALL Init();
 	static orxSTATUS orxFASTCALL Run();
+
 	static void orxFASTCALL Exit();
+
+	static orxOBJECT* orxFASTCALL GetObjectByName(std::string);
+
+	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
+
+	static orxSTATUS orxFASTCALL EventHandler(const orxEVENT*);
 protected:
 	StandAlone();
 	StandAlone(const StandAlone&);
