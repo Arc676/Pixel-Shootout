@@ -15,7 +15,6 @@
 		71614D201F6FFD1F00932B46 /* soldier_full.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1C1F6FFC3300932B46 /* soldier_full.png */; };
 		71614D251F70038A00932B46 /* Interaction.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D241F70037B00932B46 /* Interaction.ini */; };
 		71614D261F70038E00932B46 /* box.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D221F70036700932B46 /* box.png */; };
-		71614D271F70038E00932B46 /* wall.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D231F70036700932B46 /* wall.png */; };
 		71ED0E691F6FF0F90095D601 /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
@@ -29,7 +28,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				71614D261F70038E00932B46 /* box.png in CopyFiles */,
-				71614D271F70038E00932B46 /* wall.png in CopyFiles */,
 				71614D251F70038A00932B46 /* Interaction.ini in CopyFiles */,
 				71614D1F1F6FFD1F00932B46 /* soldier.png in CopyFiles */,
 				71614D201F6FFD1F00932B46 /* soldier_full.png in CopyFiles */,
@@ -127,7 +125,6 @@
 		71614D1C1F6FFC3300932B46 /* soldier_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = soldier_full.png; sourceTree = "<group>"; };
 		71614D1D1F6FFC4F00932B46 /* StaticScene.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StaticScene.ini; sourceTree = "<group>"; };
 		71614D221F70036700932B46 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
-		71614D231F70036700932B46 /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		71614D241F70037B00932B46 /* Interaction.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Interaction.ini; sourceTree = "<group>"; };
 		71ED0E5B1F6FF0950095D601 /* Orx Vice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Orx Vice"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ED0E681F6FF0F90095D601 /* liborx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborx.dylib; sourceTree = "<group>"; };
@@ -394,7 +391,6 @@
 			isa = PBXGroup;
 			children = (
 				71614D221F70036700932B46 /* box.png */,
-				71614D231F70036700932B46 /* wall.png */,
 			);
 			path = phys;
 			sourceTree = "<group>";
