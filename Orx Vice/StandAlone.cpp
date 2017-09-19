@@ -94,6 +94,12 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 				pos.fX++;
 			}
 			orxObject_SetPosition(soldier, &pos);
+
+			orxVECTOR mouse = GetMouseWorldPosition();
+			double dx = mouse.fX - pos.fX;
+			double dy = mouse.fY - pos.fY;
+			orxFLOAT rot = M_PI_2 - (orxFLOAT) atan2(dx, dy);
+			orxObject_SetRotation(obj, rot);
 		}
 	}
 }
@@ -112,8 +118,6 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 		case orxEVENT_TYPE_INPUT:
 			switch (currentEvent->eID) {
 				case orxINPUT_EVENT_ON:
-					break;
-				case orxINPUT_EVENT_OFF:
 					break;
 			}
 			break;
