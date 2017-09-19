@@ -45,6 +45,7 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 		orxObject_SetTargetAnim(soldier, "WalkRight");
 	}
 	orxEvent_AddHandler(orxEVENT_TYPE_ANIM, StandAlone::EventHandler);
+	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
 
 	orxConfig_Load("Interaction.ini");
 	orxInput_Load(orxSTRING_EMPTY);
@@ -100,6 +101,18 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 			double dy = mouse.fY - pos.fY;
 			orxFLOAT rot = M_PI_2 - (orxFLOAT) atan2(dx, dy);
 			orxObject_SetRotation(obj, rot);
+
+			if (orxInput_IsActive("Fire")) {
+				orxVECTOR velocity = {20 * (orxFLOAT)sin(rot), 20 * (orxFLOAT)cos(rot)};
+				orxVECTOR bpos;
+				orxObject_GetPosition(soldier, &bpos);
+				bpos.fX += velocity.fX;
+				bpos.fY += velocity.fY;
+
+				orxOBJECT* bullet = orxObject_CreateFromConfig("Bullet");
+				orxObject_SetPosition(bullet, &bpos);
+				orxObject_SetSpeed(bullet, &velocity);
+			}
 		}
 	}
 }
@@ -116,10 +129,8 @@ orxVECTOR orxFASTCALL StandAlone::GetMouseWorldPosition() {
 orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 	switch(currentEvent->eType) {
 		case orxEVENT_TYPE_INPUT:
-			switch (currentEvent->eID) {
-				case orxINPUT_EVENT_ON:
-					break;
-			}
+			break;
+		case orxEVENT_TYPE_PHYSICS:
 			break;
 		default:
 			break;
