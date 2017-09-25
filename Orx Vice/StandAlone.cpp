@@ -38,20 +38,17 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("StaticScene.ini");
 	orxObject_CreateFromConfig("Scene");
 
-	orxCLOCK* animClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
+	orxCLOCK* upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
 	orxOBJECT* soldier = GetObjectByName("SoldierGraphics");
 	if (soldier != orxNULL) {
-		orxClock_Register(animClock, Update, soldier, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
-		orxObject_SetTargetAnim(soldier, "WalkRight");
+		orxClock_Register(upClock, Update, soldier, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 	}
-	orxEvent_AddHandler(orxEVENT_TYPE_ANIM, StandAlone::EventHandler);
 	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
 
 	orxConfig_Load("Interaction.ini");
 	orxInput_Load(orxSTRING_EMPTY);
 	orxEvent_AddHandler(orxEVENT_TYPE_INPUT, StandAlone::EventHandler);
 
-	orxObject_CreateFromConfig("Walls");
 	return orxSTATUS_SUCCESS;
 }
 
