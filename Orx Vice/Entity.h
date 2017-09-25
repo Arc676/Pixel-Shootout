@@ -1,8 +1,8 @@
 //
-//  StandAlone.h
+//  Entity.h
 //  Orx Vice
 //
-//  Created by Alessandro Vinciguerra on 18/09/2017.
+//  Created by Alessandro Vinciguerra on 25/09/2017.
 //      <alesvinciguerra@gmail.com>
 //Copyright (C) 2017 Arc676/Alessandro Vinciguerra
 
@@ -19,35 +19,17 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //See README and LICENSE for more details
 
-#ifndef StandAlone_h
-#define StandAlone_h
+#ifndef Entity_h
+#define Entity_h
 
-#include <string>
 #include "orx.h"
-#include "Player.h"
 
-class StandAlone {
-public:
-	static StandAlone* Instance();
-
-	static orxSTATUS orxFASTCALL Init();
-	static orxSTATUS orxFASTCALL Run();
-
-	static void orxFASTCALL Exit();
-
-	static orxOBJECT* orxFASTCALL GetObjectByName(std::string);
-
-	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
-
-	static orxSTATUS orxFASTCALL EventHandler(const orxEVENT*);
-
-	static orxVECTOR orxFASTCALL GetMouseWorldPosition();
+class Entity {
 protected:
-	StandAlone();
-	StandAlone(const StandAlone&);
-	StandAlone& operator= (const StandAlone&);
-private:
-	static StandAlone* m_Instance;
+	orxOBJECT* entity = orxNULL;
+	orxVECTOR position;
+public:
+	orxOBJECT* getEntity();
 };
 
-#endif /* StandAlone_h */
+#endif /* Entity_h */

@@ -38,15 +38,16 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("StaticScene.ini");
 	orxObject_CreateFromConfig("Scene");
 
+	Player *player = new Player();
+
 	orxCLOCK* upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
-	orxOBJECT* soldier = GetObjectByName("SoldierGraphics");
+	orxOBJECT* soldier = player->getEntity();
 	if (soldier != orxNULL) {
 		orxClock_Register(upClock, Update, soldier, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 	}
 	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
 
-	orxConfig_Load("Interaction.ini");
-	orxInput_Load(orxSTRING_EMPTY);
+//	orxConfig_Load("Interaction.ini");
 	orxEvent_AddHandler(orxEVENT_TYPE_INPUT, StandAlone::EventHandler);
 
 	return orxSTATUS_SUCCESS;
@@ -77,39 +78,14 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 	orxOBJECT* obj = orxOBJECT(context);
 	if (obj != orxNULL) {
 		std::string name = orxObject_GetName(obj);
-		if (name.compare("SoldierGraphics") == 0) {
-			orxVECTOR pos;
-			orxOBJECT* soldier = GetObjectByName("SoldierGraphics");
-			orxObject_GetPosition(soldier, &pos);
-			if (orxInput_IsActive("GoUp")) {
-				pos.fY--;
-			} else if (orxInput_IsActive("GoDown")) {
-				pos.fY++;
-			}
-			if (orxInput_IsActive("GoLeft")) {
-				pos.fX--;
-			} else if (orxInput_IsActive("GoRight")) {
-				pos.fX++;
-			}
-			orxObject_SetPosition(soldier, &pos);
-
-			orxVECTOR mouse = GetMouseWorldPosition();
-			double dx = mouse.fX - pos.fX;
-			double dy = mouse.fY - pos.fY;
-			orxFLOAT rot = M_PI_2 - (orxFLOAT) atan2(dx, dy);
-			orxObject_SetRotation(obj, rot);
-
-			if (orxInput_IsActive("Fire")) {
-				orxVECTOR velocity = {20 * (orxFLOAT)sin(rot), 20 * (orxFLOAT)cos(rot)};
-				orxVECTOR bpos;
-				orxObject_GetPosition(soldier, &bpos);
-				bpos.fX += velocity.fX;
-				bpos.fY += velocity.fY;
-
-				orxOBJECT* bullet = orxObject_CreateFromConfig("Bullet");
-				orxObject_SetPosition(bullet, &bpos);
-				orxObject_SetSpeed(bullet, &velocity);
-			}
+		if (name.compare("Player") == 0) {
+			Player *player = (Player*)orxObject_GetUserData(obj);
+			player->update(orxInput_IsActive("GoUp"),
+									  orxInput_IsActive("GoDown"),
+									  orxInput_IsActive("GoLeft"),
+									  orxInput_IsActive("GoRight"),
+									  orxInput_IsActive("Fire"),
+									  GetMouseWorldPosition());
 		}
 	}
 }
