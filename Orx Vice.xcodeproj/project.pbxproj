@@ -609,7 +609,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/Xcode/UI/Orx\\ Vice/inc/**";
+				USER_HEADER_SEARCH_PATHS = "inc/**";
 			};
 			name = Debug;
 		};
@@ -624,7 +624,7 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "/Users/Ale/Documents/Code/Xcode/UI/Orx\\ Vice/inc/**";
+				USER_HEADER_SEARCH_PATHS = "inc/**";
 			};
 			name = Release;
 		};
