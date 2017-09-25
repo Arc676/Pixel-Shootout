@@ -22,14 +22,22 @@
 #ifndef Entity_h
 #define Entity_h
 
+#include "Bullet.h"
 #include "orx.h"
 
 class Entity {
 protected:
 	orxOBJECT* entity = orxNULL;
 	orxVECTOR position;
+
+	int HP = 100;
+
+	void fireBullet(double);
+
+	static double angleBetween(orxVECTOR, orxVECTOR);
 public:
 	orxOBJECT* getEntity();
+	int getHP();
 };
 
-#endif /* Entity_h */
+#endif

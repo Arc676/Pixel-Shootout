@@ -16,10 +16,11 @@
 		716CBE221F790A790034981A /* Player.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE211F79077E0034981A /* Player.png */; };
 		716CBE251F790D4B0034981A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE231F790D4B0034981A /* Player.cpp */; };
 		716CBE281F790E280034981A /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE271F790E280034981A /* Entity.cpp */; };
-		716CBE2A1F7913F80034981A /* Player.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE291F7912C40034981A /* Player.ini */; };
-		716CBE2D1F7918C60034981A /* Enemy.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE2C1F7918BE0034981A /* Enemy.ini */; };
+		716CBE2A1F7913F80034981A /* Entities.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE291F7912C40034981A /* Entities.ini */; };
 		716CBE2E1F7918CA0034981A /* Enemy.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE2B1F7918990034981A /* Enemy.png */; };
 		716CBE311F7918F40034981A /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE2F1F7918F40034981A /* Enemy.cpp */; };
+		716CBE371F79385B0034981A /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE351F79385B0034981A /* Bullet.cpp */; };
+		716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE341F7936420034981A /* Bullet.png */; };
 		71ED0E691F6FF0F90095D601 /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
@@ -32,9 +33,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */,
 				716CBE2E1F7918CA0034981A /* Enemy.png in CopyFiles */,
-				716CBE2D1F7918C60034981A /* Enemy.ini in CopyFiles */,
-				716CBE2A1F7913F80034981A /* Player.ini in CopyFiles */,
+				716CBE2A1F7913F80034981A /* Entities.ini in CopyFiles */,
 				716CBE221F790A790034981A /* Player.png in CopyFiles */,
 				71614D261F70038E00932B46 /* box.png in CopyFiles */,
 				71614D251F70038A00932B46 /* Interaction.ini in CopyFiles */,
@@ -136,11 +137,13 @@
 		716CBE241F790D4B0034981A /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		716CBE261F790E1F0034981A /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
 		716CBE271F790E280034981A /* Entity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
-		716CBE291F7912C40034981A /* Player.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Player.ini; sourceTree = "<group>"; };
+		716CBE291F7912C40034981A /* Entities.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Entities.ini; sourceTree = "<group>"; };
 		716CBE2B1F7918990034981A /* Enemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Enemy.png; sourceTree = "<group>"; };
-		716CBE2C1F7918BE0034981A /* Enemy.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Enemy.ini; sourceTree = "<group>"; };
 		716CBE2F1F7918F40034981A /* Enemy.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Enemy.cpp; sourceTree = "<group>"; };
 		716CBE301F7918F40034981A /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Enemy.h; sourceTree = "<group>"; };
+		716CBE341F7936420034981A /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bullet.png; sourceTree = "<group>"; };
+		716CBE351F79385B0034981A /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
+		716CBE361F79385B0034981A /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
 		71ED0E5B1F6FF0950095D601 /* Orx Vice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Orx Vice"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ED0E681F6FF0F90095D601 /* liborx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborx.dylib; sourceTree = "<group>"; };
 		71ED0E6A1F6FF1920095D601 /* StandAlone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandAlone.h; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 		71614D1A1F6FFC3300932B46 /* anim */ = {
 			isa = PBXGroup;
 			children = (
+				716CBE341F7936420034981A /* Bullet.png */,
 				716CBE2B1F7918990034981A /* Enemy.png */,
 				716CBE211F79077E0034981A /* Player.png */,
 			);
@@ -429,6 +433,8 @@
 				716CBE231F790D4B0034981A /* Player.cpp */,
 				716CBE301F7918F40034981A /* Enemy.h */,
 				716CBE2F1F7918F40034981A /* Enemy.cpp */,
+				716CBE351F79385B0034981A /* Bullet.cpp */,
+				716CBE361F79385B0034981A /* Bullet.h */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -470,8 +476,7 @@
 				71ED0E701F6FF4370095D601 /* MainMenu.ini */,
 				71614D1D1F6FFC4F00932B46 /* StaticScene.ini */,
 				71614D241F70037B00932B46 /* Interaction.ini */,
-				716CBE291F7912C40034981A /* Player.ini */,
-				716CBE2C1F7918BE0034981A /* Enemy.ini */,
+				716CBE291F7912C40034981A /* Entities.ini */,
 			);
 			path = bin;
 			sourceTree = "<group>";
@@ -543,6 +548,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				716CBE281F790E280034981A /* Entity.cpp in Sources */,
+				716CBE371F79385B0034981A /* Bullet.cpp in Sources */,
 				71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */,
 				716CBE311F7918F40034981A /* Enemy.cpp in Sources */,
 				71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */,

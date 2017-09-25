@@ -24,3 +24,23 @@
 orxOBJECT* Entity::getEntity() {
 	return entity;
 }
+
+int Entity::getHP() {
+	return HP;
+}
+
+double Entity::angleBetween(orxVECTOR v1, orxVECTOR v2) {
+	return M_PI_2 - (orxFLOAT) atan2(
+									 v2.fX - v1.fX,
+									 v2.fY - v1.fY);
+}
+
+void Entity::fireBullet(double rot) {
+	orxVECTOR bpos;
+	orxObject_GetPosition(entity, &bpos);
+	orxVECTOR ds = {32, 12};
+	orxVector_2DRotate(&ds, &ds, rot);
+	orxVector_Add(&bpos, &bpos, &ds);
+
+	new Bullet(bpos, 80, rot);
+}

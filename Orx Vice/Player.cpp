@@ -22,7 +22,7 @@
 #include "Player.h"
 
 Player::Player() {
-	orxConfig_Load("Player.ini");
+	orxConfig_Load("Entities.ini");
 	orxInput_Load(orxSTRING_EMPTY);
 	entity = orxObject_CreateFromConfig("Player");
 	orxObject_SetUserData(entity, this);
@@ -42,20 +42,10 @@ void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVEC
 	}
 	orxObject_SetPosition(entity, &position);
 
-	double dx = mouse.fX - position.fX;
-	double dy = mouse.fY - position.fY;
-	orxFLOAT rot = M_PI_2 - (orxFLOAT) atan2(dx, dy);
+	double rot = Entity::angleBetween(position, mouse);
 	orxObject_SetRotation(entity, rot);
 
 	if (fire) {
-		orxVECTOR velocity = {20 * (orxFLOAT)sin(rot), 20 * (orxFLOAT)cos(rot)};
-		orxVECTOR bpos;
-		orxObject_GetPosition(entity, &bpos);
-		bpos.fX += velocity.fX;
-		bpos.fY += velocity.fY;
-
-		orxOBJECT* bullet = orxObject_CreateFromConfig("Bullet");
-		orxObject_SetPosition(bullet, &bpos);
-		orxObject_SetSpeed(bullet, &velocity);
+		fireBullet(rot);
 	}
 }

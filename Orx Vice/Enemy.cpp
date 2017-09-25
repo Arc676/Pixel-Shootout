@@ -20,3 +20,22 @@
 //See README and LICENSE for more details
 
 #include "Enemy.h"
+
+Enemy::Enemy() {
+	orxConfig_Load("Entities.ini");
+	entity = orxObject_CreateFromConfig("Enemy");
+	orxObject_SetUserData(entity, this);
+}
+
+void Enemy::update(orxVECTOR playerPos) {
+	if (orxVector_GetDistance(&position, &playerPos) < 10) {
+		orxVECTOR dir;
+		orxVector_Sub(&dir, &playerPos, &position);
+		orxVector_Normalize(&dir, &dir);
+		orxVector_Mulf(&dir, &dir, 2);
+		orxVector_Add(&position, &position, &dir);
+		orxObject_SetPosition(entity, &position);
+	}
+	double rot = Entity::angleBetween(position, playerPos);
+	orxObject_SetRotation(entity, rot);
+}

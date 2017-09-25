@@ -26,6 +26,8 @@
 
 class Enemy : public Entity {
 public:
+	Enemy();
+	void update(orxVECTOR);
 };
 
 #endif
