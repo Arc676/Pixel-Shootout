@@ -35,7 +35,15 @@ double Entity::angleBetween(orxVECTOR v1, orxVECTOR v2) {
 									 v2.fY - v1.fY);
 }
 
+void Entity::update() {
+	ticksSinceLastShot++;
+}
+
 void Entity::fireBullet(double rot) {
+	if (ticksSinceLastShot < 10) {
+		return;
+	}
+	ticksSinceLastShot = 0;
 	orxVECTOR bpos;
 	orxObject_GetPosition(entity, &bpos);
 	orxVECTOR ds = {32, 12};

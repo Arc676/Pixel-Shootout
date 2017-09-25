@@ -29,6 +29,7 @@ Player::Player() {
 }
 
 void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVECTOR mouse) {
+	Entity::update();
 	orxObject_GetPosition(entity, &position);
 	if (up) {
 		position.fY -= speed;

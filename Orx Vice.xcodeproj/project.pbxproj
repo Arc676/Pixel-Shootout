@@ -433,8 +433,8 @@
 				716CBE231F790D4B0034981A /* Player.cpp */,
 				716CBE301F7918F40034981A /* Enemy.h */,
 				716CBE2F1F7918F40034981A /* Enemy.cpp */,
-				716CBE351F79385B0034981A /* Bullet.cpp */,
 				716CBE361F79385B0034981A /* Bullet.h */,
+				716CBE351F79385B0034981A /* Bullet.cpp */,
 			);
 			name = Entities;
 			sourceTree = "<group>";

@@ -32,9 +32,11 @@ protected:
 
 	int HP = 100;
 
+	int ticksSinceLastShot = 0;
 	void fireBullet(double);
 
 	static double angleBetween(orxVECTOR, orxVECTOR);
+	void update();
 public:
 	orxOBJECT* getEntity();
 	int getHP();
