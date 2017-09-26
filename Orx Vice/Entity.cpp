@@ -44,7 +44,7 @@ void Entity::fireBullet(double rot) {
 		return;
 	}
 	ticksSinceLastShot = 0;
-	orxVECTOR bpos;
+	orxVECTOR bpos = {0,0};
 	orxObject_GetPosition(entity, &bpos);
 	orxVECTOR ds = {32, 12};
 	orxVector_2DRotate(&ds, &ds, rot);
