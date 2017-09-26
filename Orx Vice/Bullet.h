@@ -13,8 +13,6 @@
 
 class Bullet {
 	orxOBJECT *entity;
-
-	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
 public:
 	Bullet(orxVECTOR, double, double);
 };
