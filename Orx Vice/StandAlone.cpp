@@ -45,9 +45,8 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	if (soldier != orxNULL) {
 		orxClock_Register(upClock, Update, soldier, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 	}
-	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
 
-//	orxConfig_Load("Interaction.ini");
+	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
 	orxEvent_AddHandler(orxEVENT_TYPE_INPUT, StandAlone::EventHandler);
 
 	return orxSTATUS_SUCCESS;
