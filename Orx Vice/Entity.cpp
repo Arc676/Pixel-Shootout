@@ -44,11 +44,11 @@ void Entity::fireBullet(double rot) {
 		return;
 	}
 	ticksSinceLastShot = 0;
-	orxVECTOR bpos = {0,0};
-//	orxObject_GetPosition(entity, &bpos);
-//	orxVECTOR ds = {32, 12};
-//	orxVector_2DRotate(&ds, &ds, rot);
-//	orxVector_Add(&bpos, &bpos, &ds);
+	orxVECTOR bpos;
+	orxObject_GetPosition(entity, &bpos);
+	orxVECTOR ds = {32, 12};
+	orxVector_2DRotate(&ds, &ds, rot);
+	orxVector_Add(&bpos, &bpos, &ds);
 
 	new Bullet(bpos, 80, rot, 10);
 }

@@ -90,8 +90,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 }
 
 orxVECTOR orxFASTCALL StandAlone::GetMouseWorldPosition() {
-	orxVECTOR worldpos = {0,0,0};
-	orxVECTOR screenpos = {0,0,0};
+	orxVECTOR worldpos, screenpos;
 
 	orxRender_GetWorldPosition(orxMouse_GetPosition(&screenpos), orxNULL, &worldpos);
 
