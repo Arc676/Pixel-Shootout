@@ -55,4 +55,7 @@ void Entity::fireBullet(double rot) {
 
 void Entity::takeHit(Bullet* bullet) {
 	HP -= bullet->getDmg();
+	if (HP <= 0) {
+		orxObject_SetLifeTime(entity, 0);
+	}
 }

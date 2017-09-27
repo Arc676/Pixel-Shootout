@@ -75,17 +75,21 @@ orxOBJECT* StandAlone::GetObjectByName(std::string objName) {
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
 	orxOBJECT* obj = orxOBJECT(context);
+	orxVECTOR mouse = GetMouseWorldPosition();
 	if (obj != orxNULL) {
 		std::string name = orxObject_GetName(obj);
 		if (name.compare("Player") == 0) {
 			Player *player = (Player*)orxObject_GetUserData(obj);
 			player->update(orxInput_IsActive("GoUp"),
-									  orxInput_IsActive("GoDown"),
-									  orxInput_IsActive("GoLeft"),
-									  orxInput_IsActive("GoRight"),
-									  orxInput_IsActive("Fire"),
-									  GetMouseWorldPosition());
+						   orxInput_IsActive("GoDown"),
+						   orxInput_IsActive("GoLeft"),
+						   orxInput_IsActive("GoRight"),
+						   orxInput_IsActive("Fire"),
+						   mouse);
 		}
+	}
+	if (orxInput_IsActive("Spawn")) {
+		new Enemy(mouse);
 	}
 }
 
@@ -109,15 +113,13 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 					orxOBJECT* bulletObj = nullptr;
 					Bullet* bullet = nullptr;
 					Entity* entity = nullptr;
-					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0 &&
-						orxString_Compare(orxObject_GetName(receiver), "Player") == 0) {
-						bullet = (Bullet*)orxObject_GetUserData(sender);
+					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
 						bulletObj = sender;
+						bullet = (Bullet*)orxObject_GetUserData(sender);
 						entity = (Entity*)orxObject_GetUserData(receiver);
-					} else if (orxString_Compare(orxObject_GetName(sender), "Player") == 0 &&
-							   orxString_Compare(orxObject_GetName(receiver), "Bullet") == 0) {
-						bullet = (Bullet*)orxObject_GetUserData(receiver);
+					} else {
 						bulletObj = receiver;
+						bullet = (Bullet*)orxObject_GetUserData(receiver);
 						entity = (Entity*)orxObject_GetUserData(sender);
 					}
 					entity->takeHit(bullet);

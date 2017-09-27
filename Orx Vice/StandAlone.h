@@ -25,6 +25,7 @@
 #include <string>
 #include "orx.h"
 #include "Player.h"
+#include "Enemy.h"
 
 class StandAlone {
 public:

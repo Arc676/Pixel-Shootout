@@ -21,9 +21,10 @@
 
 #include "Enemy.h"
 
-Enemy::Enemy() {
+Enemy::Enemy(orxVECTOR pos) {
 	orxConfig_Load("Entities.ini");
 	entity = orxObject_CreateFromConfig("Enemy");
+	orxObject_SetPosition(entity, &pos);
 	orxObject_SetUserData(entity, this);
 }
 
