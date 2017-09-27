@@ -106,15 +106,23 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 			switch (currentEvent->eID) {
 				case orxPHYSICS_EVENT_CONTACT_ADD:
 					orxOBJECT* sender = orxOBJECT(currentEvent->hSender);
-					Bullet* bullet = (Bullet*)orxObject_GetUserData(sender);
-					if (bullet != orxNULL) {
-						orxOBJECT* receiver = orxOBJECT(currentEvent->hRecipient);
-						Entity* entity = (Entity*)orxObject_GetUserData(receiver);
-						if (entity != orxNULL) {
-							orxLOG("sender: %s", orxObject_GetName(sender));
-							orxLOG("recipient: %s", orxObject_GetName(receiver));
-						}
+					orxOBJECT* receiver = orxOBJECT(currentEvent->hRecipient);
+					orxOBJECT* bulletObj = nullptr;
+					Bullet* bullet = nullptr;
+					Entity* entity = nullptr;
+					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0 &&
+						orxString_Compare(orxObject_GetName(receiver), "Player") == 0) {
+						bullet = (Bullet*)orxObject_GetUserData(sender);
+						bulletObj = sender;
+						entity = (Entity*)orxObject_GetUserData(receiver);
+					} else if (orxString_Compare(orxObject_GetName(sender), "Player") == 0 &&
+							   orxString_Compare(orxObject_GetName(receiver), "Bullet") == 0) {
+						bullet = (Bullet*)orxObject_GetUserData(receiver);
+						bulletObj = receiver;
+						entity = (Entity*)orxObject_GetUserData(sender);
 					}
+					entity->takeHit(bullet);
+					orxObject_SetLifeTime(bulletObj, 0);
 					break;
 			}
 			break;

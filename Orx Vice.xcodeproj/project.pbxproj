@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71614D121F6FF78300932B46 /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
-		71614D131F6FF7C400932B46 /* Orx Vice.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Orx Vice.ini */; };
+		71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */; };
 		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; };
 		71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1D1F6FFC4F00932B46 /* StaticScene.ini */; };
 		71614D251F70038A00932B46 /* Interaction.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D241F70037B00932B46 /* Interaction.ini */; };
@@ -40,7 +40,7 @@
 				71614D261F70038E00932B46 /* box.png in CopyFiles */,
 				71614D251F70038A00932B46 /* Interaction.ini in CopyFiles */,
 				71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */,
-				71614D131F6FF7C400932B46 /* Orx Vice.ini in CopyFiles */,
+				71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */,
 				71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */,
 				71614D121F6FF78300932B46 /* liborx.dylib in CopyFiles */,
 			);
@@ -144,12 +144,12 @@
 		716CBE341F7936420034981A /* Bullet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bullet.png; sourceTree = "<group>"; };
 		716CBE351F79385B0034981A /* Bullet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Bullet.cpp; sourceTree = "<group>"; };
 		716CBE361F79385B0034981A /* Bullet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bullet.h; sourceTree = "<group>"; };
-		71ED0E5B1F6FF0950095D601 /* Orx Vice */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Orx Vice"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71ED0E5B1F6FF0950095D601 /* Pixel Shootout */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Pixel Shootout"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ED0E681F6FF0F90095D601 /* liborx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborx.dylib; sourceTree = "<group>"; };
 		71ED0E6A1F6FF1920095D601 /* StandAlone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandAlone.h; sourceTree = "<group>"; };
 		71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StandAlone.cpp; sourceTree = "<group>"; };
 		71ED0E6D1F6FF3400095D601 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
-		71ED0E6F1F6FF4030095D601 /* Orx Vice.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Orx Vice.ini"; sourceTree = "<group>"; };
+		71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pixel Shootout.ini"; sourceTree = "<group>"; };
 		71ED0E701F6FF4370095D601 /* MainMenu.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MainMenu.ini; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -455,7 +455,7 @@
 		71ED0E5C1F6FF0950095D601 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71ED0E5B1F6FF0950095D601 /* Orx Vice */,
+				71ED0E5B1F6FF0950095D601 /* Pixel Shootout */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -472,7 +472,7 @@
 		71ED0E651F6FF0F90095D601 /* bin */ = {
 			isa = PBXGroup;
 			children = (
-				71ED0E6F1F6FF4030095D601 /* Orx Vice.ini */,
+				71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */,
 				71ED0E701F6FF4370095D601 /* MainMenu.ini */,
 				71614D1D1F6FFC4F00932B46 /* StaticScene.ini */,
 				71614D241F70037B00932B46 /* Interaction.ini */,
@@ -492,9 +492,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		71ED0E5A1F6FF0950095D601 /* Orx Vice */ = {
+		71ED0E5A1F6FF0950095D601 /* Pixel Shootout */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71ED0E621F6FF0950095D601 /* Build configuration list for PBXNativeTarget "Orx Vice" */;
+			buildConfigurationList = 71ED0E621F6FF0950095D601 /* Build configuration list for PBXNativeTarget "Pixel Shootout" */;
 			buildPhases = (
 				71ED0E571F6FF0950095D601 /* Sources */,
 				71ED0E581F6FF0950095D601 /* Frameworks */,
@@ -504,9 +504,9 @@
 			);
 			dependencies = (
 			);
-			name = "Orx Vice";
+			name = "Pixel Shootout";
 			productName = "Orx Vice";
-			productReference = 71ED0E5B1F6FF0950095D601 /* Orx Vice */;
+			productReference = 71ED0E5B1F6FF0950095D601 /* Pixel Shootout */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -537,7 +537,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71ED0E5A1F6FF0950095D601 /* Orx Vice */,
+				71ED0E5A1F6FF0950095D601 /* Pixel Shootout */,
 			);
 		};
 /* End PBXProject section */
@@ -692,7 +692,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71ED0E621F6FF0950095D601 /* Build configuration list for PBXNativeTarget "Orx Vice" */ = {
+		71ED0E621F6FF0950095D601 /* Build configuration list for PBXNativeTarget "Pixel Shootout" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71ED0E631F6FF0950095D601 /* Debug */,
