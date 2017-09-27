@@ -45,10 +45,14 @@ void Entity::fireBullet(double rot) {
 	}
 	ticksSinceLastShot = 0;
 	orxVECTOR bpos = {0,0};
-	orxObject_GetPosition(entity, &bpos);
-	orxVECTOR ds = {32, 12};
-	orxVector_2DRotate(&ds, &ds, rot);
-	orxVector_Add(&bpos, &bpos, &ds);
+//	orxObject_GetPosition(entity, &bpos);
+//	orxVECTOR ds = {32, 12};
+//	orxVector_2DRotate(&ds, &ds, rot);
+//	orxVector_Add(&bpos, &bpos, &ds);
 
-	new Bullet(bpos, 80, rot);
+	new Bullet(bpos, 80, rot, 10);
+}
+
+void Entity::takeHit(Bullet* bullet) {
+	HP -= bullet->getDmg();
 }

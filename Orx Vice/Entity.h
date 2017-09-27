@@ -40,6 +40,7 @@ protected:
 public:
 	orxOBJECT* getEntity();
 	int getHP();
+	void takeHit(Bullet*);
 };
 
 #endif

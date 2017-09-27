@@ -103,6 +103,20 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 		case orxEVENT_TYPE_INPUT:
 			break;
 		case orxEVENT_TYPE_PHYSICS:
+			switch (currentEvent->eID) {
+				case orxPHYSICS_EVENT_CONTACT_ADD:
+					orxOBJECT* sender = orxOBJECT(currentEvent->hSender);
+					Bullet* bullet = (Bullet*)orxObject_GetUserData(sender);
+					if (bullet != orxNULL) {
+						orxOBJECT* receiver = orxOBJECT(currentEvent->hRecipient);
+						Entity* entity = (Entity*)orxObject_GetUserData(receiver);
+						if (entity != orxNULL) {
+							orxLOG("sender: %s", orxObject_GetName(sender));
+							orxLOG("recipient: %s", orxObject_GetName(receiver));
+						}
+					}
+					break;
+			}
 			break;
 		default:
 			break;
