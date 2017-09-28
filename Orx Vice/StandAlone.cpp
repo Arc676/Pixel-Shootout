@@ -97,6 +97,7 @@ orxVECTOR orxFASTCALL StandAlone::GetMouseWorldPosition() {
 	orxVECTOR worldpos, screenpos;
 
 	orxRender_GetWorldPosition(orxMouse_GetPosition(&screenpos), orxNULL, &worldpos);
+	worldpos.fZ = 0;
 
 	return worldpos;
 }

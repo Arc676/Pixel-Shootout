@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71614D121F6FF78300932B46 /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
+		7105BE2A1F7CF5CE00331E6D /* liborxd.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7105BE291F7CF5CE00331E6D /* liborxd.dylib */; };
+		7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7105BE291F7CF5CE00331E6D /* liborxd.dylib */; };
+		7105BE2C1F7CF62500331E6D /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */; };
 		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; };
 		71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1D1F6FFC4F00932B46 /* StaticScene.ini */; };
@@ -21,7 +23,6 @@
 		716CBE311F7918F40034981A /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE2F1F7918F40034981A /* Enemy.cpp */; };
 		716CBE371F79385B0034981A /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE351F79385B0034981A /* Bullet.cpp */; };
 		716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE341F7936420034981A /* Bullet.png */; };
-		71ED0E691F6FF0F90095D601 /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7105BE2C1F7CF62500331E6D /* liborx.dylib in CopyFiles */,
+				7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */,
 				716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */,
 				716CBE2E1F7918CA0034981A /* Enemy.png in CopyFiles */,
 				716CBE2A1F7913F80034981A /* Entities.ini in CopyFiles */,
@@ -42,13 +45,13 @@
 				71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */,
 				71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */,
 				71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */,
-				71614D121F6FF78300932B46 /* liborx.dylib in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7105BE291F7CF5CE00331E6D /* liborxd.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborxd.dylib; sourceTree = "<group>"; };
 		71612EB61F6FF4BD00932B46 /* orxAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnim.h; sourceTree = "<group>"; };
 		71612EB71F6FF4BD00932B46 /* orxAnimPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnimPointer.h; sourceTree = "<group>"; };
 		71612EB81F6FF4BD00932B46 /* orxAnimSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnimSet.h; sourceTree = "<group>"; };
@@ -158,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71ED0E691F6FF0F90095D601 /* liborx.dylib in Frameworks */,
+				7105BE2A1F7CF5CE00331E6D /* liborxd.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +487,7 @@
 		71ED0E671F6FF0F90095D601 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				7105BE291F7CF5CE00331E6D /* liborxd.dylib */,
 				71ED0E681F6FF0F90095D601 /* liborx.dylib */,
 			);
 			path = lib;
