@@ -22,6 +22,9 @@
 #include "StandAlone.h"
 
 StandAlone* StandAlone::m_Instance = nullptr;
+Player* StandAlone::player = nullptr;
+orxCLOCK* StandAlone::upClock = nullptr;
+Environment* StandAlone::environment = nullptr;
 
 StandAlone* StandAlone::Instance() {
 	if (m_Instance != nullptr) {
@@ -38,13 +41,11 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("StaticScene.ini");
 	orxObject_CreateFromConfig("Scene");
 
-	Player *player = new Player();
+	player = new Player();
+	environment = new Environment(player);
 
-	orxCLOCK* upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
-	orxOBJECT* soldier = player->getEntity();
-	if (soldier != orxNULL) {
-		orxClock_Register(upClock, Update, soldier, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
-	}
+	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
+	orxClock_Register(upClock, Update, player->getEntity(), orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 
 	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
 	orxEvent_AddHandler(orxEVENT_TYPE_INPUT, StandAlone::EventHandler);
@@ -79,7 +80,6 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 	if (obj != orxNULL) {
 		std::string name = orxObject_GetName(obj);
 		if (name.compare("Player") == 0) {
-			Player *player = (Player*)orxObject_GetUserData(obj);
 			player->update(orxInput_IsActive("GoUp"),
 						   orxInput_IsActive("GoDown"),
 						   orxInput_IsActive("GoLeft"),
@@ -89,7 +89,8 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 		}
 	}
 	if (orxInput_IsActive("Spawn")) {
-		new Enemy(mouse);
+		Enemy* e = new Enemy(mouse);
+		environment->registerEntity(e);
 	}
 }
 

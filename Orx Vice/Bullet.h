@@ -19,8 +19,8 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //See README and LICENSE for more details
 
-#ifndef Bullet_hpp
-#define Bullet_hpp
+#ifndef Bullet_h
+#define Bullet_h
 
 #include "orx.h"
 

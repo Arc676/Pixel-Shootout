@@ -26,6 +26,7 @@
 #include "orx.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Environment.h"
 
 class StandAlone {
 public:
@@ -49,6 +50,9 @@ protected:
 	StandAlone& operator= (const StandAlone&);
 private:
 	static StandAlone* m_Instance;
+	static orxCLOCK* upClock;
+	static Player* player;
+	static Environment* environment;
 };
 
 #endif /* StandAlone_h */

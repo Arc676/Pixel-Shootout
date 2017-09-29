@@ -10,6 +10,7 @@
 		7105BE2A1F7CF5CE00331E6D /* liborxd.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 7105BE291F7CF5CE00331E6D /* liborxd.dylib */; };
 		7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7105BE291F7CF5CE00331E6D /* liborxd.dylib */; };
 		7105BE2C1F7CF62500331E6D /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
+		711187431F7E28C80013A56F /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 711187411F7E28C80013A56F /* Environment.cpp */; };
 		71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */; };
 		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; };
 		71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1D1F6FFC4F00932B46 /* StaticScene.ini */; };
@@ -52,6 +53,8 @@
 
 /* Begin PBXFileReference section */
 		7105BE291F7CF5CE00331E6D /* liborxd.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborxd.dylib; sourceTree = "<group>"; };
+		711187411F7E28C80013A56F /* Environment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
+		711187421F7E28C80013A56F /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
 		71612EB61F6FF4BD00932B46 /* orxAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnim.h; sourceTree = "<group>"; };
 		71612EB71F6FF4BD00932B46 /* orxAnimPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnimPointer.h; sourceTree = "<group>"; };
 		71612EB81F6FF4BD00932B46 /* orxAnimSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnimSet.h; sourceTree = "<group>"; };
@@ -423,6 +426,8 @@
 				71ED0E6A1F6FF1920095D601 /* StandAlone.h */,
 				71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */,
 				71ED0E6D1F6FF3400095D601 /* Main.cpp */,
+				711187421F7E28C80013A56F /* Environment.h */,
+				711187411F7E28C80013A56F /* Environment.cpp */,
 			);
 			name = App;
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 				716CBE311F7918F40034981A /* Enemy.cpp in Sources */,
 				71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */,
 				716CBE251F790D4B0034981A /* Player.cpp in Sources */,
+				711187431F7E28C80013A56F /* Environment.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

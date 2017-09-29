@@ -25,6 +25,10 @@ orxOBJECT* Entity::getEntity() {
 	return entity;
 }
 
+orxVECTOR Entity::getPosition() {
+	return position;
+}
+
 int Entity::getHP() {
 	return HP;
 }

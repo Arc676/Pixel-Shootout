@@ -1,8 +1,8 @@
 //
-//  Entity.h
+//  Environment.hpp
 //  Orx Vice
 //
-//  Created by Alessandro Vinciguerra on 25/09/2017.
+//  Created by Alessandro Vinciguerra on 29/09/2017.
 //      <alesvinciguerra@gmail.com>
 //Copyright (C) 2017 Arc676/Alessandro Vinciguerra
 
@@ -19,30 +19,23 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //See README and LICENSE for more details
 
-#ifndef Entity_h
-#define Entity_h
+#ifndef Environment_h
+#define Environment_h
 
-#include "Bullet.h"
 #include "orx.h"
+#include "Player.h"
+#include "Enemy.h"
 
-class Entity {
-protected:
-	orxOBJECT* entity = orxNULL;
-	orxVECTOR position;
+class Environment {
+	Player* player;
 
-	int HP = 1;
-
-	int ticksSinceLastShot = 0;
-	void fireBullet(double);
-
-	static double angleBetween(orxVECTOR, orxVECTOR);
-	void update(); 
+	static Environment* instance;
 public:
-	orxOBJECT* getEntity();
-	orxVECTOR getPosition();
-	
-	int getHP();
-	void takeHit(Bullet*);
+	Environment(Player*);
+	void registerEntity(Entity* entity);
+	orxCLOCK* upClock;
+
+	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
 };
 
 #endif
