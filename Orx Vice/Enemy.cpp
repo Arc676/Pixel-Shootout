@@ -30,6 +30,7 @@ Enemy::Enemy(orxVECTOR pos) {
 
 void Enemy::update(orxVECTOR playerPos) {
 	Entity::update();
+	orxObject_GetPosition(entity, &position);
 	if (orxVector_GetDistance(&position, &playerPos) > 200) {
 		orxVECTOR dir;
 		orxVector_Sub(&dir, &playerPos, &position);

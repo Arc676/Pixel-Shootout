@@ -124,21 +124,28 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 					orxOBJECT* sender = orxOBJECT(currentEvent->hSender);
 					orxOBJECT* receiver = orxOBJECT(currentEvent->hRecipient);
 					orxOBJECT* bulletObj = nullptr;
+					orxOBJECT* otherObj = nullptr;
+
 					Bullet* bullet = nullptr;
 					Entity* entity = nullptr;
-					bool enemyHit = false;
+
 					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
 						bulletObj = sender;
-						bullet = (Bullet*)orxObject_GetUserData(sender);
-						entity = (Entity*)orxObject_GetUserData(receiver);
-						enemyHit = orxString_Compare(orxObject_GetName(receiver), "Enemy") == 0;
-					} else {
+						otherObj = receiver;
+					} else if (orxString_Compare(orxObject_GetName(receiver), "Bullet") == 0) {
 						bulletObj = receiver;
-						bullet = (Bullet*)orxObject_GetUserData(receiver);
-						entity = (Entity*)orxObject_GetUserData(sender);
-						enemyHit = orxString_Compare(orxObject_GetName(sender), "Enemy") == 0;
+						otherObj = sender;
+					} else {
+						break;
 					}
-					entity->takeHit(bullet);
+
+					bullet = (Bullet*)orxObject_GetUserData(bulletObj);
+					orxSTRING name = (orxSTRING)orxObject_GetName(otherObj);
+					if (orxString_Compare(name, "Enemy") == 0 ||
+						orxString_Compare(name, "Player") == 0) {
+						entity = (Entity*)orxObject_GetUserData(otherObj);
+						entity->takeHit(bullet);
+					}
 					orxObject_SetLifeTime(bulletObj, 0);
 					break;
 			}
