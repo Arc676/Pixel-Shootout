@@ -42,7 +42,7 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxObject_CreateFromConfig("Scene");
 
 	player = new Player();
-	environment = new Environment(player);
+	environment = new Environment();
 
 	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
 	orxClock_Register(upClock, Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
@@ -92,6 +92,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 			e->update(player->getPosition());
 		}
 	}
+	environment->update();
 	if (orxInput_IsActive("Spawn")) {
 		new Enemy(mouse);
 	}
@@ -118,16 +119,22 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 					orxOBJECT* bulletObj = nullptr;
 					Bullet* bullet = nullptr;
 					Entity* entity = nullptr;
+					bool enemyHit = false;
 					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
 						bulletObj = sender;
 						bullet = (Bullet*)orxObject_GetUserData(sender);
 						entity = (Entity*)orxObject_GetUserData(receiver);
+						enemyHit = orxString_Compare(orxObject_GetName(receiver), "Enemy") == 0;
 					} else {
 						bulletObj = receiver;
 						bullet = (Bullet*)orxObject_GetUserData(receiver);
 						entity = (Entity*)orxObject_GetUserData(sender);
+						enemyHit = orxString_Compare(orxObject_GetName(sender), "Enemy") == 0;
 					}
 					entity->takeHit(bullet);
+					if (enemyHit && entity->getHP() <= 0) {
+						environment->enemyDied();
+					}
 					orxObject_SetLifeTime(bulletObj, 0);
 					break;
 			}

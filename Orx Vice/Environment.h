@@ -22,20 +22,17 @@
 #ifndef Environment_h
 #define Environment_h
 
+#include <stdlib.h>
+
 #include "orx.h"
 #include "Player.h"
 #include "Enemy.h"
 
 class Environment {
-	Player* player;
-
-	static Environment* instance;
+	int enemiesPresent = 0;
 public:
-	Environment(Player*);
-	void registerEntity(Entity* entity);
-	orxCLOCK* upClock;
-
-	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
+	void enemyDied();
+	void update();
 };
 
 #endif

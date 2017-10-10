@@ -21,26 +21,18 @@
 
 #include "Environment.h"
 
-Environment* Environment::instance = nullptr;
-
-Environment::Environment(Player* player) {
-	this->player = player;
-	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
-	Environment::instance = this;
+void Environment::enemyDied() {
+	enemiesPresent--;
 }
 
-void Environment::registerEntity(Entity* entity) {
-	orxClock_Register(upClock, Update, entity, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
-}
-
-void orxFASTCALL Environment::Update(const orxCLOCK_INFO* info, void* context) {
-	orxOBJECT* obj = orxOBJECT(context);
-	if (obj != orxNULL) {
-		orxLOG("found non-null entity to update");
-		if (orxString_Compare(orxObject_GetName(obj), "Enemy") == 0) {
-			orxLOG("found enemy to update");
-			Enemy* e = (Enemy*)orxObject_GetUserData(obj);
-			e->update(instance->player->getPosition());
+void Environment::update() {
+	if (enemiesPresent == 0) {
+		enemiesPresent = arc4random_uniform(10);
+		for (int i = 0; i < enemiesPresent; i++) {
+			new Enemy({
+				(orxFLOAT)(50 + arc4random_uniform(50)),
+				(orxFLOAT)(50 + arc4random_uniform(50)),
+				0});
 		}
 	}
 }
