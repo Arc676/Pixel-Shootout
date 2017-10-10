@@ -45,7 +45,7 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	environment = new Environment(player);
 
 	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
-	orxClock_Register(upClock, Update, player->getEntity(), orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
+	orxClock_Register(upClock, Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 
 	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
 	orxEvent_AddHandler(orxEVENT_TYPE_INPUT, StandAlone::EventHandler);
@@ -61,13 +61,11 @@ void orxFASTCALL StandAlone::Exit() {
 	return;
 }
 
-orxOBJECT* StandAlone::GetObjectByName(std::string objName) {
-	std::string name;
+orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 	for (orxOBJECT* obj = orxOBJECT(orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT));
 		 obj != orxNULL;
 		 obj = orxOBJECT(orxStructure_GetNext(obj))) {
-		name = orxObject_GetName(obj);
-		if (name.compare(objName) == 0) {
+		if (orxString_Compare(orxObject_GetName(obj), objName) == 0) {
 			return obj;
 		}
 	}
@@ -75,22 +73,27 @@ orxOBJECT* StandAlone::GetObjectByName(std::string objName) {
 }
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
-	orxOBJECT* obj = orxOBJECT(context);
 	orxVECTOR mouse = GetMouseWorldPosition();
-	if (obj != orxNULL) {
-		std::string name = orxObject_GetName(obj);
-		if (name.compare("Player") == 0) {
+	for (
+		 orxOBJECT *obj = (orxOBJECT*)orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT);
+		 obj != orxNULL;
+		 obj = orxOBJECT(orxStructure_GetNext(obj))
+		) {
+		orxSTRING name = (orxSTRING)orxObject_GetName(obj);
+		if (orxString_Compare(name, "Player") == 0) {
 			player->update(orxInput_IsActive("GoUp"),
 						   orxInput_IsActive("GoDown"),
 						   orxInput_IsActive("GoLeft"),
 						   orxInput_IsActive("GoRight"),
 						   orxInput_IsActive("Fire"),
 						   mouse);
+		} else if (orxString_Compare(name, "Enemy") == 0) {
+			Enemy* e = (Enemy*)orxObject_GetUserData(obj);
+			e->update(player->getPosition());
 		}
 	}
 	if (orxInput_IsActive("Spawn")) {
-		Enemy* e = new Enemy(mouse);
-		environment->registerEntity(e);
+		new Enemy(mouse);
 	}
 }
 

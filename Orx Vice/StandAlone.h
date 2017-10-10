@@ -22,7 +22,6 @@
 #ifndef StandAlone_h
 #define StandAlone_h
 
-#include <string>
 #include "orx.h"
 #include "Player.h"
 #include "Enemy.h"
@@ -37,7 +36,7 @@ public:
 
 	static void orxFASTCALL Exit();
 
-	static orxOBJECT* orxFASTCALL GetObjectByName(std::string);
+	static orxOBJECT* orxFASTCALL GetObjectByName(orxSTRING);
 
 	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
 
