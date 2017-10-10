@@ -41,6 +41,8 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("StaticScene.ini");
 	orxObject_CreateFromConfig("Scene");
 
+	orxConfig_Load("Entities.ini");
+
 	player = new Player();
 	environment = new Environment();
 
@@ -73,6 +75,7 @@ orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 }
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
+	int enemiesStillPresent = 0;
 	orxVECTOR mouse = GetMouseWorldPosition();
 	for (
 		 orxOBJECT *obj = (orxOBJECT*)orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT);
@@ -90,8 +93,12 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 		} else if (orxString_Compare(name, "Enemy") == 0) {
 			Enemy* e = (Enemy*)orxObject_GetUserData(obj);
 			e->update(player->getPosition());
+			if (e->getHP() > 0) {
+				enemiesStillPresent++;
+			}
 		}
 	}
+	environment->updateEnemyCount(enemiesStillPresent);
 	environment->update();
 	if (orxInput_IsActive("Spawn")) {
 		new Enemy(mouse);
@@ -132,9 +139,6 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 						enemyHit = orxString_Compare(orxObject_GetName(sender), "Enemy") == 0;
 					}
 					entity->takeHit(bullet);
-					if (enemyHit && entity->getHP() <= 0) {
-						environment->enemyDied();
-					}
 					orxObject_SetLifeTime(bulletObj, 0);
 					break;
 			}

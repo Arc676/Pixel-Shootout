@@ -24,7 +24,6 @@
 Bullet::Bullet(orxVECTOR pos, double speed, double angle, int dmg) {
 	damage = dmg;
 
-	orxConfig_Load("Entities.ini");
 	entity = orxObject_CreateFromConfig("Bullet");
 
 	orxVECTOR velocity = {(orxFLOAT)speed, 0};

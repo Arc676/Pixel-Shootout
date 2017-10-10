@@ -21,12 +21,12 @@
 
 #include "Environment.h"
 
-void Environment::enemyDied() {
-	enemiesPresent--;
+void Environment::updateEnemyCount(int newCount){
+	enemiesPresent = newCount;
 }
 
 void Environment::update() {
-	if (enemiesPresent == 0) {
+	if (enemiesPresent <= 0) {
 		enemiesPresent = arc4random_uniform(10);
 		for (int i = 0; i < enemiesPresent; i++) {
 			new Enemy({

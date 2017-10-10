@@ -22,7 +22,6 @@
 #include "Player.h"
 
 Player::Player() {
-	orxConfig_Load("Entities.ini");
 	orxInput_Load(orxSTRING_EMPTY);
 	entity = orxObject_CreateFromConfig("Player");
 	orxObject_SetUserData(entity, this);

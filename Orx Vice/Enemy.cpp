@@ -22,7 +22,6 @@
 #include "Enemy.h"
 
 Enemy::Enemy(orxVECTOR pos) {
-	orxConfig_Load("Entities.ini");
 	entity = orxObject_CreateFromConfig("Enemy");
 	position = pos;
 	orxObject_SetPosition(entity, &position);
@@ -42,4 +41,5 @@ void Enemy::update(orxVECTOR playerPos) {
 	}
 	double rot = Entity::angleBetween(position, playerPos);
 	orxObject_SetRotation(entity, rot);
+	fireBullet(rot);
 }

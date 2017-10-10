@@ -31,7 +31,7 @@
 class Environment {
 	int enemiesPresent = 0;
 public:
-	void enemyDied();
+	void updateEnemyCount(int);
 	void update();
 };
 
