@@ -145,6 +145,8 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 						orxString_Compare(name, "Player") == 0) {
 						entity = (Entity*)orxObject_GetUserData(otherObj);
 						entity->takeHit(bullet);
+					} else if (orxString_Compare(name, "Bullet") == 0) {
+						orxObject_SetLifeTime(otherObj, 0);
 					}
 					orxObject_SetLifeTime(bulletObj, 0);
 					break;

@@ -25,6 +25,7 @@
 #include "Entity.h"
 
 class Enemy : public Entity {
+	orxVECTOR targetPoint;
 public:
 	Enemy(orxVECTOR);
 	void update(orxVECTOR);

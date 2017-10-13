@@ -29,10 +29,35 @@ void Environment::update() {
 	if (enemiesPresent <= 0) {
 		enemiesPresent = arc4random_uniform(10);
 		for (int i = 0; i < enemiesPresent; i++) {
-			new Enemy({
-				(orxFLOAT)(50 + arc4random_uniform(50)),
-				(orxFLOAT)(50 + arc4random_uniform(50)),
-				0});
+			int side = arc4random_uniform(4);
+			int x, y;
+			switch (side) {
+				case 0:
+					x = -490;
+					y = arc4random_uniform(580) - 290;
+					break;
+
+				case 1:
+					x = arc4random_uniform(980) - 490;
+					y = -290;
+					break;
+
+				case 2:
+					x = 490;
+					y = arc4random_uniform(550) - 290;
+					break;
+
+				case 3:
+					x = arc4random_uniform(980) - 490;
+					y = 290;
+					break;
+
+				default:
+					x = -400;
+					y = -200;
+					break;
+			}
+			new Enemy({(orxFLOAT)x,(orxFLOAT)y,0});
 		}
 	}
 }

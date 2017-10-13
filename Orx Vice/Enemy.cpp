@@ -24,6 +24,7 @@
 Enemy::Enemy(orxVECTOR pos) {
 	entity = orxObject_CreateFromConfig("Enemy");
 	position = pos;
+	targetPoint = pos;
 	orxObject_SetPosition(entity, &position);
 	orxObject_SetUserData(entity, this);
 }
@@ -31,16 +32,52 @@ Enemy::Enemy(orxVECTOR pos) {
 void Enemy::update(orxVECTOR playerPos) {
 	Entity::update();
 	orxObject_GetPosition(entity, &position);
-	if (orxVector_GetDistance(&position, &playerPos) > 200) {
-		orxVECTOR dir;
-		orxVector_Sub(&dir, &playerPos, &position);
-		orxVector_Normalize(&dir, &dir);
-		dir.fZ = 0;
-		orxVector_Mulf(&dir, &dir, 2);
-		orxVector_Add(&position, &position, &dir);
-		orxObject_SetPosition(entity, &position);
+	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0x0002, 0xFFFB, orxFALSE, nullptr, nullptr);
+	if (collide != orxNULL && orxString_Compare(orxObject_GetName(collide), "Player") == 0) {
+		if (orxVector_GetDistance(&position, &playerPos) > 200) {
+			orxVECTOR dir;
+			orxVector_Sub(&dir, &playerPos, &position);
+			orxVector_Normalize(&dir, &dir);
+			dir.fZ = 0;
+			orxVector_Mulf(&dir, &dir, 2);
+			orxVector_Add(&position, &position, &dir);
+			orxObject_SetPosition(entity, &position);
+		}
+		double rot = Entity::angleBetween(position, playerPos);
+		orxObject_SetRotation(entity, rot);
+		fireBullet(rot);
+	} else {
+		orxVECTOR diff;
+		orxVector_Sub(&diff, &position, &targetPoint);
+		if (orxVector_GetSize(&diff) <= 10) {
+			if (position.fX < -500 || position.fX > 500 || position.fY < -300 || position.fY > 300) {
+				orxVector_Neg(&targetPoint, &position);
+				orxObject_Raycast(&position, &targetPoint, 0x0002, 0x0008, orxFALSE, &targetPoint, nullptr);
+				orxVector_Divf(&targetPoint, &targetPoint, 1.75);
+			} else {
+				orxVECTOR dir = {
+					(orxFLOAT) arc4random_uniform(200) - 100,
+					(orxFLOAT) arc4random_uniform(200) - 100,
+					0
+				};
+				orxVector_Add(&targetPoint, &position, &dir);
+				orxVector_Copy(&dir, &position);
+				orxObject_Raycast(&position, &targetPoint, 0x0002, 0x0008, orxFALSE, &dir, nullptr);
+				if (!orxVector_AreEqual(&position, &dir) &&
+					orxVector_GetDistance(&position, &dir) < orxVector_GetDistance(&position, &targetPoint)) {
+					orxVector_Copy(&targetPoint, &dir);
+				}
+			}
+		} else {
+			orxVECTOR dir;
+			orxVector_Sub(&dir, &targetPoint, &position);
+			orxVector_Normalize(&dir, &dir);
+			orxVector_Mulf(&dir, &dir, 2);
+			orxVector_Add(&position, &position, &dir);
+			orxObject_SetPosition(entity, &position);
+
+			double rot = Entity::angleBetween(position, targetPoint);
+			orxObject_SetRotation(entity, rot);
+		}
 	}
-	double rot = Entity::angleBetween(position, playerPos);
-	orxObject_SetRotation(entity, rot);
-	fireBullet(rot);
 }
