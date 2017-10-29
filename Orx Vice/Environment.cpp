@@ -25,6 +25,23 @@ void Environment::updateEnemyCount(int newCount){
 	enemiesPresent = newCount;
 }
 
+void Environment::resetWorld() {
+	enemiesPresent = 0;
+	ticksSinceWavePast = 0;
+	for (
+		 orxOBJECT *obj = (orxOBJECT*)orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT);
+		 obj != orxNULL;
+		 obj = orxOBJECT(orxStructure_GetNext(obj))
+		 ) {
+		orxSTRING name = (orxSTRING)orxObject_GetName(obj);
+		if (orxString_Compare(name, "Bullet") == 0 ||
+			orxString_Compare(name, "Enemy") == 0) {
+			Entity* entity = (Entity*)orxObject_GetUserData(obj);
+			entity->despawn();
+		}
+	}
+}
+
 void Environment::update() {
 	if (enemiesPresent <= 0) {
 		ticksSinceWavePast++;

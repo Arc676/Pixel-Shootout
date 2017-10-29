@@ -35,6 +35,7 @@ class Environment {
 public:
 	void updateEnemyCount(int);
 	void update();
+	void resetWorld();
 };
 
 #endif

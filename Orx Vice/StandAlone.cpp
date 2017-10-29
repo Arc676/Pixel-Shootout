@@ -83,6 +83,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 			orxPhysics_EnableSimulation(orxTRUE);
 			orxObject_SetLifeTime(deathScreen, 0);
 			player->respawn();
+			environment->resetWorld();
 		}
 		return;
 	}
