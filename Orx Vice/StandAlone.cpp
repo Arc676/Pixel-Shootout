@@ -49,6 +49,8 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 
 	player = new Player();
 	environment = new Environment();
+
+	orxConfig_Load("UI.ini");
 	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 
 	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
@@ -87,6 +89,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 			orxObject_SetLifeTime(deathScreen, 0);
 			player->respawn();
 			environment->resetWorld();
+			orxObject_SetTextString(scoreLabel, "Score: 0");
 		}
 		return;
 	}
@@ -118,13 +121,6 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 				enemiesStillPresent++;
 			}
 		}
-	}
-	int enemiesKilled = environment->getEnemyCount() - enemiesStillPresent;
-	if (enemiesKilled > 0) {
-		player->earnPoints(enemiesKilled * 10);
-		orxCHAR newtext[15];
-		orxString_Print(newtext, "Score: %d", player->getScore());
-		orxObject_SetTextString(scoreLabel, newtext);
 	}
 	environment->updateEnemyCount(enemiesStillPresent);
 	environment->update();
@@ -173,6 +169,12 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 						orxString_Compare(name, "Player") == 0) {
 						character = (Character*)orxObject_GetUserData(otherObj);
 						character->takeHit(bullet);
+						if (orxString_Compare(name, "Enemy") == 0) {
+							player->earnPoints(10);
+							orxCHAR newtext[15];
+							orxString_Print(newtext, "Score: %d", player->getScore());
+							orxObject_SetTextString(scoreLabel, newtext);
+						}
 					} else if (orxString_Compare(name, "Bullet") == 0) {
 						orxObject_SetLifeTime(otherObj, 0);
 					}
