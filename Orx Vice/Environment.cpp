@@ -27,6 +27,10 @@ void Environment::updateEnemyCount(int newCount){
 
 void Environment::update() {
 	if (enemiesPresent <= 0) {
+		ticksSinceWavePast++;
+	}
+	if (ticksSinceWavePast > waveDelay) {
+		ticksSinceWavePast = 0;
 		enemiesPresent = arc4random_uniform(10);
 		for (int i = 0; i < enemiesPresent; i++) {
 			int side = arc4random_uniform(4);

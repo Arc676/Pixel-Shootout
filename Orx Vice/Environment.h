@@ -30,6 +30,8 @@
 
 class Environment {
 	int enemiesPresent = 0;
+	int ticksSinceWavePast = 0;
+	int waveDelay = 50;
 public:
 	void updateEnemyCount(int);
 	void update();
