@@ -78,6 +78,12 @@ orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
 	if (paused) {
+		if (orxInput_IsActive("Fire")) {
+			paused = 0;
+			orxPhysics_EnableSimulation(orxTRUE);
+			orxObject_SetLifeTime(deathScreen, 0);
+			player->respawn();
+		}
 		return;
 	}
 	if (player->getHP() <= 0) {

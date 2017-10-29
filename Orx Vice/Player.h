@@ -30,6 +30,7 @@ public:
 	Player();
 	void update(bool, bool, bool, bool, bool, orxVECTOR);
 	virtual void die();
+	void respawn();
 };
 
 #endif
