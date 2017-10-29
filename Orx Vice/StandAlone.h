@@ -54,6 +54,7 @@ private:
 	static Environment* environment;
 	static int paused;
 	static orxOBJECT* deathScreen;
+	static orxOBJECT* scoreLabel;
 };
 
 #endif /* StandAlone_h */

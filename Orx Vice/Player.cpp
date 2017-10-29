@@ -32,9 +32,18 @@ void Player::respawn() {
 	orxObject_SetPosition(entity, &pos);
 	HP = 1;
 	ticksSinceLastShot = 0;
+	score = 0;
 }
 
 void Player::despawn() {}
+
+int Player::getScore() {
+	return score;
+}
+
+void Player::earnPoints(int amt) {
+	score += amt;
+}
 
 void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVECTOR mouse) {
 	if (HP <= 0) {

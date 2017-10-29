@@ -26,7 +26,9 @@ Player* StandAlone::player = nullptr;
 orxCLOCK* StandAlone::upClock = nullptr;
 Environment* StandAlone::environment = nullptr;
 int StandAlone::paused = 0;
+
 orxOBJECT* StandAlone::deathScreen = nullptr;
+orxOBJECT* StandAlone::scoreLabel = nullptr;
 
 StandAlone* StandAlone::Instance() {
 	if (m_Instance != nullptr) {
@@ -47,6 +49,7 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 
 	player = new Player();
 	environment = new Environment();
+	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 
 	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
 	orxClock_Register(upClock, Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
@@ -115,6 +118,13 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 				enemiesStillPresent++;
 			}
 		}
+	}
+	int enemiesKilled = environment->getEnemyCount() - enemiesStillPresent;
+	if (enemiesKilled > 0) {
+		player->earnPoints(enemiesKilled * 10);
+		orxCHAR newtext[15];
+		orxString_Print(newtext, "Score: %d", player->getScore());
+		orxObject_SetTextString(scoreLabel, newtext);
 	}
 	environment->updateEnemyCount(enemiesStillPresent);
 	environment->update();

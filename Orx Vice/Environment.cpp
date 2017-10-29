@@ -25,6 +25,10 @@ void Environment::updateEnemyCount(int newCount){
 	enemiesPresent = newCount;
 }
 
+int Environment::getEnemyCount() {
+	return enemiesPresent;
+}
+
 void Environment::resetWorld() {
 	enemiesPresent = 0;
 	ticksSinceWavePast = 0;
