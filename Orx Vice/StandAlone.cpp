@@ -144,7 +144,7 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 					orxOBJECT* otherObj = nullptr;
 
 					Bullet* bullet = nullptr;
-					Entity* entity = nullptr;
+					Character* character = nullptr;
 
 					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
 						bulletObj = sender;
@@ -160,8 +160,8 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 					orxSTRING name = (orxSTRING)orxObject_GetName(otherObj);
 					if (orxString_Compare(name, "Enemy") == 0 ||
 						orxString_Compare(name, "Player") == 0) {
-						entity = (Entity*)orxObject_GetUserData(otherObj);
-						entity->takeHit(bullet);
+						character = (Character*)orxObject_GetUserData(otherObj);
+						character->takeHit(bullet);
 					} else if (orxString_Compare(name, "Bullet") == 0) {
 						orxObject_SetLifeTime(otherObj, 0);
 					}

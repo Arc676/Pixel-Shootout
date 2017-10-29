@@ -22,10 +22,9 @@
 #ifndef Bullet_h
 #define Bullet_h
 
-#include "orx.h"
+#include "Entity.h"
 
-class Bullet {
-	orxOBJECT *entity;
+class Bullet : public Entity {
 	int damage;
 public:
 	Bullet(orxVECTOR, double, double, int);

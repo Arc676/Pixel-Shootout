@@ -22,14 +22,14 @@
 #ifndef Player_h
 #define Player_h
 
-#include "Entity.h"
+#include "Character.h"
 
-class Player : public Entity {
+class Player : public Character {
 	int speed = 2;
 public:
 	Player();
 	void update(bool, bool, bool, bool, bool, orxVECTOR);
-	virtual void die();
+	virtual void despawn();
 	void respawn();
 };
 
