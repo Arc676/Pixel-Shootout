@@ -53,6 +53,7 @@ private:
 	static Player* player;
 	static Environment* environment;
 	static int paused;
+	static orxOBJECT* deathScreen;
 };
 
 #endif /* StandAlone_h */

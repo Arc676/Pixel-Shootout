@@ -25,6 +25,7 @@
 		717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 717293DC1F8D09FB00734F1D /* wall.png */; };
 		71BB1DFB1F90E27400EBC58F /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
+		71E2A3901FA5E6DF000B3764 /* Died.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A38F1FA5D1BD000B3764 /* Died.ini */; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				71E2A3901FA5E6DF000B3764 /* Died.ini in CopyFiles */,
 				717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */,
 				717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */,
 				7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */,
