@@ -29,6 +29,7 @@ class Player : public Entity {
 public:
 	Player();
 	void update(bool, bool, bool, bool, bool, orxVECTOR);
+	virtual void die();
 };
 
 #endif

@@ -43,6 +43,7 @@ public:
 	
 	int getHP();
 	void takeHit(Bullet*);
+	virtual void die();
 };
 
 #endif

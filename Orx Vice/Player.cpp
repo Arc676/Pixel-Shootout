@@ -27,7 +27,12 @@ Player::Player() {
 	orxObject_SetUserData(entity, this);
 }
 
+void Player::die() {}
+
 void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVECTOR mouse) {
+	if (HP <= 0) {
+		return;
+	}
 	Entity::update();
 	orxObject_GetPosition(entity, &position);
 	if (up) {
