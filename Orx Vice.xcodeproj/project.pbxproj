@@ -155,6 +155,7 @@
 		717293DC1F8D09FB00734F1D /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		71E2A38D1FA5B6F1000B3764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71E2A38E1FA5B7E1000B3764 /* version.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
+		71E2A38F1FA5D1BD000B3764 /* Died.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = Died.ini; sourceTree = "<group>"; };
 		71ED0E5B1F6FF0950095D601 /* Pixel Shootout */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Pixel Shootout"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ED0E681F6FF0F90095D601 /* liborx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborx.dylib; sourceTree = "<group>"; };
 		71ED0E6A1F6FF1920095D601 /* StandAlone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandAlone.h; sourceTree = "<group>"; };
@@ -509,6 +510,7 @@
 				71614D1D1F6FFC4F00932B46 /* StaticScene.ini */,
 				71614D241F70037B00932B46 /* Interaction.ini */,
 				716CBE291F7912C40034981A /* Entities.ini */,
+				71E2A38F1FA5D1BD000B3764 /* Died.ini */,
 			);
 			path = bin;
 			sourceTree = "<group>";

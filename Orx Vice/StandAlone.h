@@ -52,6 +52,7 @@ private:
 	static orxCLOCK* upClock;
 	static Player* player;
 	static Environment* environment;
+	static int paused;
 };
 
 #endif /* StandAlone_h */

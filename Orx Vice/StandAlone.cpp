@@ -25,6 +25,7 @@ StandAlone* StandAlone::m_Instance = nullptr;
 Player* StandAlone::player = nullptr;
 orxCLOCK* StandAlone::upClock = nullptr;
 Environment* StandAlone::environment = nullptr;
+int StandAlone::paused = 0;
 
 StandAlone* StandAlone::Instance() {
 	if (m_Instance != nullptr) {
@@ -75,6 +76,14 @@ orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 }
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
+	if (paused) {
+		return;
+	}
+	if (player->getHP() <= 0) {
+		paused = 1;
+		orxPhysics_EnableSimulation(orxFALSE);
+		return;
+	}
 	int enemiesStillPresent = 0;
 	orxVECTOR mouse = GetMouseWorldPosition();
 	for (
