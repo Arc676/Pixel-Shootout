@@ -32,8 +32,10 @@ Enemy::Enemy(orxVECTOR pos) {
 void Enemy::update(orxVECTOR playerPos) {
 	Character::update();
 	orxObject_GetPosition(entity, &position);
-	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0x0002, 0xFFFB, orxFALSE, nullptr, nullptr);
-	if (collide != orxNULL && orxString_Compare(orxObject_GetName(collide), "Player") == 0) {
+	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFFB, orxFALSE, nullptr, nullptr);
+	orxSTRING name = (orxSTRING)orxObject_GetName(collide);
+	if (collide != orxNULL &&
+		(orxString_Compare(name, "Player") == 0 || orxString_Compare(name, "Enemy") == 0)) {
 		if (orxVector_GetDistance(&position, &playerPos) > 200) {
 			orxVECTOR dir;
 			orxVector_Sub(&dir, &playerPos, &position);
@@ -45,7 +47,9 @@ void Enemy::update(orxVECTOR playerPos) {
 		}
 		double rot = Character::angleBetween(position, playerPos);
 		orxObject_SetRotation(entity, rot);
-		fireBullet(rot);
+		if (orxString_Compare(name, "Player") == 0) {
+			fireBullet(rot);
+		}
 	} else {
 		orxVECTOR diff;
 		orxVector_Sub(&diff, &position, &targetPoint);
