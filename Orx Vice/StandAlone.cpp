@@ -23,7 +23,6 @@
 
 StandAlone* StandAlone::m_Instance = nullptr;
 Player* StandAlone::player = nullptr;
-orxCLOCK* StandAlone::upClock = nullptr;
 Environment* StandAlone::environment = nullptr;
 int StandAlone::paused = 0;
 
@@ -53,7 +52,7 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("UI.ini");
 	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 
-	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
+	orxCLOCK* upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
 	orxClock_Register(upClock, Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 
 	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);

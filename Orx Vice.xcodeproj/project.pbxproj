@@ -458,13 +458,6 @@
 			name = Entities;
 			sourceTree = "<group>";
 		};
-		71BB1DF91F90E09600EBC58F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		71E2A38C1FA5B6D1000B3764 /* Metadata */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,7 +477,6 @@
 				71ED0E671F6FF0F90095D601 /* lib */,
 				71ED0E5D1F6FF0950095D601 /* Orx Vice */,
 				71ED0E5C1F6FF0950095D601 /* Products */,
-				71BB1DF91F90E09600EBC58F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

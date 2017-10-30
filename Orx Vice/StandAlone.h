@@ -49,7 +49,6 @@ protected:
 	StandAlone& operator= (const StandAlone&);
 private:
 	static StandAlone* m_Instance;
-	static orxCLOCK* upClock;
 	static Player* player;
 	static Environment* environment;
 	static int paused;
