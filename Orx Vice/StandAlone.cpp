@@ -82,8 +82,14 @@ orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 }
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
+	if (orxInput_IsActive("Pause")) {
+		if (player->getHP() > 0) {
+			paused = !paused;
+			orxPhysics_EnableSimulation(!paused);
+		}
+	}
 	if (paused) {
-		if (orxInput_IsActive("Fire")) {
+		if (player->getHP() <= 0 && orxInput_IsActive("Fire")) {
 			paused = 0;
 			orxPhysics_EnableSimulation(orxTRUE);
 			orxObject_SetLifeTime(deathScreen, 0);

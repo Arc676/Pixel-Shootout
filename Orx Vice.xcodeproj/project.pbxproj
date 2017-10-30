@@ -12,8 +12,6 @@
 		71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */; };
 		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; };
 		71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1D1F6FFC4F00932B46 /* StaticScene.ini */; };
-		71614D251F70038A00932B46 /* Interaction.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D241F70037B00932B46 /* Interaction.ini */; };
-		71614D261F70038E00932B46 /* box.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D221F70036700932B46 /* box.png */; };
 		716CBE221F790A790034981A /* Player.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE211F79077E0034981A /* Player.png */; };
 		716CBE251F790D4B0034981A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE231F790D4B0034981A /* Player.cpp */; };
 		716CBE281F790E280034981A /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE271F790E280034981A /* Entity.cpp */; };
@@ -48,8 +46,6 @@
 				716CBE2E1F7918CA0034981A /* Enemy.png in CopyFiles */,
 				716CBE2A1F7913F80034981A /* Entities.ini in CopyFiles */,
 				716CBE221F790A790034981A /* Player.png in CopyFiles */,
-				71614D261F70038E00932B46 /* box.png in CopyFiles */,
-				71614D251F70038A00932B46 /* Interaction.ini in CopyFiles */,
 				71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */,
 				71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */,
 				71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */,
@@ -143,8 +139,6 @@
 		71614D161F6FF9CC00932B46 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		71614D181F6FFA7700932B46 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		71614D1D1F6FFC4F00932B46 /* StaticScene.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = StaticScene.ini; sourceTree = "<group>"; };
-		71614D221F70036700932B46 /* box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box.png; sourceTree = "<group>"; };
-		71614D241F70037B00932B46 /* Interaction.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Interaction.ini; sourceTree = "<group>"; };
 		716CBE211F79077E0034981A /* Player.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Player.png; sourceTree = "<group>"; };
 		716CBE231F790D4B0034981A /* Player.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Player.cpp; sourceTree = "<group>"; };
 		716CBE241F790D4B0034981A /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -431,7 +425,6 @@
 			isa = PBXGroup;
 			children = (
 				717293DC1F8D09FB00734F1D /* wall.png */,
-				71614D221F70036700932B46 /* box.png */,
 			);
 			path = phys;
 			sourceTree = "<group>";
@@ -519,7 +512,6 @@
 				71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */,
 				71ED0E701F6FF4370095D601 /* MainMenu.ini */,
 				71614D1D1F6FFC4F00932B46 /* StaticScene.ini */,
-				71614D241F70037B00932B46 /* Interaction.ini */,
 				716CBE291F7912C40034981A /* Entities.ini */,
 				71E2A3961FA5F57D000B3764 /* UI.ini */,
 			);
