@@ -52,8 +52,8 @@ void Enemy::update(orxVECTOR playerPos) {
 		}
 	} else {
 		orxVECTOR diff;
-		orxVector_Sub(&diff, &position, &targetPoint);
-		if (orxVector_GetSize(&diff) <= 10) {
+		orxVector_Sub(&diff, &targetPoint, &position);
+		if (orxVector_GetSize(&diff) <= 40) {
 			if (position.fX < -500 || position.fX > 500 || position.fY < -300 || position.fY > 300) {
 				orxVector_Neg(&targetPoint, &position);
 				orxObject_Raycast(&position, &targetPoint, 0x0002, 0x0008, orxFALSE, &targetPoint, nullptr);
