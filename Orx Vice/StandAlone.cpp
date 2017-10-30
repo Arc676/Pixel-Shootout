@@ -25,6 +25,7 @@ StandAlone* StandAlone::m_Instance = nullptr;
 Player* StandAlone::player = nullptr;
 Environment* StandAlone::environment = nullptr;
 int StandAlone::paused = 0;
+int StandAlone::pauseKeyPressed = 0;
 
 orxOBJECT* StandAlone::deathScreen = nullptr;
 orxOBJECT* StandAlone::scoreLabel = nullptr;
@@ -81,11 +82,15 @@ orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 }
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
-	if (orxInput_IsActive("Pause")) {
+	int pause = orxInput_IsActive("Pause");
+	if (!pauseKeyPressed && pause) {
+		pauseKeyPressed = 1;
 		if (player->getHP() > 0) {
+			orxPhysics_EnableSimulation(paused);
 			paused = !paused;
-			orxPhysics_EnableSimulation(!paused);
 		}
+	} else if (pauseKeyPressed && !pause) {
+		pauseKeyPressed = 0;
 	}
 	if (paused) {
 		if (player->getHP() <= 0 && orxInput_IsActive("Fire")) {

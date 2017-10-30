@@ -52,6 +52,7 @@ private:
 	static Player* player;
 	static Environment* environment;
 	static int paused;
+	static int pauseKeyPressed;
 	static orxOBJECT* deathScreen;
 	static orxOBJECT* scoreLabel;
 };
