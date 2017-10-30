@@ -22,9 +22,9 @@
 #ifndef Enemy_h
 #define Enemy_h
 
-#include "Entity.h"
+#include "Character.h"
 
-class Enemy : public Entity {
+class Enemy : public Character {
 	orxVECTOR targetPoint;
 public:
 	Enemy(orxVECTOR);

@@ -52,6 +52,9 @@ private:
 	static orxCLOCK* upClock;
 	static Player* player;
 	static Environment* environment;
+	static int paused;
+	static orxOBJECT* deathScreen;
+	static orxOBJECT* scoreLabel;
 };
 
 #endif /* StandAlone_h */

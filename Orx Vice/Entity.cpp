@@ -21,45 +21,6 @@
 
 #include "Entity.h"
 
-orxOBJECT* Entity::getEntity() {
-	return entity;
-}
-
-orxVECTOR Entity::getPosition() {
-	return position;
-}
-
-int Entity::getHP() {
-	return HP;
-}
-
-double Entity::angleBetween(orxVECTOR v1, orxVECTOR v2) {
-	return M_PI_2 - (orxFLOAT) atan2(
-									 v2.fX - v1.fX,
-									 v2.fY - v1.fY);
-}
-
-void Entity::update() {
-	ticksSinceLastShot++;
-}
-
-void Entity::fireBullet(double rot) {
-	if (ticksSinceLastShot < 10) {
-		return;
-	}
-	ticksSinceLastShot = 0;
-	orxVECTOR bpos;
-	orxObject_GetPosition(entity, &bpos);
-	orxVECTOR ds = {32, 12};
-	orxVector_2DRotate(&ds, &ds, rot);
-	orxVector_Add(&bpos, &bpos, &ds);
-
-	new Bullet(bpos, 80, rot, 10);
-}
-
-void Entity::takeHit(Bullet* bullet) {
-	HP -= bullet->getDmg();
-	if (HP <= 0) {
-		orxObject_SetLifeTime(entity, 0);
-	}
+void Entity::despawn() {
+	orxObject_SetLifeTime(entity, 0);
 }

@@ -25,6 +25,10 @@ StandAlone* StandAlone::m_Instance = nullptr;
 Player* StandAlone::player = nullptr;
 orxCLOCK* StandAlone::upClock = nullptr;
 Environment* StandAlone::environment = nullptr;
+int StandAlone::paused = 0;
+
+orxOBJECT* StandAlone::deathScreen = nullptr;
+orxOBJECT* StandAlone::scoreLabel = nullptr;
 
 StandAlone* StandAlone::Instance() {
 	if (m_Instance != nullptr) {
@@ -45,6 +49,9 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 
 	player = new Player();
 	environment = new Environment();
+
+	orxConfig_Load("UI.ini");
+	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 
 	upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
 	orxClock_Register(upClock, Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
@@ -75,6 +82,23 @@ orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 }
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
+	if (paused) {
+		if (orxInput_IsActive("Fire")) {
+			paused = 0;
+			orxPhysics_EnableSimulation(orxTRUE);
+			orxObject_SetLifeTime(deathScreen, 0);
+			player->respawn();
+			environment->resetWorld();
+			orxObject_SetTextString(scoreLabel, "Score: 0");
+		}
+		return;
+	}
+	if (player->getHP() <= 0) {
+		paused = 1;
+		orxPhysics_EnableSimulation(orxFALSE);
+		deathScreen = orxObject_CreateFromConfig("YouDied");
+		return;
+	}
 	int enemiesStillPresent = 0;
 	orxVECTOR mouse = GetMouseWorldPosition();
 	for (
@@ -127,7 +151,7 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 					orxOBJECT* otherObj = nullptr;
 
 					Bullet* bullet = nullptr;
-					Entity* entity = nullptr;
+					Character* character = nullptr;
 
 					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
 						bulletObj = sender;
@@ -143,8 +167,14 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 					orxSTRING name = (orxSTRING)orxObject_GetName(otherObj);
 					if (orxString_Compare(name, "Enemy") == 0 ||
 						orxString_Compare(name, "Player") == 0) {
-						entity = (Entity*)orxObject_GetUserData(otherObj);
-						entity->takeHit(bullet);
+						character = (Character*)orxObject_GetUserData(otherObj);
+						character->takeHit(bullet);
+						if (orxString_Compare(name, "Enemy") == 0) {
+							player->earnPoints(10);
+							orxCHAR newtext[15];
+							orxString_Print(newtext, "Score: %d", player->getScore());
+							orxObject_SetTextString(scoreLabel, newtext);
+						}
 					} else if (orxString_Compare(name, "Bullet") == 0) {
 						orxObject_SetLifeTime(otherObj, 0);
 					}

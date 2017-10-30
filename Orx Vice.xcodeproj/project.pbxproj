@@ -25,6 +25,9 @@
 		717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 717293DC1F8D09FB00734F1D /* wall.png */; };
 		71BB1DFB1F90E27400EBC58F /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
+		71E2A3921FA5EC5D000B3764 /* Died.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3911FA5EC55000B3764 /* Died.png */; };
+		71E2A3951FA5F013000B3764 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A3931FA5F013000B3764 /* Character.cpp */; };
+		71E2A3971FA5F5FC000B3764 /* UI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3961FA5F57D000B3764 /* UI.ini */; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
 /* End PBXBuildFile section */
@@ -36,7 +39,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				71E2A3971FA5F5FC000B3764 /* UI.ini in CopyFiles */,
 				717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */,
+				71E2A3921FA5EC5D000B3764 /* Died.png in CopyFiles */,
 				717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */,
 				7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */,
 				716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */,
@@ -155,6 +160,10 @@
 		717293DC1F8D09FB00734F1D /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		71E2A38D1FA5B6F1000B3764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71E2A38E1FA5B7E1000B3764 /* version.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
+		71E2A3911FA5EC55000B3764 /* Died.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Died.png; sourceTree = "<group>"; };
+		71E2A3931FA5F013000B3764 /* Character.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Character.cpp; sourceTree = "<group>"; };
+		71E2A3941FA5F013000B3764 /* Character.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Character.h; sourceTree = "<group>"; };
+		71E2A3961FA5F57D000B3764 /* UI.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = UI.ini; sourceTree = "<group>"; };
 		71ED0E5B1F6FF0950095D601 /* Pixel Shootout */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Pixel Shootout"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ED0E681F6FF0F90095D601 /* liborx.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborx.dylib; sourceTree = "<group>"; };
 		71ED0E6A1F6FF1920095D601 /* StandAlone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StandAlone.h; sourceTree = "<group>"; };
@@ -410,6 +419,7 @@
 		71614D1A1F6FFC3300932B46 /* anim */ = {
 			isa = PBXGroup;
 			children = (
+				71E2A3911FA5EC55000B3764 /* Died.png */,
 				716CBE341F7936420034981A /* Bullet.png */,
 				716CBE2B1F7918990034981A /* Enemy.png */,
 				716CBE211F79077E0034981A /* Player.png */,
@@ -443,6 +453,8 @@
 			children = (
 				716CBE261F790E1F0034981A /* Entity.h */,
 				716CBE271F790E280034981A /* Entity.cpp */,
+				71E2A3941FA5F013000B3764 /* Character.h */,
+				71E2A3931FA5F013000B3764 /* Character.cpp */,
 				716CBE241F790D4B0034981A /* Player.h */,
 				716CBE231F790D4B0034981A /* Player.cpp */,
 				716CBE301F7918F40034981A /* Enemy.h */,
@@ -509,6 +521,7 @@
 				71614D1D1F6FFC4F00932B46 /* StaticScene.ini */,
 				71614D241F70037B00932B46 /* Interaction.ini */,
 				716CBE291F7912C40034981A /* Entities.ini */,
+				71E2A3961FA5F57D000B3764 /* UI.ini */,
 			);
 			path = bin;
 			sourceTree = "<group>";
@@ -583,6 +596,7 @@
 				716CBE281F790E280034981A /* Entity.cpp in Sources */,
 				716CBE371F79385B0034981A /* Bullet.cpp in Sources */,
 				71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */,
+				71E2A3951FA5F013000B3764 /* Character.cpp in Sources */,
 				716CBE311F7918F40034981A /* Enemy.cpp in Sources */,
 				71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */,
 				716CBE251F790D4B0034981A /* Player.cpp in Sources */,

@@ -27,8 +27,29 @@ Player::Player() {
 	orxObject_SetUserData(entity, this);
 }
 
+void Player::respawn() {
+	orxVECTOR pos = {0, 0, 0};
+	orxObject_SetPosition(entity, &pos);
+	HP = 1;
+	ticksSinceLastShot = 0;
+	score = 0;
+}
+
+void Player::despawn() {}
+
+int Player::getScore() {
+	return score;
+}
+
+void Player::earnPoints(int amt) {
+	score += amt;
+}
+
 void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVECTOR mouse) {
-	Entity::update();
+	if (HP <= 0) {
+		return;
+	}
+	Character::update();
 	orxObject_GetPosition(entity, &position);
 	if (up) {
 		position.fY -= speed;
@@ -42,7 +63,7 @@ void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVEC
 	}
 	orxObject_SetPosition(entity, &position);
 
-	double rot = Entity::angleBetween(position, mouse);
+	double rot = Character::angleBetween(position, mouse);
 	orxObject_SetRotation(entity, rot);
 
 	if (fire) {

@@ -1,8 +1,8 @@
 //
-//  Player.hpp
-//  Orx Vice
+//  Character.hpp
+//  Pixel Shootout
 //
-//  Created by Alessandro Vinciguerra on 25/09/2017.
+//  Created by Alessandro Vinciguerra on 29/10/2017.
 //      <alesvinciguerra@gmail.com>
 //Copyright (C) 2017 Arc676/Alessandro Vinciguerra
 
@@ -19,23 +19,29 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //See README and LICENSE for more details
 
-#ifndef Player_h
-#define Player_h
+#ifndef Character_h
+#define Character_h
 
-#include "Character.h"
+#include "Bullet.h"
+#include "Entity.h"
 
-class Player : public Character {
-	int score = 0;
-	int speed = 2;
+class Character : public Entity {
+protected:
+	orxVECTOR position;
+
+	int HP = 1;
+
+	int ticksSinceLastShot = 0;
+	void fireBullet(double);
+
+	static double angleBetween(orxVECTOR, orxVECTOR);
+	void update(); 
 public:
-	Player();
-	int getScore();
-	void earnPoints(int);
+	orxOBJECT* getEntity();
+	orxVECTOR getPosition();
 
-	void update(bool, bool, bool, bool, bool, orxVECTOR);
-	
-	virtual void despawn();
-	void respawn();
+	int getHP();
+	void takeHit(Bullet*);
 };
 
 #endif
