@@ -32,21 +32,18 @@ Enemy::Enemy(orxVECTOR pos) {
 void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 	Character::update();
 	orxObject_GetPosition(entity, &position);
+
 	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFFB, orxFALSE, nullptr, nullptr);
 	orxSTRING name = (orxSTRING)orxObject_GetName(collide);
+	double rot;
+	orxVECTOR target;
+
 	if (collide != orxNULL &&
 		(orxString_Compare(name, "Player") == 0 || orxString_Compare(name, "Enemy") == 0)) {
 		if (orxVector_GetDistance(&position, &playerPos) > 200) {
-			orxVECTOR dir;
-			orxVector_Sub(&dir, &playerPos, &position);
-			orxVector_Normalize(&dir, &dir);
-			dir.fZ = 0;
-			orxVector_Mulf(&dir, &dir, 50 * dt);
-			orxVector_Add(&position, &position, &dir);
-			orxObject_SetPosition(entity, &position);
+			orxVector_Sub(&target, &playerPos, &position);
 		}
-		double rot = Character::angleBetween(position, playerPos);
-		orxObject_SetRotation(entity, rot);
+		rot = angleBetween(position, playerPos);
 		if (orxString_Compare(name, "Player") == 0) {
 			fireBullet(rot);
 		}
@@ -73,15 +70,15 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 				}
 			}
 		} else {
-			orxVECTOR dir;
-			orxVector_Sub(&dir, &targetPoint, &position);
-			orxVector_Normalize(&dir, &dir);
-			orxVector_Mulf(&dir, &dir, 50 * dt);
-			orxVector_Add(&position, &position, &dir);
-			orxObject_SetPosition(entity, &position);
-
-			double rot = Character::angleBetween(position, targetPoint);
-			orxObject_SetRotation(entity, rot);
+			orxVector_Sub(&target, &targetPoint, &position);
 		}
+		rot = Character::angleBetween(position, targetPoint);
 	}
+
+	orxVector_Normalize(&target, &target);
+	target.fZ = 0;
+	orxVector_Mulf(&target, &target, 50 * dt);
+	orxVector_Add(&position, &position, &target);
+	orxObject_SetPosition(entity, &position);
+	orxObject_SetRotation(entity, rot);
 }
