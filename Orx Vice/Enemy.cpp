@@ -29,7 +29,7 @@ Enemy::Enemy(orxVECTOR pos) {
 	orxObject_SetUserData(entity, this);
 }
 
-void Enemy::update(orxVECTOR playerPos) {
+void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 	Character::update();
 	orxObject_GetPosition(entity, &position);
 	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFFB, orxFALSE, nullptr, nullptr);
@@ -41,7 +41,7 @@ void Enemy::update(orxVECTOR playerPos) {
 			orxVector_Sub(&dir, &playerPos, &position);
 			orxVector_Normalize(&dir, &dir);
 			dir.fZ = 0;
-			orxVector_Mulf(&dir, &dir, 2);
+			orxVector_Mulf(&dir, &dir, 50 * dt);
 			orxVector_Add(&position, &position, &dir);
 			orxObject_SetPosition(entity, &position);
 		}
@@ -76,7 +76,7 @@ void Enemy::update(orxVECTOR playerPos) {
 			orxVECTOR dir;
 			orxVector_Sub(&dir, &targetPoint, &position);
 			orxVector_Normalize(&dir, &dir);
-			orxVector_Mulf(&dir, &dir, 2);
+			orxVector_Mulf(&dir, &dir, 50 * dt);
 			orxVector_Add(&position, &position, &dir);
 			orxObject_SetPosition(entity, &position);
 

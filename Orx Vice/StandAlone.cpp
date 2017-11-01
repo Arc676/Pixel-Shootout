@@ -104,6 +104,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 	}
 	int enemiesStillPresent = 0;
 	orxVECTOR mouse = GetMouseWorldPosition();
+	orxFLOAT delta = clockInfo->fDT;
 	for (
 		 orxOBJECT *obj = (orxOBJECT*)orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT);
 		 obj != orxNULL;
@@ -116,10 +117,11 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 						   orxInput_IsActive("GoLeft"),
 						   orxInput_IsActive("GoRight"),
 						   orxInput_IsActive("Fire"),
-						   mouse);
+						   mouse,
+						   delta);
 		} else if (orxString_Compare(name, "Enemy") == 0) {
 			Enemy* e = (Enemy*)orxObject_GetUserData(obj);
-			e->update(player->getPosition());
+			e->update(player->getPosition(), delta);
 			if (e->getHP() > 0) {
 				enemiesStillPresent++;
 			}

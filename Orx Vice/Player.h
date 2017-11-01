@@ -26,13 +26,13 @@
 
 class Player : public Character {
 	int score = 0;
-	int speed = 2;
+	int speed = 60;
 public:
 	Player();
 	int getScore();
 	void earnPoints(int);
 
-	void update(bool, bool, bool, bool, bool, orxVECTOR);
+	void update(bool, bool, bool, bool, bool, orxVECTOR, orxFLOAT);
 	
 	virtual void despawn();
 	void respawn();

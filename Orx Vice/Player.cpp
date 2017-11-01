@@ -45,21 +45,21 @@ void Player::earnPoints(int amt) {
 	score += amt;
 }
 
-void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVECTOR mouse) {
+void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVECTOR mouse, orxFLOAT dt) {
 	if (HP <= 0) {
 		return;
 	}
 	Character::update();
 	orxObject_GetPosition(entity, &position);
 	if (up) {
-		position.fY -= speed;
+		position.fY -= speed * dt;
 	} else if (down) {
-		position.fY += speed;
+		position.fY += speed * dt;
 	}
 	if (left) {
-		position.fX -= speed;
+		position.fX -= speed * dt;
 	} else if (right) {
-		position.fX += speed;
+		position.fX += speed * dt;
 	}
 	orxObject_SetPosition(entity, &position);
 
