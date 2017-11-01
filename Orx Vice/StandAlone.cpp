@@ -25,7 +25,6 @@ StandAlone* StandAlone::m_Instance = nullptr;
 Player* StandAlone::player = nullptr;
 Environment* StandAlone::environment = nullptr;
 int StandAlone::paused = 0;
-int StandAlone::pauseKeyPressed = 0;
 
 orxOBJECT* StandAlone::deathScreen = nullptr;
 orxOBJECT* StandAlone::scoreLabel = nullptr;
@@ -53,7 +52,7 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("UI.ini");
 	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 
-	orxCLOCK* upClock = orxClock_Create(0.02f, orxCLOCK_TYPE_USER);
+	orxCLOCK* upClock = orxClock_FindFirst(-1.0f, orxCLOCK_TYPE_CORE);
 	orxClock_Register(upClock, Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 
 	orxEvent_AddHandler(orxEVENT_TYPE_PHYSICS, StandAlone::EventHandler);
@@ -82,15 +81,9 @@ orxOBJECT* StandAlone::GetObjectByName(orxSTRING objName) {
 }
 
 void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* context) {
-	int pause = orxInput_IsActive("Pause");
-	if (!pauseKeyPressed && pause) {
-		pauseKeyPressed = 1;
-		if (player->getHP() > 0) {
-			orxPhysics_EnableSimulation(paused);
-			paused = !paused;
-		}
-	} else if (pauseKeyPressed && !pause) {
-		pauseKeyPressed = 0;
+	if (orxInput_IsActive("Pause") && orxInput_HasNewStatus("Pause") && player->getHP() > 0) {
+		orxPhysics_EnableSimulation(paused);
+		paused = !paused;
 	}
 	if (paused) {
 		if (player->getHP() <= 0 && orxInput_IsActive("Fire")) {
