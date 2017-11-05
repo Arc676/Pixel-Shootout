@@ -52,28 +52,28 @@ void Environment::update() {
 	}
 	if (ticksSinceWavePast > waveDelay) {
 		ticksSinceWavePast = 0;
-		enemiesPresent = arc4random_uniform(10);
+		enemiesPresent = orxMath_GetRandomU32(1, 10);
 		for (int i = 0; i < enemiesPresent; i++) {
-			int side = arc4random_uniform(4);
+			int side = orxMath_GetRandomU32(0, 3);
 			int x, y;
 			switch (side) {
 				case 0:
 					x = -490;
-					y = arc4random_uniform(580) - 290;
+					y = orxMath_GetRandomS32(-290, 290);
 					break;
 
 				case 1:
-					x = arc4random_uniform(980) - 490;
+					x = orxMath_GetRandomS32(-490, 490);
 					y = -290;
 					break;
 
 				case 2:
 					x = 490;
-					y = arc4random_uniform(550) - 290;
+					y = orxMath_GetRandomS32(-290, 290);
 					break;
 
 				case 3:
-					x = arc4random_uniform(980) - 490;
+					x = orxMath_GetRandomS32(-490, 490);
 					y = 290;
 					break;
 

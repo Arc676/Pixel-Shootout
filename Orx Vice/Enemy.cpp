@@ -57,8 +57,8 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 				orxVector_Divf(&targetPoint, &targetPoint, 1.75);
 			} else {
 				orxVECTOR dir = {
-					(orxFLOAT) arc4random_uniform(200) - 100,
-					(orxFLOAT) arc4random_uniform(200) - 100,
+					orxMath_GetRandomS32(-100, 100),
+					orxMath_GetRandomS32(-100, 100),
 					0
 				};
 				orxVector_Add(&targetPoint, &position, &dir);
