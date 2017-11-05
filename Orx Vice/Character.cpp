@@ -44,7 +44,7 @@ void Character::update() {
 }
 
 void Character::fireBullet(double rot) {
-	if (ticksSinceLastShot < 10) {
+	if (ticksSinceLastShot < 20) {
 		return;
 	}
 	ticksSinceLastShot = 0;

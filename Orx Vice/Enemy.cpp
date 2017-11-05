@@ -37,6 +37,7 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 	orxSTRING name = (collide ? (orxSTRING)orxObject_GetName(collide) : (orxSTRING)"");
 	double rot;
 	orxVECTOR target;
+	orxVector_Copy(&target, &position);
 
 	if (collide != orxNULL &&
 		(orxString_Compare(name, "Player") == 0 || orxString_Compare(name, "Enemy") == 0)) {
@@ -75,10 +76,12 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 		rot = Character::angleBetween(position, targetPoint);
 	}
 
-	orxVector_Normalize(&target, &target);
-	target.fZ = 0;
-	orxVector_Mulf(&target, &target, 50 * dt);
-	orxVector_Add(&position, &position, &target);
-	orxObject_SetPosition(entity, &position);
+	if (!orxVector_AreEqual(&position, &target)) {
+		orxVector_Normalize(&target, &target);
+		target.fZ = 0;
+		orxVector_Mulf(&target, &target, 50 * dt);
+		orxVector_Add(&position, &position, &target);
+		orxObject_SetPosition(entity, &position);
+	}
 	orxObject_SetRotation(entity, rot);
 }

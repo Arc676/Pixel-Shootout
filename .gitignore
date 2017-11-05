@@ -12,3 +12,4 @@ XCFs
 Version History
 *.o
 linux/
+*.so
