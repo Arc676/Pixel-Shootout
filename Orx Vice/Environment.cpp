@@ -55,26 +55,26 @@ void Environment::update() {
 		enemiesPresent = orxMath_GetRandomU32(1, 10);
 		for (int i = 0; i < enemiesPresent; i++) {
 			int side = orxMath_GetRandomU32(0, 3);
-			int x, y;
+			orxFLOAT x, y;
 			switch (side) {
 				case 0:
-					x = -490;
-					y = orxMath_GetRandomS32(-290, 290);
+					x = -490.0f;
+					y = orxMath_GetRandomFloat(-290.0f, 290.0f);
 					break;
 
 				case 1:
-					x = orxMath_GetRandomS32(-490, 490);
-					y = -290;
+					x = orxMath_GetRandomFloat(-490.0f, 490.0f);
+					y = -290.0f;
 					break;
 
 				case 2:
-					x = 490;
-					y = orxMath_GetRandomS32(-290, 290);
+					x = 490.0f;
+					y = orxMath_GetRandomFloat(-290.0f, 290.0f);
 					break;
 
 				case 3:
-					x = orxMath_GetRandomS32(-490, 490);
-					y = 290;
+					x = orxMath_GetRandomFloat(-490.0f, 490.0f);
+					y = 290.0f;
 					break;
 
 				default:
@@ -82,7 +82,7 @@ void Environment::update() {
 					y = -200;
 					break;
 			}
-			new Enemy({(orxFLOAT)x,(orxFLOAT)y,0});
+			new Enemy({x,y,0});
 		}
 	}
 }

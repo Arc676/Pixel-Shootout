@@ -9,7 +9,9 @@ LIB=-l orx
 OBJS=Bullet.o Character.o Enemy.o Entity.o Environment.o Main.o Player.o StandAlone.o
 
 pixelshootout: $(OBJS)
-	$(CC) $(LD) $(OBJS) $(LIB) -o bin/pixelshootout
+	$(CC) $(LD) $(OBJS) $(LIB) -o linux/Pixel\ Shootout
+	find data -name '*.png' -exec cp {} linux \;
+	cp bin/*.ini linux
 
 Bullet.o:
 	$(CC) $(FLAGS) $(LD) Orx\ Vice/Bullet.cpp
@@ -36,4 +38,4 @@ StandAlone.o:
 	$(CC) $(FLAGS) $(LD) Orx\ Vice/StandAlone.cpp
 
 clean:
-	rm bin/pixelshootout *.o
+	rm linux/Pixel\ Shootout *.o
