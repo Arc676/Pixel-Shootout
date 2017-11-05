@@ -39,15 +39,15 @@ double Character::angleBetween(orxVECTOR v1, orxVECTOR v2) {
 									 v2.fY - v1.fY);
 }
 
-void Character::update() {
-	ticksSinceLastShot++;
+void Character::update(orxFLOAT dt) {
+	timeSinceLastShot += dt;
 }
 
 void Character::fireBullet(double rot) {
-	if (ticksSinceLastShot < 20) {
+	if (timeSinceLastShot < 0.5) {
 		return;
 	}
-	ticksSinceLastShot = 0;
+	timeSinceLastShot = 0;
 	orxVECTOR bpos;
 	orxObject_GetPosition(entity, &bpos);
 	orxVECTOR ds = {32, 12};

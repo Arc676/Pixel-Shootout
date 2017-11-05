@@ -30,7 +30,7 @@ Enemy::Enemy(orxVECTOR pos) {
 }
 
 void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
-	Character::update();
+	Character::update(dt);
 	orxObject_GetPosition(entity, &position);
 
 	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFFB, orxFALSE, nullptr, nullptr);

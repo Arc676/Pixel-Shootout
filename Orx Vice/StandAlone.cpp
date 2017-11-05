@@ -128,7 +128,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 		}
 	}
 	environment->updateEnemyCount(enemiesStillPresent);
-	environment->update();
+	environment->update(delta);
 	if (orxInput_IsActive("Spawn")) {
 		new Enemy(mouse);
 	}

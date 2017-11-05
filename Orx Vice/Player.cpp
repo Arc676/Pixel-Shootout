@@ -31,7 +31,7 @@ void Player::respawn() {
 	orxVECTOR pos = {0, 0, 0};
 	orxObject_SetPosition(entity, &pos);
 	HP = 1;
-	ticksSinceLastShot = 0;
+	timeSinceLastShot = 0;
 	score = 0;
 }
 
@@ -49,7 +49,7 @@ void Player::update(bool up, bool down, bool left, bool right, bool fire, orxVEC
 	if (HP <= 0) {
 		return;
 	}
-	Character::update();
+	Character::update(dt);
 	orxObject_GetPosition(entity, &position);
 	if (up) {
 		position.fY -= speed * dt;

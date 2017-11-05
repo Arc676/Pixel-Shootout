@@ -30,13 +30,13 @@
 
 class Environment {
 	int enemiesPresent = 0;
-	int ticksSinceWavePast = 0;
-	int waveDelay = 50;
+	orxFLOAT timeSinceWavePast = 0;
+	orxFLOAT waveDelay = 3;
 public:
 	int getEnemyCount();
 	void updateEnemyCount(int);
-	
-	void update();
+
+	void update(orxFLOAT);
 	void resetWorld();
 };
 

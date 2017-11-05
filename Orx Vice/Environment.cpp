@@ -31,7 +31,7 @@ int Environment::getEnemyCount() {
 
 void Environment::resetWorld() {
 	enemiesPresent = 0;
-	ticksSinceWavePast = 0;
+	timeSinceWavePast = 0;
 	for (
 		 orxOBJECT *obj = (orxOBJECT*)orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT);
 		 obj != orxNULL;
@@ -46,12 +46,12 @@ void Environment::resetWorld() {
 	}
 }
 
-void Environment::update() {
+void Environment::update(orxFLOAT dt) {
 	if (enemiesPresent <= 0) {
-		ticksSinceWavePast++;
+		timeSinceWavePast += dt;
 	}
-	if (ticksSinceWavePast > waveDelay) {
-		ticksSinceWavePast = 0;
+	if (timeSinceWavePast > waveDelay) {
+		timeSinceWavePast = 0;
 		enemiesPresent = orxMath_GetRandomU32(1, 10);
 		for (int i = 0; i < enemiesPresent; i++) {
 			int side = orxMath_GetRandomU32(0, 3);
