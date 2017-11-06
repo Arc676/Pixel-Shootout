@@ -21,10 +21,14 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(const std::string &name, int fireRate, int dmg) : name(name), fireRate(fireRate), dmg(dmg) {}
+Weapon::Weapon(const std::string &name, int fireRate, int dmg, double bulletSpeed) : name(name), fireRate(fireRate), dmg(dmg), bulletSpeed(bulletSpeed) {}
 
 int Weapon::getDmg() {
 	return dmg;
+}
+
+double Weapon::getBulletSpeed() {
+	return bulletSpeed;
 }
 
 std::string Weapon::getName() {

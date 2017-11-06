@@ -28,11 +28,13 @@ class Weapon {
 	std::string name;
 	int fireRate;
 	int dmg;
+	double bulletSpeed;
 public:
-	Weapon(const std::string&, int, int);
+	Weapon(const std::string&, int, int, double);
 	std::string getName();
 	int getFireRate();
 	int getDmg();
+	double getBulletSpeed();
 };
 
 #endif

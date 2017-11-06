@@ -44,7 +44,7 @@ void Character::update(orxFLOAT dt) {
 }
 
 void Character::fireBullet(double rot) {
-	if (timeSinceLastShot < 0.5) {
+	if (timeSinceLastShot < currentWeapon->getFireRate()) {
 		return;
 	}
 	timeSinceLastShot = 0;
@@ -54,7 +54,7 @@ void Character::fireBullet(double rot) {
 	orxVector_2DRotate(&ds, &ds, rot);
 	orxVector_Add(&bpos, &bpos, &ds);
 
-	new Bullet(bpos, 80, rot, 10);
+	new Bullet(bpos, currentWeapon->getBulletSpeed(), rot, currentWeapon->getDmg());
 }
 
 void Character::takeHit(Bullet* bullet) {
