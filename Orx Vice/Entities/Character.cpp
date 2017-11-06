@@ -63,3 +63,11 @@ void Character::takeHit(Bullet* bullet) {
 		despawn();
 	}
 }
+
+void Character::obtainWeapon(Weapon *weapon) {
+	currentWeapon = weapon;
+}
+
+Weapon* Character::getCurrentWeapon() {
+	return currentWeapon;
+}

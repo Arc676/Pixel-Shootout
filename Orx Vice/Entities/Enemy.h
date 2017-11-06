@@ -1,8 +1,8 @@
 //
-//  Character.hpp
-//  Pixel Shootout
+//  Enemy.hpp
+//  Orx Vice
 //
-//  Created by Alessandro Vinciguerra on 29/10/2017.
+//  Created by Alessandro Vinciguerra on 25/09/2017.
 //      <alesvinciguerra@gmail.com>
 //Copyright (C) 2017 Arc676/Alessandro Vinciguerra
 
@@ -19,34 +19,16 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //See README and LICENSE for more details
 
-#ifndef Character_h
-#define Character_h
+#ifndef Enemy_h
+#define Enemy_h
 
-#include "Bullet.h"
-#include "Entity.h"
-#include "Weapon.h"
+#include "Character.h"
 
-class Character : public Entity {
-protected:
-	orxVECTOR position;
-
-	int HP = 1;
-
-	Weapon* currentWeapon;
-	orxFLOAT timeSinceLastShot = 0;
-	void fireBullet(double);
-
-	static double angleBetween(orxVECTOR, orxVECTOR);
-	void update(orxFLOAT);
+class Enemy : public Character {
+	orxVECTOR targetPoint;
 public:
-	orxOBJECT* getEntity();
-	orxVECTOR getPosition();
-
-	int getHP();
-	void takeHit(Bullet*);
-
-	void obtainWeapon(Weapon*);
-	Weapon* getCurrentWeapon();
+	Enemy(orxVECTOR);
+	void update(orxVECTOR, orxFLOAT);
 };
 
 #endif

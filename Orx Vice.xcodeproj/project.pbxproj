@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7105BE291F7CF5CE00331E6D /* liborxd.dylib */; };
 		711187431F7E28C80013A56F /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 711187411F7E28C80013A56F /* Environment.cpp */; };
+		712814831FB09D7E00456037 /* Weapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712814811FB09D7E00456037 /* Weapon.cpp */; };
 		71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */; };
 		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; };
 		71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1D1F6FFC4F00932B46 /* StaticScene.ini */; };
@@ -58,6 +59,8 @@
 		7105BE291F7CF5CE00331E6D /* liborxd.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborxd.dylib; sourceTree = "<group>"; };
 		711187411F7E28C80013A56F /* Environment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
 		711187421F7E28C80013A56F /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
+		712814811FB09D7E00456037 /* Weapon.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Weapon.cpp; sourceTree = "<group>"; };
+		712814821FB09D7E00456037 /* Weapon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weapon.h; sourceTree = "<group>"; };
 		71612EB61F6FF4BD00932B46 /* orxAnim.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnim.h; sourceTree = "<group>"; };
 		71612EB71F6FF4BD00932B46 /* orxAnimPointer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnimPointer.h; sourceTree = "<group>"; };
 		71612EB81F6FF4BD00932B46 /* orxAnimSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = orxAnimSet.h; sourceTree = "<group>"; };
@@ -184,6 +187,8 @@
 			children = (
 				716CBE361F79385B0034981A /* Bullet.h */,
 				716CBE351F79385B0034981A /* Bullet.cpp */,
+				712814821FB09D7E00456037 /* Weapon.h */,
+				712814811FB09D7E00456037 /* Weapon.cpp */,
 			);
 			path = Combat;
 			sourceTree = "<group>";
@@ -592,6 +597,7 @@
 				716CBE311F7918F40034981A /* Enemy.cpp in Sources */,
 				71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */,
 				716CBE251F790D4B0034981A /* Player.cpp in Sources */,
+				712814831FB09D7E00456037 /* Weapon.cpp in Sources */,
 				711187431F7E28C80013A56F /* Environment.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

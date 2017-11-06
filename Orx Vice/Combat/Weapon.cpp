@@ -1,8 +1,8 @@
 //
-//  Character.hpp
+//  Weapon.cpp
 //  Pixel Shootout
 //
-//  Created by Alessandro Vinciguerra on 29/10/2017.
+//  Created by Alessandro Vinciguerra on 06/11/2017.
 //      <alesvinciguerra@gmail.com>
 //Copyright (C) 2017 Arc676/Alessandro Vinciguerra
 
@@ -19,34 +19,18 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //See README and LICENSE for more details
 
-#ifndef Character_h
-#define Character_h
-
-#include "Bullet.h"
-#include "Entity.h"
 #include "Weapon.h"
 
-class Character : public Entity {
-protected:
-	orxVECTOR position;
+Weapon::Weapon(const std::string &name, int fireRate, int dmg) : name(name), fireRate(fireRate), dmg(dmg) {}
 
-	int HP = 1;
+int Weapon::getDmg() {
+	return dmg;
+}
 
-	Weapon* currentWeapon;
-	orxFLOAT timeSinceLastShot = 0;
-	void fireBullet(double);
+std::string Weapon::getName() {
+	return name;
+}
 
-	static double angleBetween(orxVECTOR, orxVECTOR);
-	void update(orxFLOAT);
-public:
-	orxOBJECT* getEntity();
-	orxVECTOR getPosition();
-
-	int getHP();
-	void takeHit(Bullet*);
-
-	void obtainWeapon(Weapon*);
-	Weapon* getCurrentWeapon();
-};
-
-#endif
+int Weapon::getFireRate() {
+	return fireRate;
+}
