@@ -179,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		712814801FB09CE600456037 /* Combat */ = {
+			isa = PBXGroup;
+			children = (
+				716CBE361F79385B0034981A /* Bullet.h */,
+				716CBE351F79385B0034981A /* Bullet.cpp */,
+			);
+			path = Combat;
+			sourceTree = "<group>";
+		};
 		71612EB41F6FF4BD00932B46 /* inc */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,7 +447,7 @@
 				711187421F7E28C80013A56F /* Environment.h */,
 				711187411F7E28C80013A56F /* Environment.cpp */,
 			);
-			name = App;
+			path = App;
 			sourceTree = "<group>";
 		};
 		716CBE331F79197B0034981A /* Entities */ = {
@@ -452,10 +461,8 @@
 				716CBE231F790D4B0034981A /* Player.cpp */,
 				716CBE301F7918F40034981A /* Enemy.h */,
 				716CBE2F1F7918F40034981A /* Enemy.cpp */,
-				716CBE361F79385B0034981A /* Bullet.h */,
-				716CBE351F79385B0034981A /* Bullet.cpp */,
 			);
-			name = Entities;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		71E2A38C1FA5B6D1000B3764 /* Metadata */ = {
@@ -492,6 +499,7 @@
 			isa = PBXGroup;
 			children = (
 				71E2A38C1FA5B6D1000B3764 /* Metadata */,
+				712814801FB09CE600456037 /* Combat */,
 				716CBE331F79197B0034981A /* Entities */,
 				716CBE321F7919720034981A /* App */,
 			);
