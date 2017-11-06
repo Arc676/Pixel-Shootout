@@ -44,7 +44,7 @@ void Character::update(orxFLOAT dt) {
 }
 
 void Character::fireBullet(double rot) {
-	if (timeSinceLastShot < currentWeapon->getFireRate()) {
+	if (timeSinceLastShot < currentWeapon->getFiringDelay()) {
 		return;
 	}
 	timeSinceLastShot = 0;
