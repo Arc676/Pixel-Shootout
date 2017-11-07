@@ -27,6 +27,7 @@
 class Entity {
 protected:
 	orxOBJECT* entity = orxNULL;
+	orxVECTOR position;
 public:
 	virtual void despawn();
 };

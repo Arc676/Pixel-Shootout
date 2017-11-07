@@ -24,6 +24,7 @@
 		717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 717293DC1F8D09FB00734F1D /* wall.png */; };
 		71A5EEA51FB1DCDD006BAE30 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EEA31FB1DCDD006BAE30 /* Item.cpp */; };
+		71A5EEA81FB1DE24006BAE30 /* Obtainable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EEA61FB1DE24006BAE30 /* Obtainable.cpp */; };
 		71BB1DFB1F90E27400EBC58F /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
 		71E2A3921FA5EC5D000B3764 /* Died.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3911FA5EC55000B3764 /* Died.png */; };
 		71E2A3951FA5F013000B3764 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A3931FA5F013000B3764 /* Character.cpp */; };
@@ -158,6 +159,8 @@
 		717293DC1F8D09FB00734F1D /* wall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wall.png; sourceTree = "<group>"; };
 		71A5EEA31FB1DCDD006BAE30 /* Item.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Item.cpp; sourceTree = "<group>"; };
 		71A5EEA41FB1DCDD006BAE30 /* Item.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		71A5EEA61FB1DE24006BAE30 /* Obtainable.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Obtainable.cpp; sourceTree = "<group>"; };
+		71A5EEA71FB1DE24006BAE30 /* Obtainable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Obtainable.h; sourceTree = "<group>"; };
 		71E2A38D1FA5B6F1000B3764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71E2A38E1FA5B7E1000B3764 /* version.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
 		71E2A3911FA5EC55000B3764 /* Died.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Died.png; sourceTree = "<group>"; };
@@ -478,6 +481,8 @@
 			children = (
 				71A5EEA41FB1DCDD006BAE30 /* Item.h */,
 				71A5EEA31FB1DCDD006BAE30 /* Item.cpp */,
+				71A5EEA71FB1DE24006BAE30 /* Obtainable.h */,
+				71A5EEA61FB1DE24006BAE30 /* Obtainable.cpp */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -610,6 +615,7 @@
 				71A5EEA51FB1DCDD006BAE30 /* Item.cpp in Sources */,
 				716CBE311F7918F40034981A /* Enemy.cpp in Sources */,
 				71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */,
+				71A5EEA81FB1DE24006BAE30 /* Obtainable.cpp in Sources */,
 				716CBE251F790D4B0034981A /* Player.cpp in Sources */,
 				712814831FB09D7E00456037 /* Weapon.cpp in Sources */,
 				711187431F7E28C80013A56F /* Environment.cpp in Sources */,

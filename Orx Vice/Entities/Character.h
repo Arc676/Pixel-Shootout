@@ -28,8 +28,6 @@
 
 class Character : public Entity {
 protected:
-	orxVECTOR position;
-
 	int HP = 1;
 
 	Weapon* currentWeapon;
