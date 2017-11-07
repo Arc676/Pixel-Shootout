@@ -38,19 +38,19 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 	Character::update(dt);
 	orxObject_GetPosition(entity, &position);
 
-	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFFB, orxTRUE, nullptr, nullptr);
+	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFF9, orxTRUE, nullptr, nullptr);
 	orxSTRING name = (collide ? (orxSTRING)orxObject_GetName(collide) : (orxSTRING)"");
 	double rot;
 	orxVECTOR target;
 	orxVector_Copy(&target, &position);
 
-	if (collide != orxNULL &&
-		(orxString_Compare(name, "Player") == 0 || orxString_Compare(name, "Enemy") == 0)) {
+	if (collide != orxNULL && orxString_Compare(name, "Player") == 0) {
 		if (orxVector_GetDistance(&position, &playerPos) > 200) {
 			orxVector_Sub(&target, &playerPos, &position);
 		}
 		rot = angleBetween(position, playerPos);
-		if (orxString_Compare(name, "Player") == 0) {
+		orxOBJECT* otherEnemy = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0x0002, orxTRUE, nullptr, nullptr);
+		if (!otherEnemy && orxString_Compare(name, "Player") == 0) {
 			fireBullet(rot);
 		}
 	} else {
@@ -58,7 +58,7 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 		orxVector_Sub(&diff, &targetPoint, &position);
 		if (orxVector_GetSize(&diff) <= 40) {
 			if (position.fX < -500 || position.fX > 500 || position.fY < -300 || position.fY > 300) {
-				orxVector_Neg(&targetPoint, &position);
+				targetPoint = {0, 0, 0};
 				orxObject_Raycast(&position, &targetPoint, 0x0002, 0x0008, orxFALSE, &targetPoint, nullptr);
 				orxVector_Divf(&targetPoint, &targetPoint, 1.75);
 			} else {

@@ -11,7 +11,7 @@ OBJS=Bullet.o Character.o Enemy.o Entity.o Environment.o Main.o Player.o StandAl
 pixelshootout: $(OBJS)
 	$(CC) $(LD) $(OBJS) $(LIB) -o linux/Pixel\ Shootout
 	find data -name '*.png' -exec cp {} linux \;
-	cp bin/*.ini linux
+	cp -u bin/*.ini linux
 
 Bullet.o:
 	$(CC) $(FLAGS) $(LD) Orx\ Vice/Combat/Bullet.cpp
