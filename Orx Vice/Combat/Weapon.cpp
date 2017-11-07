@@ -21,7 +21,7 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(const std::string &name, double firingDelay, int dmg, double bulletSpeed) : name(name), firingDelay(firingDelay), dmg(dmg), bulletSpeed(bulletSpeed) {}
+Weapon::Weapon(const std::string &name, double firingDelay, int dmg, double bulletSpeed) : Item(name), firingDelay(firingDelay), dmg(dmg), bulletSpeed(bulletSpeed) {}
 
 int Weapon::getDmg() {
 	return dmg;
@@ -29,10 +29,6 @@ int Weapon::getDmg() {
 
 double Weapon::getBulletSpeed() {
 	return bulletSpeed;
-}
-
-std::string Weapon::getName() {
-	return name;
 }
 
 double Weapon::getFiringDelay() {

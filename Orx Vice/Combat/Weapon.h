@@ -22,16 +22,14 @@
 #ifndef Weapon_h
 #define Weapon_h
 
-#include <string>
+#include "../Items/Item.h"
 
-class Weapon {
-	std::string name;
+class Weapon : public Item {
 	double firingDelay;
 	int dmg;
 	double bulletSpeed;
 public:
 	Weapon(const std::string&, double, int, double);
-	std::string getName();
 	double getFiringDelay();
 	int getDmg();
 	double getBulletSpeed();
