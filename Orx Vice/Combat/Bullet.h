@@ -22,7 +22,7 @@
 #ifndef Bullet_h
 #define Bullet_h
 
-#include "Entity.h"
+#include "../Entities/Entity.h"
 
 class Bullet : public Entity {
 	int damage;

@@ -25,8 +25,8 @@
 #include <stdlib.h>
 
 #include "orx.h"
-#include "Player.h"
-#include "Enemy.h"
+#include "../Entities/Player.h"
+#include "../Entities/Enemy.h"
 
 class Environment {
 	int enemiesPresent = 0;

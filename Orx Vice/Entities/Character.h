@@ -22,9 +22,9 @@
 #ifndef Character_h
 #define Character_h
 
-#include "Bullet.h"
+#include "../Combat/Bullet.h"
+#include "../Combat/Weapon.h"
 #include "Entity.h"
-#include "Weapon.h"
 
 class Character : public Entity {
 protected:

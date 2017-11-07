@@ -33,7 +33,7 @@ public:
 	void earnPoints(int);
 
 	void update(bool, bool, bool, bool, bool, orxVECTOR, orxFLOAT);
-	
+
 	virtual void despawn();
 	void respawn();
 };

@@ -6,7 +6,7 @@ CC=g++
 FLAGS=-std=c++11 -c
 LD=-I inc/ -L lib/
 LIB=-l orx
-OBJS=Bullet.o Character.o Enemy.o Entity.o Environment.o Main.o Player.o StandAlone.o
+OBJS=Bullet.o Character.o Enemy.o Entity.o Environment.o Main.o Player.o StandAlone.o Weapon.o
 
 pixelshootout: $(OBJS)
 	$(CC) $(LD) $(OBJS) $(LIB) -o linux/Pixel\ Shootout
@@ -14,28 +14,31 @@ pixelshootout: $(OBJS)
 	cp bin/*.ini linux
 
 Bullet.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/Bullet.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Combat/Bullet.cpp
 
 Character.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/Character.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Entities/Character.cpp
 
 Enemy.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/Enemy.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Entities/Enemy.cpp
 
 Entity.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/Entity.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Entities/Entity.cpp
 
 Environment.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/Environment.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/App/Environment.cpp
 
 Main.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/Main.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/App/Main.cpp
 
 Player.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/Player.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Entities/Player.cpp
 
 StandAlone.o:
-	$(CC) $(FLAGS) $(LD) Orx\ Vice/StandAlone.cpp
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/App/StandAlone.cpp
+
+Weapon.o:
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Combat/Weapon.cpp
 
 clean:
 	rm linux/Pixel\ Shootout *.o
