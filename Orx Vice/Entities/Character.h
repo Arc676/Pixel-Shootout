@@ -43,7 +43,8 @@ public:
 	int getHP();
 	void takeHit(Bullet*);
 
-	void obtainWeapon(Weapon*);
+	void obtainItem(Item*);
+
 	Weapon* getCurrentWeapon();
 };
 

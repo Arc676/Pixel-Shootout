@@ -21,8 +21,12 @@
 
 #include "Item.h"
 
-Item::Item(orxSTRING name) : name(name) {}
+Item::Item(orxSTRING name, ItemType type) : name(name), type(type) {}
 
 orxSTRING Item::getName() {
 	return name;
+}
+
+ItemType Item::getItemType() {
+	return type;
 }

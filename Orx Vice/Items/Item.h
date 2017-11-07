@@ -24,12 +24,18 @@
 
 #include "orx.h"
 
+enum ItemType {
+	WEAPON
+};
+
 class Item {
 protected:
 	orxSTRING name;
+	ItemType type;
 public:
-	Item(orxSTRING);
+	Item(orxSTRING, ItemType);
 	orxSTRING getName();
+	ItemType getItemType();
 };
 
 #endif

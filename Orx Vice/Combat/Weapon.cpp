@@ -21,7 +21,7 @@
 
 #include "Weapon.h"
 
-Weapon::Weapon(orxSTRING name, double firingDelay, int dmg, double bulletSpeed) : Item(name), firingDelay(firingDelay), dmg(dmg), bulletSpeed(bulletSpeed) {}
+Weapon::Weapon(orxSTRING name, double firingDelay, int dmg, double bulletSpeed) : Item(name, WEAPON), firingDelay(firingDelay), dmg(dmg), bulletSpeed(bulletSpeed) {}
 
 int Weapon::getDmg() {
 	return dmg;

@@ -64,8 +64,10 @@ void Character::takeHit(Bullet* bullet) {
 	}
 }
 
-void Character::obtainWeapon(Weapon *weapon) {
-	currentWeapon = weapon;
+void Character::obtainItem(Item *item) {
+	if (item->getItemType() == WEAPON) {
+		currentWeapon = (Weapon*)item;
+	}
 }
 
 Weapon* Character::getCurrentWeapon() {
