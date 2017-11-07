@@ -9,14 +9,14 @@
 #ifndef Item_h
 #define Item_h
 
-#include <string>
+#include "orx.h"
 
 class Item {
 protected:
-	std::string name;
+	orxSTRING name;
 public:
-	Item(const std::string&);
-	std::string getName();
+	Item(orxSTRING);
+	orxSTRING getName();
 };
 
 #endif

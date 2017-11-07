@@ -8,8 +8,8 @@
 
 #include "Item.h"
 
-Item::Item(const std::string &name) : name(name) {}
+Item::Item(orxSTRING name) : name(name) {}
 
-std::string Item::getName() {
+orxSTRING Item::getName() {
 	return name;
 }

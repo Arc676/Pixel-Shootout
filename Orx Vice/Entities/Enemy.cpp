@@ -27,7 +27,7 @@ Enemy::Enemy(orxVECTOR pos) {
 	targetPoint = pos;
 	orxObject_SetPosition(entity, &position);
 	orxObject_SetUserData(entity, this);
-	currentWeapon = new Weapon("Handgun", 0.5, 10, 80);
+	currentWeapon = new Weapon((char*)"Handgun", 0.5, 10, 80);
 }
 
 Enemy::Enemy(orxVECTOR pos, Weapon* weapon) : Enemy(pos) {

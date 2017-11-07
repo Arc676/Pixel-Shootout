@@ -29,7 +29,7 @@ class Weapon : public Item {
 	int dmg;
 	double bulletSpeed;
 public:
-	Weapon(const std::string&, double, int, double);
+	Weapon(orxSTRING, double, int, double);
 	double getFiringDelay();
 	int getDmg();
 	double getBulletSpeed();

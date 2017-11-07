@@ -25,7 +25,7 @@ Player::Player() {
 	orxInput_Load(orxSTRING_EMPTY);
 	entity = orxObject_CreateFromConfig("Player");
 	orxObject_SetUserData(entity, this);
-	currentWeapon = new Weapon("Handgun", 0.5, 10, 80);
+	currentWeapon = new Weapon((char*)"Handgun", 0.5, 10, 80);
 }
 
 void Player::respawn() {
