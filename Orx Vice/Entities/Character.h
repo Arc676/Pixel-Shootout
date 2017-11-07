@@ -1,5 +1,5 @@
 //
-//  Character.hpp
+//  Character.h
 //  Pixel Shootout
 //
 //  Created by Alessandro Vinciguerra on 29/10/2017.

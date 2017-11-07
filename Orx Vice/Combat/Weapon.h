@@ -1,5 +1,5 @@
 //
-//  Weapon.hpp
+//  Weapon.h
 //  Pixel Shootout
 //
 //  Created by Alessandro Vinciguerra on 06/11/2017.

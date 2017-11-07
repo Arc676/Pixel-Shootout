@@ -1,5 +1,5 @@
 //
-//  Player.hpp
+//  Player.h
 //  Orx Vice
 //
 //  Created by Alessandro Vinciguerra on 25/09/2017.
