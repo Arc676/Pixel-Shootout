@@ -38,7 +38,7 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 	Character::update(dt);
 	orxObject_GetPosition(entity, &position);
 
-	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFFB, orxFALSE, nullptr, nullptr);
+	orxOBJECT* collide = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0xFFFB, orxTRUE, nullptr, nullptr);
 	orxSTRING name = (collide ? (orxSTRING)orxObject_GetName(collide) : (orxSTRING)"");
 	double rot;
 	orxVECTOR target;
