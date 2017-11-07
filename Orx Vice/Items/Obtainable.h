@@ -27,8 +27,10 @@
 #include "../Entities/Entity.h"
 
 class Obtainable : public Entity {
+	Item* item;
 public:
-	Obtainable(orxSTRING, orxVECTOR);
+	Obtainable(orxSTRING, orxVECTOR, Item*);
+	Item* getItem();
 };
 
 #endif

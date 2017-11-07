@@ -23,8 +23,12 @@
 #define StandAlone_h
 
 #include "orx.h"
+
 #include "../Entities/Player.h"
 #include "../Entities/Enemy.h"
+
+#include "../Items/Obtainable.h"
+
 #include "Environment.h"
 
 class StandAlone {

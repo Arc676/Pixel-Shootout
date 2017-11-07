@@ -52,6 +52,9 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("UI.ini");
 	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 
+	orxConfig_Load("Items.ini");
+	new Obtainable((char*)"FastGun", {}, new Weapon((char*)"Fast Gun", 0.5, 10, 160));
+
 	orxCLOCK* upClock = orxClock_FindFirst(-1.0f, orxCLOCK_TYPE_CORE);
 	orxClock_Register(upClock, Update, orxNULL, orxMODULE_ID_MAIN, orxCLOCK_PRIORITY_NORMAL);
 

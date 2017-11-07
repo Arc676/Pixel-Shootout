@@ -20,3 +20,13 @@
 //See README and LICENSE for more details
 
 #include "Obtainable.h"
+
+Obtainable::Obtainable(orxSTRING name, orxVECTOR pos, Item* item) {
+	position = pos;
+	this->item = item;
+	entity = orxObject_CreateFromConfig(name);
+}
+
+Item* Obtainable::getItem() {
+	return item;
+}
