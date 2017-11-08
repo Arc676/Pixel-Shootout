@@ -145,6 +145,26 @@ orxVECTOR orxFASTCALL StandAlone::GetMouseWorldPosition() {
 	return worldpos;
 }
 
+void StandAlone::bulletEvent(orxOBJECT* bulletObj, orxOBJECT* otherObj) {
+	Bullet* bullet = (Bullet*)orxObject_GetUserData(bulletObj);
+	Character* character = nullptr;
+	orxSTRING name = (orxSTRING)orxObject_GetName(otherObj);
+	if (orxString_Compare(name, "Enemy") == 0 ||
+		orxString_Compare(name, "Player") == 0) {
+		character = (Character*)orxObject_GetUserData(otherObj);
+		character->takeHit(bullet);
+		if (orxString_Compare(name, "Enemy") == 0) {
+			player->earnPoints(10);
+			orxCHAR newtext[15];
+			orxString_Print(newtext, "Score: %d", player->getScore());
+			orxObject_SetTextString(scoreLabel, newtext);
+		}
+	} else if (orxString_Compare(name, "Bullet") == 0) {
+		orxObject_SetLifeTime(otherObj, 0);
+	}
+	orxObject_SetLifeTime(bulletObj, 0);
+}
+
 orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 	switch(currentEvent->eType) {
 		case orxEVENT_TYPE_INPUT:
@@ -154,38 +174,12 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 				case orxPHYSICS_EVENT_CONTACT_ADD:
 					orxOBJECT* sender = orxOBJECT(currentEvent->hSender);
 					orxOBJECT* receiver = orxOBJECT(currentEvent->hRecipient);
-					orxOBJECT* bulletObj = nullptr;
-					orxOBJECT* otherObj = nullptr;
-
-					Bullet* bullet = nullptr;
-					Character* character = nullptr;
 
 					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
-						bulletObj = sender;
-						otherObj = receiver;
+						bulletEvent(sender, receiver);
 					} else if (orxString_Compare(orxObject_GetName(receiver), "Bullet") == 0) {
-						bulletObj = receiver;
-						otherObj = sender;
-					} else {
-						break;
+						bulletEvent(receiver, sender);
 					}
-
-					bullet = (Bullet*)orxObject_GetUserData(bulletObj);
-					orxSTRING name = (orxSTRING)orxObject_GetName(otherObj);
-					if (orxString_Compare(name, "Enemy") == 0 ||
-						orxString_Compare(name, "Player") == 0) {
-						character = (Character*)orxObject_GetUserData(otherObj);
-						character->takeHit(bullet);
-						if (orxString_Compare(name, "Enemy") == 0) {
-							player->earnPoints(10);
-							orxCHAR newtext[15];
-							orxString_Print(newtext, "Score: %d", player->getScore());
-							orxObject_SetTextString(scoreLabel, newtext);
-						}
-					} else if (orxString_Compare(name, "Bullet") == 0) {
-						orxObject_SetLifeTime(otherObj, 0);
-					}
-					orxObject_SetLifeTime(bulletObj, 0);
 					break;
 			}
 			break;

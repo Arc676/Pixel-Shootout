@@ -42,6 +42,8 @@ public:
 
 	static orxOBJECT* orxFASTCALL GetObjectByName(orxSTRING);
 
+	static void bulletEvent(orxOBJECT*, orxOBJECT*);
+	static void itemEvent(orxOBJECT*, orxOBJECT*);
 	static void orxFASTCALL Update(const orxCLOCK_INFO*, void*);
 
 	static orxSTATUS orxFASTCALL EventHandler(const orxEVENT*);
