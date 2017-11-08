@@ -21,8 +21,12 @@
 
 #include "Powerup.h"
 
-Powerup::Powerup(orxSTRING name, PowerupType type) : Item(name, POWERUP), type(type) {}
+Powerup::Powerup(orxSTRING name, PowerupType type, double enhancement) : Item(name, POWERUP), type(type), enhancement(enhancement) {}
 
 PowerupType Powerup::getType() {
 	return type;
+}
+
+double Powerup::getEnhancementFactor() {
+	return enhancement;
 }

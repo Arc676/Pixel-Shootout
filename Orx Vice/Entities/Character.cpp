@@ -65,8 +65,20 @@ void Character::takeHit(Bullet* bullet) {
 }
 
 void Character::obtainItem(Item *item) {
-	if (item->getItemType() == WEAPON) {
-		currentWeapon = (Weapon*)item;
+	switch (item->getItemType()) {
+		case WEAPON:
+			currentWeapon = (Weapon*)item;
+			break;
+		case POWERUP:
+			Powerup* powerup = (Powerup*)item;
+			switch (powerup->getType()) {
+				case SPEED:
+					speed *= powerup->getEnhancementFactor();
+					break;
+				default:
+					break;
+			}
+			break;
 	}
 }
 

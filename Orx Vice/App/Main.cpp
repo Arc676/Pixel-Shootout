@@ -1,6 +1,6 @@
 //
 //  Main.cpp
-//  Orx Vice
+//  Pixel Shootout
 //
 //  Created by Alessandro Vinciguerra on 18/09/2017.
 //      <alesvinciguerra@gmail.com>

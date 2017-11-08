@@ -1,6 +1,6 @@
 //
 //  Entity.h
-//  Orx Vice
+//  Pixel Shootout
 //
 //  Created by Alessandro Vinciguerra on 25/09/2017.
 //      <alesvinciguerra@gmail.com>

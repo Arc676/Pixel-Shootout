@@ -30,9 +30,11 @@ enum PowerupType {
 
 class Powerup : public Item {
 	PowerupType type;
+	double enhancement;
 public:
-	Powerup(orxSTRING, PowerupType);
+	Powerup(orxSTRING, PowerupType, double);
 	PowerupType getType();
+	double getEnhancementFactor();
 };
 
 #endif

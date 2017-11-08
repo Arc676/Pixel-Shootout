@@ -1,6 +1,6 @@
 //
 //  Environment.h
-//  Orx Vice
+//  Pixel Shootout
 //
 //  Created by Alessandro Vinciguerra on 29/09/2017.
 //      <alesvinciguerra@gmail.com>

@@ -24,6 +24,9 @@
 
 #include "../Combat/Bullet.h"
 #include "../Combat/Weapon.h"
+
+#include "../Items/Powerup.h"
+
 #include "Entity.h"
 
 class Character : public Entity {
