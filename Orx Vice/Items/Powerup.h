@@ -1,8 +1,8 @@
 //
-//  Character.h
+//  Powerup.h
 //  Pixel Shootout
 //
-//  Created by Alessandro Vinciguerra on 29/10/2017.
+//  Created by Alessandro Vinciguerra on 08/11/2017.
 //      <alesvinciguerra@gmail.com>
 //Copyright (C) 2017 Arc676/Alessandro Vinciguerra
 
@@ -19,34 +19,20 @@
 //along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //See README and LICENSE for more details
 
-#ifndef Character_h
-#define Character_h
+#ifndef Powerup_h
+#define Powerup_h
 
-#include "../Combat/Bullet.h"
-#include "../Combat/Weapon.h"
-#include "Entity.h"
+#include "Item.h"
 
-class Character : public Entity {
-protected:
-	int HP = 1;
-	int speed = 60;
+enum PowerupType {
+	SPEED
+};
 
-	Weapon* currentWeapon;
-	orxFLOAT timeSinceLastShot = 0;
-	void fireBullet(double);
-
-	static double angleBetween(orxVECTOR, orxVECTOR);
-	void update(orxFLOAT);
+class Powerup : public Item {
+	PowerupType type;
 public:
-	orxOBJECT* getEntity();
-	orxVECTOR getPosition();
-
-	int getHP();
-	void takeHit(Bullet*);
-
-	void obtainItem(Item*);
-
-	Weapon* getCurrentWeapon();
+	Powerup(orxSTRING, PowerupType);
+	PowerupType getType();
 };
 
 #endif

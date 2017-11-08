@@ -25,7 +25,8 @@
 #include "orx.h"
 
 enum ItemType {
-	WEAPON
+	WEAPON,
+	POWERUP
 };
 
 class Item {

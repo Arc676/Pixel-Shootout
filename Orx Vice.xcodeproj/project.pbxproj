@@ -32,6 +32,7 @@
 		71E2A3971FA5F5FC000B3764 /* UI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3961FA5F57D000B3764 /* UI.ini */; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
+		71F019681FB2E15C00170DC8 /* Powerup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71F019661FB2E15C00170DC8 /* Powerup.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -177,6 +178,9 @@
 		71ED0E6D1F6FF3400095D601 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
 		71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Pixel Shootout.ini"; sourceTree = "<group>"; };
 		71ED0E701F6FF4370095D601 /* MainMenu.ini */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MainMenu.ini; sourceTree = "<group>"; };
+		71F019651FB2DDFA00170DC8 /* Speed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Speed.png; sourceTree = "<group>"; };
+		71F019661FB2E15C00170DC8 /* Powerup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Powerup.cpp; sourceTree = "<group>"; };
+		71F019671FB2E15C00170DC8 /* Powerup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Powerup.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -427,6 +431,7 @@
 		71614D191F6FFC3300932B46 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				71F019641FB2DDFA00170DC8 /* powerups */,
 				71614D211F70036700932B46 /* phys */,
 				71614D1A1F6FFC3300932B46 /* anim */,
 			);
@@ -486,6 +491,8 @@
 				71A5EEA31FB1DCDD006BAE30 /* Item.cpp */,
 				71A5EEA71FB1DE24006BAE30 /* Obtainable.h */,
 				71A5EEA61FB1DE24006BAE30 /* Obtainable.cpp */,
+				71F019671FB2E15C00170DC8 /* Powerup.h */,
+				71F019661FB2E15C00170DC8 /* Powerup.cpp */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -552,6 +559,14 @@
 				71ED0E681F6FF0F90095D601 /* liborx.dylib */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		71F019641FB2DDFA00170DC8 /* powerups */ = {
+			isa = PBXGroup;
+			children = (
+				71F019651FB2DDFA00170DC8 /* Speed.png */,
+			);
+			path = powerups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -622,6 +637,7 @@
 				71A5EEA81FB1DE24006BAE30 /* Obtainable.cpp in Sources */,
 				716CBE251F790D4B0034981A /* Player.cpp in Sources */,
 				712814831FB09D7E00456037 /* Weapon.cpp in Sources */,
+				71F019681FB2E15C00170DC8 /* Powerup.cpp in Sources */,
 				711187431F7E28C80013A56F /* Environment.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

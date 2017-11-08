@@ -26,7 +26,6 @@
 
 class Player : public Character {
 	int score = 0;
-	int speed = 60;
 public:
 	Player();
 	int getScore();

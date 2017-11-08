@@ -84,7 +84,7 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 	if (!orxVector_AreEqual(&position, &target)) {
 		orxVector_Normalize(&target, &target);
 		target.fZ = 0;
-		orxVector_Mulf(&target, &target, 50 * dt);
+		orxVector_Mulf(&target, &target, speed * dt);
 		orxVector_Add(&position, &position, &target);
 		orxObject_SetPosition(entity, &position);
 	}
