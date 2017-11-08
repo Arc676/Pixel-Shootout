@@ -25,7 +25,7 @@ Player::Player() {
 	orxInput_Load(orxSTRING_EMPTY);
 	entity = orxObject_CreateFromConfig("Player");
 	orxObject_SetUserData(entity, this);
-	currentWeapon = Weapon::makeCopyOf(HANDGUN);
+	currentWeapon = Weapon::copyOf(HANDGUN);
 }
 
 void Player::respawn() {

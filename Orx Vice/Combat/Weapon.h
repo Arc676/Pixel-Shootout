@@ -42,8 +42,8 @@ public:
 	int getDmg();
 	double getBulletSpeed();
 
-	static Weapon* makeCopyOf(WeaponType);
-	Weapon* makeCopy();
+	static Weapon* copyOf(WeaponType);
+	Weapon* copy();
 };
 
 #endif

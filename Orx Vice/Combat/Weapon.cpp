@@ -38,17 +38,17 @@ double Weapon::getFiringDelay() {
 	return firingDelay;
 }
 
-Weapon* Weapon::makeCopyOf(WeaponType type) {
+Weapon* Weapon::copyOf(WeaponType type) {
 	switch (type) {
 		case HANDGUN:
-			return handgun->makeCopy();
+			return handgun->copy();
 		case FASTGUN:
-			return fastGun->makeCopy();
+			return fastGun->copy();
 		default:
 			return nullptr;
 	}
 }
 
-Weapon* Weapon::makeCopy() {
+Weapon* Weapon::copy() {
 	return new Weapon(name, firingDelay, dmg, bulletSpeed);
 }
