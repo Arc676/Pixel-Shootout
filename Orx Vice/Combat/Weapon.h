@@ -32,6 +32,7 @@ enum WeaponType {
 class Weapon : public Item {
 	static Weapon* handgun;
 	static Weapon* fastGun;
+	Weapon* copy();
 protected:
 	double firingDelay;
 	int dmg;
@@ -43,7 +44,6 @@ public:
 	double getBulletSpeed();
 
 	static Weapon* copyOf(WeaponType);
-	Weapon* copy();
 };
 
 #endif

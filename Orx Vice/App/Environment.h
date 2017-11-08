@@ -22,13 +22,21 @@
 #ifndef Environment_h
 #define Environment_h
 
-#include <stdlib.h>
-
 #include "orx.h"
+
 #include "../Entities/Player.h"
 #include "../Entities/Enemy.h"
 
+#include "../Items/Obtainable.h"
+#include "../Items/Powerup.h"
+
+#include "../Combat/Weapon.h"
+
 class Environment {
+	orxFLOAT timeSincePowerupSpawn = 0;
+	orxFLOAT powerupDelay = 30;
+	int powerupSpawnProbability = 60;
+
 	int enemiesPresent = 0;
 	orxFLOAT timeSinceWavePast = 0;
 	orxFLOAT waveDelay = 3;
@@ -38,6 +46,8 @@ public:
 
 	void update(orxFLOAT);
 	void resetWorld();
+
+	static orxVECTOR randomPosition(orxFLOAT, orxFLOAT, orxFLOAT, orxFLOAT, orxBOOL);
 };
 
 #endif

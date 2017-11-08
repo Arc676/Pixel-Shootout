@@ -46,6 +46,33 @@ void Environment::resetWorld() {
 	}
 }
 
+orxVECTOR Environment::randomPosition(orxFLOAT xmin, orxFLOAT xmax, orxFLOAT ymin, orxFLOAT ymax, orxBOOL edge) {
+	int side = orxMath_GetRandomU32(0, 3);
+	orxFLOAT x = orxMath_GetRandomFloat(xmin, xmax);
+	orxFLOAT y = orxMath_GetRandomFloat(ymin, ymax);
+	if (edge) {
+		switch (side) {
+			case 0:
+				x = xmin;
+				break;
+			case 1:
+				y = ymin;
+				break;
+			case 2:
+				x = xmax;
+				break;
+			case 3:
+				y = ymax;
+				break;
+			default:
+				x = xmin;
+				y = ymin;
+				break;
+		}
+	}
+	return {x, y, 0};
+}
+
 void Environment::update(orxFLOAT dt) {
 	if (enemiesPresent <= 0) {
 		timeSinceWavePast += dt;
@@ -54,35 +81,14 @@ void Environment::update(orxFLOAT dt) {
 		timeSinceWavePast = 0;
 		enemiesPresent = orxMath_GetRandomU32(1, 10);
 		for (int i = 0; i < enemiesPresent; i++) {
-			int side = orxMath_GetRandomU32(0, 3);
-			orxFLOAT x, y;
-			switch (side) {
-				case 0:
-					x = -490.0f;
-					y = orxMath_GetRandomFloat(-290.0f, 290.0f);
-					break;
-
-				case 1:
-					x = orxMath_GetRandomFloat(-490.0f, 490.0f);
-					y = -290.0f;
-					break;
-
-				case 2:
-					x = 490.0f;
-					y = orxMath_GetRandomFloat(-290.0f, 290.0f);
-					break;
-
-				case 3:
-					x = orxMath_GetRandomFloat(-490.0f, 490.0f);
-					y = 290.0f;
-					break;
-
-				default:
-					x = -400;
-					y = -200;
-					break;
-			}
-			new Enemy({x,y,0});
+			new Enemy(randomPosition(-490.0f, 490.0f, -290.0f, 290.0f, orxTRUE));
+		}
+	}
+	timeSincePowerupSpawn += dt;
+	if (timeSincePowerupSpawn > powerupDelay) {
+		timeSincePowerupSpawn = 0;
+		if (orxMath_GetRandomU32(0, 100) < powerupSpawnProbability) {
+			new Obtainable((char*)"FastGun", randomPosition(-490.0f, 490.0f, -290.0f, 290.0f, orxFALSE), Weapon::copyOf(FASTGUN));
 		}
 	}
 }
