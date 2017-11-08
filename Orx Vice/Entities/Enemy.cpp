@@ -27,11 +27,11 @@ Enemy::Enemy(orxVECTOR pos) {
 	targetPoint = pos;
 	orxObject_SetPosition(entity, &position);
 	orxObject_SetUserData(entity, this);
-	currentWeapon = new Weapon((char*)"Handgun", 0.5, 10, 80);
+	currentWeapon = Weapon::makeCopyOf(HANDGUN);
 }
 
-Enemy::Enemy(orxVECTOR pos, Weapon* weapon) : Enemy(pos) {
-	currentWeapon = weapon;
+Enemy::Enemy(orxVECTOR pos, WeaponType type) : Enemy(pos) {
+	currentWeapon = Weapon::makeCopyOf(type);
 }
 
 void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {

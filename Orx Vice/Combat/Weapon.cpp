@@ -21,6 +21,9 @@
 
 #include "Weapon.h"
 
+Weapon* Weapon::handgun = new Weapon((char*)"Handgun", 0.5, 10, 80);
+Weapon* Weapon::fastGun = new Weapon((char*)"Fast Gun", 0.4, 10, 160);
+
 Weapon::Weapon(orxSTRING name, double firingDelay, int dmg, double bulletSpeed) : Item(name, WEAPON), firingDelay(firingDelay), dmg(dmg), bulletSpeed(bulletSpeed) {}
 
 int Weapon::getDmg() {
@@ -33,4 +36,19 @@ double Weapon::getBulletSpeed() {
 
 double Weapon::getFiringDelay() {
 	return firingDelay;
+}
+
+Weapon* Weapon::makeCopyOf(WeaponType type) {
+	switch (type) {
+		case HANDGUN:
+			return handgun->makeCopy();
+		case FASTGUN:
+			return fastGun->makeCopy();
+		default:
+			return nullptr;
+	}
+}
+
+Weapon* Weapon::makeCopy() {
+	return new Weapon(name, firingDelay, dmg, bulletSpeed);
 }

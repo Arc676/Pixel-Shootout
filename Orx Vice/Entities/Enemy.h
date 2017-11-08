@@ -28,7 +28,7 @@ class Enemy : public Character {
 	orxVECTOR targetPoint;
 public:
 	Enemy(orxVECTOR);
-	Enemy(orxVECTOR, Weapon*);
+	Enemy(orxVECTOR, WeaponType);
 	void update(orxVECTOR, orxFLOAT);
 };
 

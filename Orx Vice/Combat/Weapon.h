@@ -24,7 +24,15 @@
 
 #include "../Items/Item.h"
 
+enum WeaponType {
+	HANDGUN,
+	FASTGUN
+};
+
 class Weapon : public Item {
+	static Weapon* handgun;
+	static Weapon* fastGun;
+protected:
 	double firingDelay;
 	int dmg;
 	double bulletSpeed;
@@ -33,6 +41,9 @@ public:
 	double getFiringDelay();
 	int getDmg();
 	double getBulletSpeed();
+
+	static Weapon* makeCopyOf(WeaponType);
+	Weapon* makeCopy();
 };
 
 #endif
