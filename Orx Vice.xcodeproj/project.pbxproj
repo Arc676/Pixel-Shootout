@@ -33,6 +33,7 @@
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
 		71F019681FB2E15C00170DC8 /* Powerup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71F019661FB2E15C00170DC8 /* Powerup.cpp */; };
+		71F019691FB2E39300170DC8 /* Speed.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71F019651FB2DDFA00170DC8 /* Speed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				71F019691FB2E39300170DC8 /* Speed.png in CopyFiles */,
 				71A5EEAA1FB1E5C7006BAE30 /* Items.ini in CopyFiles */,
 				71E2A3971FA5F5FC000B3764 /* UI.ini in CopyFiles */,
 				717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */,
