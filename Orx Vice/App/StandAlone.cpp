@@ -180,25 +180,20 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 		case orxEVENT_TYPE_PHYSICS:
 			switch (currentEvent->eID) {
 				case orxPHYSICS_EVENT_CONTACT_ADD:
-					orxOBJECT* sender = orxOBJECT(currentEvent->hSender);
-					orxOBJECT* receiver = orxOBJECT(currentEvent->hRecipient);
-
-					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
-						bulletEvent(sender, receiver);
-					} else if (orxString_Compare(orxObject_GetName(receiver), "Bullet") == 0) {
-						bulletEvent(receiver, sender);
-					} else {
-						orxConfig_PushSection(orxObject_GetName(sender));
-                        if (orxConfig_GetBool("IsObtainable")) {
-                            itemEvent(sender, receiver);
-                        } else {
-                            orxConfig_PopSection();
-                            orxConfig_PushSection(orxObject_GetName(receiver));
-                            if (orxConfig_GetBool("IsObtainable")) {
-                                itemEvent(receiver, sender);
-                            }
-                        }
-                        orxConfig_PopSection();
+					orxOBJECT* objs[] = {
+						orxOBJECT(currentEvent->hSender),
+						orxOBJECT(currentEvent->hRecipient)
+					};
+					for (int i = 0; i < 2; i++) {
+						if (orxString_Compare(orxObject_GetName(objs[i]), "Bullet") == 0) {
+							bulletEvent(objs[i], objs[1 - i]);
+						} else {
+							orxConfig_PushSection(orxObject_GetName(objs[i]));
+							if (orxConfig_GetBool("IsObtainable")) {
+								itemEvent(objs[i], objs[1 - i]);
+							}
+							orxConfig_PopSection();
+						}
 					}
 					break;
 			}
