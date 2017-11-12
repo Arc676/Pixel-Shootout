@@ -25,6 +25,7 @@ Obtainable::Obtainable(orxSTRING name, orxVECTOR pos, Item* item) {
 	position = pos;
 	this->item = item;
 	entity = orxObject_CreateFromConfig(name);
+    orxObject_SetUserData(entity, this);
 }
 
 Item* Obtainable::getItem() {

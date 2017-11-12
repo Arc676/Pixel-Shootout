@@ -165,6 +165,14 @@ void StandAlone::bulletEvent(orxOBJECT* bulletObj, orxOBJECT* otherObj) {
 	orxObject_SetLifeTime(bulletObj, 0);
 }
 
+void StandAlone::itemEvent(orxOBJECT* itemObj, orxOBJECT* characterObj) {
+    Obtainable* obtainable = (Obtainable*) orxObject_GetUserData(itemObj);
+    Character* character = (Character*) orxObject_GetUserData(characterObj);
+    character->obtainItem(obtainable->getItem());
+    orxObject_SetLifeTime(itemObj, 0);
+    player->earnPoints(20);
+}
+
 orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 	switch(currentEvent->eType) {
 		case orxEVENT_TYPE_INPUT:
@@ -179,6 +187,18 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 						bulletEvent(sender, receiver);
 					} else if (orxString_Compare(orxObject_GetName(receiver), "Bullet") == 0) {
 						bulletEvent(receiver, sender);
+					} else {
+						orxConfig_PushSection(orxObject_GetName(sender));
+                        if (orxConfig_GetBool("IsObtainable")) {
+                            itemEvent(sender, receiver);
+                        } else {
+                            orxConfig_PopSection();
+                            orxConfig_PushSection(orxObject_GetName(receiver));
+                            if (orxConfig_GetBool("IsObtainable")) {
+                                itemEvent(receiver, sender);
+                            }
+                        }
+                        orxConfig_PopSection();
 					}
 					break;
 			}
