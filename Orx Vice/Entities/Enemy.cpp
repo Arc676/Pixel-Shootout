@@ -50,7 +50,7 @@ void Enemy::update(orxVECTOR playerPos, orxFLOAT dt) {
 		}
 		rot = angleBetween(position, playerPos);
 		orxOBJECT* otherEnemy = orxObject_Raycast(&position, &playerPos, 0xFFFF, 0x0002, orxTRUE, nullptr, nullptr);
-		if (!otherEnemy && orxString_Compare(name, "Player") == 0) {
+		if (!otherEnemy) {
 			fireBullet(rot);
 		}
 	} else {
