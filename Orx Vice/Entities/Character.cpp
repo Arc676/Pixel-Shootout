@@ -64,6 +64,11 @@ void Character::takeHit(Bullet* bullet) {
 	}
 }
 
+void Character::despawn() {
+    delete currentWeapon;
+    Entity::despawn();
+}
+
 void Character::obtainItem(Item *item) {
 	switch (item->getItemType()) {
 		case WEAPON:

@@ -169,7 +169,7 @@ void StandAlone::itemEvent(orxOBJECT* itemObj, orxOBJECT* characterObj) {
     Obtainable* obtainable = (Obtainable*) orxObject_GetUserData(itemObj);
     Character* character = (Character*) orxObject_GetUserData(characterObj);
     character->obtainItem(obtainable->getItem());
-    orxObject_SetLifeTime(itemObj, 0);
+    obtainable->despawn();
     player->earnPoints(20);
 }
 
