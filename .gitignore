@@ -13,3 +13,4 @@ Version History
 *.o
 linux/
 *.so
+*.a
