@@ -21,16 +21,16 @@
 
 #include "StandAlone.h"
 
-StandAlone* StandAlone::m_Instance = nullptr;
-Player* StandAlone::player = nullptr;
-Environment* StandAlone::environment = nullptr;
+StandAlone* StandAlone::m_Instance = 0;
+Player* StandAlone::player = 0;
+Environment* StandAlone::environment = 0;
 int StandAlone::paused = 0;
 
-orxOBJECT* StandAlone::deathScreen = nullptr;
-orxOBJECT* StandAlone::scoreLabel = nullptr;
+orxOBJECT* StandAlone::deathScreen = 0;
+orxOBJECT* StandAlone::scoreLabel = 0;
 
 StandAlone* StandAlone::Instance() {
-	if (m_Instance != nullptr) {
+	if (m_Instance != 0) {
 		return m_Instance;
 	}
 	m_Instance = new StandAlone();
@@ -152,11 +152,11 @@ orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {
 				case orxPHYSICS_EVENT_CONTACT_ADD:
 					orxOBJECT* sender = orxOBJECT(currentEvent->hSender);
 					orxOBJECT* receiver = orxOBJECT(currentEvent->hRecipient);
-					orxOBJECT* bulletObj = nullptr;
-					orxOBJECT* otherObj = nullptr;
+					orxOBJECT* bulletObj = 0;
+					orxOBJECT* otherObj = 0;
 
-					Bullet* bullet = nullptr;
-					Character* character = nullptr;
+					Bullet* bullet = 0;
+					Character* character = 0;
 
 					if (orxString_Compare(orxObject_GetName(sender), "Bullet") == 0) {
 						bulletObj = sender;
