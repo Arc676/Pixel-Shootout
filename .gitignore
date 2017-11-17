@@ -13,3 +13,6 @@ Version History
 *.o
 linux/
 *.so
+*.a
+cb*
+*.layout

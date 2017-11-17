@@ -1,0 +1,462 @@
+# depslib dependency file v1.0
+1510602408 source:c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\bullet.cpp
+	"Bullet.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\bullet.h
+	"Entity.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\entity.h
+	"orx.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\orx.h
+	"orxInclude.h"
+	"orxKernel.h"
+	"orxUtils.h"
+	"main/orxAndroid.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\orxinclude.h
+	"base/orxModule.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\base\orxmodule.h
+	"base/orxVersion.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\base\orxversion.h
+	"base/orxType.h"
+	"base/orxBuild.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\base\orxtype.h
+	"base/orxDecl.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\base\orxdecl.h
+	"TargetConditionals.h"
+	<android/api-level.h>
+	<android/api-level.h>
+	<stddef.h>
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\base\orxbuild.h
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\orxkernel.h
+	"anim/orxAnim.h"
+	"anim/orxAnimPointer.h"
+	"anim/orxAnimSet.h"
+	"core/orxClock.h"
+	"core/orxCommand.h"
+	"core/orxConfig.h"
+	"core/orxConsole.h"
+	"core/orxEvent.h"
+	"core/orxLocale.h"
+	"core/orxResource.h"
+	"core/orxSystem.h"
+	"core/orxThread.h"
+	"debug/orxDebug.h"
+	"debug/orxFPS.h"
+	"debug/orxProfiler.h"
+	"display/orxGraphic.h"
+	"display/orxDisplay.h"
+	"display/orxFont.h"
+	"display/orxScreenshot.h"
+	"display/orxText.h"
+	"display/orxTexture.h"
+	"io/orxFile.h"
+	"io/orxInput.h"
+	"io/orxJoystick.h"
+	"io/orxKeyboard.h"
+	"io/orxMouse.h"
+	"main/orxParam.h"
+	"math/orxAABox.h"
+	"math/orxMath.h"
+	"math/orxOBox.h"
+	"math/orxVector.h"
+	"memory/orxBank.h"
+	"memory/orxMemory.h"
+	"object/orxFrame.h"
+	"object/orxFX.h"
+	"object/orxFXPointer.h"
+	"object/orxObject.h"
+	"object/orxSpawner.h"
+	"object/orxStructure.h"
+	"object/orxTimeLine.h"
+	"plugin/orxPlugin.h"
+	"plugin/orxPluginCore.h"
+	"plugin/orxPluginUser.h"
+	"physics/orxBody.h"
+	"physics/orxPhysics.h"
+	"render/orxCamera.h"
+	"render/orxRender.h"
+	"render/orxShader.h"
+	"render/orxShaderPointer.h"
+	"render/orxViewport.h"
+	"sound/orxSound.h"
+	"sound/orxSoundPointer.h"
+	"sound/orxSoundSystem.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\anim\orxanim.h
+	"orxInclude.h"
+	"object/orxStructure.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\object\orxstructure.h
+	"orxInclude.h"
+	"core/orxClock.h"
+	"memory/orxMemory.h"
+	"utils/orxLinkList.h"
+	"utils/orxTree.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxclock.h
+	"orxInclude.h"
+	"core/orxSystem.h"
+	"utils/orxString.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxsystem.h
+	"orxInclude.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\math\orxvector.h
+	"orxInclude.h"
+	"debug/orxDebug.h"
+	"memory/orxMemory.h"
+	"math/orxMath.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\debug\orxdebug.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\memory\orxmemory.h
+	"orxInclude.h"
+	"debug/orxDebug.h"
+	<string.h>
+	<windows.h>
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\math\orxmath.h
+	"orxInclude.h"
+	<math.h>
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\utils\orxstring.h
+	"orxInclude.h"
+	"memory/orxMemory.h"
+	"math/orxVector.h"
+	<stdio.h>
+	<stdarg.h>
+	<string.h>
+	<stdlib.h>
+	"debug/orxDebug.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\utils\orxlinklist.h
+	"orxInclude.h"
+	"debug/orxDebug.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\utils\orxtree.h
+	"orxInclude.h"
+	"debug/orxDebug.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\anim\orxanimpointer.h
+	"orxInclude.h"
+	"anim/orxAnimSet.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\anim\orxanimset.h
+	"orxInclude.h"
+	"anim/orxAnim.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxcommand.h
+	"orxInclude.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxconfig.h
+	"orxInclude.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxconsole.h
+	"orxInclude.h"
+	"display/orxFont.h"
+	"io/orxInput.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\display\orxfont.h
+	"orxInclude.h"
+	"display/orxTexture.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\display\orxtexture.h
+	"orxInclude.h"
+	"display/orxDisplay.h"
+	"math/orxMath.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\display\orxdisplay.h
+	"orxInclude.h"
+	"plugin/orxPluginCore.h"
+	"math/orxVector.h"
+	"math/orxOBox.h"
+	"memory/orxBank.h"
+	"utils/orxHashTable.h"
+	"utils/orxString.h"
+	"utils/orxLinkList.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\orxplugincore.h
+	"orxInclude.h"
+	"plugin/orxPluginType.h"
+	"plugin/define/orxPlugin_CoreDefine.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\orxplugintype.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_coredefine.h
+	"plugin/define/orxPlugin_Display.h"
+	"plugin/define/orxPlugin_Joystick.h"
+	"plugin/define/orxPlugin_Keyboard.h"
+	"plugin/define/orxPlugin_Mouse.h"
+	"plugin/define/orxPlugin_Physics.h"
+	"plugin/define/orxPlugin_Render.h"
+	"plugin/define/orxPlugin_SoundSystem.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_display.h
+	"plugin/define/orxPlugin_CoreID.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_coreid.h
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_joystick.h
+	"plugin/define/orxPlugin_CoreID.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_keyboard.h
+	"plugin/define/orxPlugin_CoreID.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_mouse.h
+	"plugin/define/orxPlugin_CoreID.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_physics.h
+	"plugin/define/orxPlugin_CoreID.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_render.h
+	"plugin/define/orxPlugin_CoreID.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\define\orxplugin_soundsystem.h
+	"plugin/define/orxPlugin_CoreID.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\math\orxobox.h
+	"orxInclude.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\memory\orxbank.h
+	"orxInclude.h"
+	"memory/orxMemory.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\utils\orxhashtable.h
+	"orxInclude.h"
+	"memory/orxMemory.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\io\orxinput.h
+	"orxInclude.h"
+	"io/orxJoystick.h"
+	"io/orxKeyboard.h"
+	"io/orxMouse.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\io\orxjoystick.h
+	"orxInclude.h"
+	"plugin/orxPluginCore.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\io\orxkeyboard.h
+	"orxInclude.h"
+	"plugin/orxPluginCore.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\io\orxmouse.h
+	"orxInclude.h"
+	"plugin/orxPluginCore.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxevent.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxlocale.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxresource.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\core\orxthread.h
+	"orxInclude.h"
+	"memory/orxMemory.h"
+	<semaphore.h>
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\debug\orxfps.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\debug\orxprofiler.h
+	"orxInclude.h"
+	"core/orxThread.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\display\orxgraphic.h
+	"orxInclude.h"
+	"object/orxStructure.h"
+	"display/orxDisplay.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\display\orxscreenshot.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\display\orxtext.h
+	"orxInclude.h"
+	"display/orxFont.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\io\orxfile.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\main\orxparam.h
+	"orxInclude.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\math\orxaabox.h
+	"orxInclude.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\object\orxframe.h
+	"orxInclude.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\object\orxfx.h
+	"orxInclude.h"
+	"math/orxVector.h"
+	"object/orxObject.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\object\orxobject.h
+	"orxInclude.h"
+	"anim/orxAnimSet.h"
+	"core/orxClock.h"
+	"display/orxDisplay.h"
+	"display/orxGraphic.h"
+	"display/orxTexture.h"
+	"math/orxOBox.h"
+	"memory/orxBank.h"
+	"object/orxStructure.h"
+	"sound/orxSound.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\sound\orxsound.h
+	"orxInclude.h"
+	"sound/orxSoundSystem.h"
+	"math/orxVector.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\sound\orxsoundsystem.h
+	"orxInclude.h"
+	"math/orxVector.h"
+	"plugin/orxPluginCore.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\object\orxfxpointer.h
+	"orxInclude.h"
+	"object/orxFX.h"
+	"object/orxStructure.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\object\orxspawner.h
+	"orxInclude.h"
+	"object/orxStructure.h"
+	"object/orxFrame.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\object\orxtimeline.h
+	"orxInclude.h"
+	"object/orxStructure.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\orxplugin.h
+	"orxInclude.h"
+	"plugin/orxPluginType.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\plugin\orxpluginuser.h
+	"orxInclude.h"
+	"plugin/orxPluginType.h"
+	"plugin/define/orxPlugin_CoreDefine.h"
+	"memory/orxMemory.h"
+	"utils/orxString.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\physics\orxbody.h
+	"orxInclude.h"
+	"object/orxStructure.h"
+	"physics/orxPhysics.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\physics\orxphysics.h
+	"orxInclude.h"
+	"plugin/orxPluginCore.h"
+	"math/orxAABox.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\render\orxcamera.h
+	"orxInclude.h"
+	"object/orxFrame.h"
+	"object/orxStructure.h"
+	"math/orxAABox.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\render\orxrender.h
+	"orxInclude.h"
+	"plugin/orxPluginCore.h"
+	"display/orxDisplay.h"
+	"object/orxFrame.h"
+	"object/orxObject.h"
+	"render/orxViewport.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\render\orxviewport.h
+	"orxInclude.h"
+	"core/orxClock.h"
+	"render/orxCamera.h"
+	"render/orxShaderPointer.h"
+	"display/orxDisplay.h"
+	"display/orxTexture.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\render\orxshaderpointer.h
+	"orxInclude.h"
+	"render/orxShader.h"
+	"object/orxStructure.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\render\orxshader.h
+	"orxInclude.h"
+	"math/orxVector.h"
+	"display/orxTexture.h"
+	"object/orxObject.h"
+	"utils/orxLinkList.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\sound\orxsoundpointer.h
+	"orxInclude.h"
+	"sound/orxSound.h"
+	"object/orxStructure.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\orxutils.h
+	"utils/orxHashTable.h"
+	"utils/orxLinkList.h"
+	"utils/orxString.h"
+	"utils/orxTree.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\inc\main\orxandroid.h
+	<jni.h>
+	<pthread.h>
+	<stdlib.h>
+	<android/native_window.h>
+	<android_native_app_glue.h>
+
+1510602408 source:c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\character.cpp
+	"Character.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\character.h
+	"Bullet.h"
+	"Entity.h"
+
+1510604402 source:c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\enemy.cpp
+	"Enemy.h"
+
+1510604098 c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\enemy.h
+	"Character.h"
+
+1510602408 source:c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\entity.cpp
+	"Entity.h"
+
+1510602408 source:c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\environment.cpp
+	"Environment.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\environment.h
+	<stdlib.h>
+	"orx.h"
+	"Player.h"
+	"Enemy.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\player.h
+	"Character.h"
+
+1510602408 source:c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\main.cpp
+	"StandAlone.h"
+
+1510602408 c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\standalone.h
+	"orx.h"
+	"Player.h"
+	"Enemy.h"
+	"Environment.h"
+
+1510602408 source:c:\documents and settings\ale\my documents\codeblocks\orx-vice\orx vice\player.cpp
+	"Player.h"
+
