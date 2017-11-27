@@ -31,25 +31,37 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="inc" />
+			<Add directory="Orx Vice/App" />
+			<Add directory="Orx Vice/Combat" />
+			<Add directory="Orx Vice/Entities" />
+			<Add directory="Orx Vice/Items" />
 		</Compiler>
 		<Linker>
 			<Add library="lib/liborx.a" />
 		</Linker>
-		<Unit filename="Orx Vice/Bullet.cpp" />
-		<Unit filename="Orx Vice/Bullet.h" />
-		<Unit filename="Orx Vice/Character.cpp" />
-		<Unit filename="Orx Vice/Character.h" />
-		<Unit filename="Orx Vice/Enemy.cpp" />
-		<Unit filename="Orx Vice/Enemy.h" />
-		<Unit filename="Orx Vice/Entity.cpp" />
-		<Unit filename="Orx Vice/Entity.h" />
-		<Unit filename="Orx Vice/Environment.cpp" />
-		<Unit filename="Orx Vice/Environment.h" />
-		<Unit filename="Orx Vice/Main.cpp" />
-		<Unit filename="Orx Vice/Player.cpp" />
-		<Unit filename="Orx Vice/Player.h" />
-		<Unit filename="Orx Vice/StandAlone.cpp" />
-		<Unit filename="Orx Vice/StandAlone.h" />
+		<Unit filename="Orx Vice/App/Environment.cpp" />
+		<Unit filename="Orx Vice/App/Environment.h" />
+		<Unit filename="Orx Vice/App/Main.cpp" />
+		<Unit filename="Orx Vice/App/StandAlone.cpp" />
+		<Unit filename="Orx Vice/App/StandAlone.h" />
+		<Unit filename="Orx Vice/Combat/Bullet.cpp" />
+		<Unit filename="Orx Vice/Combat/Bullet.h" />
+		<Unit filename="Orx Vice/Combat/Weapon.cpp" />
+		<Unit filename="Orx Vice/Combat/Weapon.h" />
+		<Unit filename="Orx Vice/Entities/Character.cpp" />
+		<Unit filename="Orx Vice/Entities/Character.h" />
+		<Unit filename="Orx Vice/Entities/Enemy.cpp" />
+		<Unit filename="Orx Vice/Entities/Enemy.h" />
+		<Unit filename="Orx Vice/Entities/Entity.cpp" />
+		<Unit filename="Orx Vice/Entities/Entity.h" />
+		<Unit filename="Orx Vice/Entities/Player.cpp" />
+		<Unit filename="Orx Vice/Entities/Player.h" />
+		<Unit filename="Orx Vice/Items/Item.cpp" />
+		<Unit filename="Orx Vice/Items/Item.h" />
+		<Unit filename="Orx Vice/Items/Obtainable.cpp" />
+		<Unit filename="Orx Vice/Items/Obtainable.h" />
+		<Unit filename="Orx Vice/Items/Powerup.cpp" />
+		<Unit filename="Orx Vice/Items/Powerup.h" />
 		<Unit filename="bin/Entities.ini" />
 		<Unit filename="bin/MainMenu.ini" />
 		<Unit filename="bin/Pixel Shootout.ini" />
