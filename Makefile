@@ -6,7 +6,7 @@ CC=g++
 FLAGS=-std=c++11 -c
 LD=-I inc/ -L lib/
 LIB=-l orx
-OBJS=Bullet.o Character.o Enemy.o Entity.o Environment.o Main.o Player.o StandAlone.o Weapon.o
+OBJS=Bullet.o Character.o Enemy.o Entity.o Environment.o Main.o Player.o StandAlone.o Weapon.o Item.o Obtainable.o Powerup.o
 
 pixelshootout: $(OBJS)
 	$(CC) $(LD) $(OBJS) $(LIB) -o linux/Pixel\ Shootout
@@ -39,6 +39,15 @@ StandAlone.o:
 
 Weapon.o:
 	$(CC) $(FLAGS) $(LD) Orx\ Vice/Combat/Weapon.cpp
+
+Item.o:
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Items/Item.cpp
+
+Obtainable.o:
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Items/Obtainable.cpp
+
+Powerup.o:
+	$(CC) $(FLAGS) $(LD) Orx\ Vice/Items/Powerup.cpp
 
 clean:
 	rm linux/Pixel\ Shootout *.o
