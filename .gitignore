@@ -16,3 +16,5 @@ linux/
 *.a
 cb*
 *.layout
+*.layout
+*.user
