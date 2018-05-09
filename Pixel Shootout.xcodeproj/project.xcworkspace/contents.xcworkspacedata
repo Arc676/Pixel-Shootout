@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Orx Vice.xcodeproj">
+      location = "self:/Volumes/Data/Code/Xcode/UI/Pixel Shootout/Pixel Shootout.xcodeproj">
    </FileRef>
 </Workspace>
