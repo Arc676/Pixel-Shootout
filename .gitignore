@@ -19,3 +19,4 @@ cb*
 *.layout
 *.user
 xcshareddata
+ignore*

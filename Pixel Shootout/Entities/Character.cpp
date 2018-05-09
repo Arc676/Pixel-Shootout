@@ -34,7 +34,7 @@ int Character::getHP() {
 }
 
 double Character::angleBetween(orxVECTOR v1, orxVECTOR v2) {
-	return M_PI_2 - (orxFLOAT) atan2(
+	return orxMATH_KF_PI_BY_2 - (orxFLOAT) atan2(
 									 v2.fX - v1.fX,
 									 v2.fY - v1.fY);
 }
