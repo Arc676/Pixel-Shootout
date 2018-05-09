@@ -7,33 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7105BE291F7CF5CE00331E6D /* liborxd.dylib */; };
 		711187431F7E28C80013A56F /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 711187411F7E28C80013A56F /* Environment.cpp */; };
 		712814831FB09D7E00456037 /* Weapon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 712814811FB09D7E00456037 /* Weapon.cpp */; };
-		71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */; };
-		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; };
-		71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1D1F6FFC4F00932B46 /* StaticScene.ini */; };
-		716CBE221F790A790034981A /* Player.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE211F79077E0034981A /* Player.png */; };
+		71614D131F6FF7C400932B46 /* Pixel Shootout.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E6F1F6FF4030095D601 /* Pixel Shootout.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		71614D141F6FF7C400932B46 /* MainMenu.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E701F6FF4370095D601 /* MainMenu.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		71614D1E1F6FFC5700932B46 /* StaticScene.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71614D1D1F6FFC4F00932B46 /* StaticScene.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		716CBE221F790A790034981A /* Player.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE211F79077E0034981A /* Player.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		716CBE251F790D4B0034981A /* Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE231F790D4B0034981A /* Player.cpp */; };
 		716CBE281F790E280034981A /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE271F790E280034981A /* Entity.cpp */; };
-		716CBE2A1F7913F80034981A /* Entities.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE291F7912C40034981A /* Entities.ini */; };
-		716CBE2E1F7918CA0034981A /* Enemy.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE2B1F7918990034981A /* Enemy.png */; };
+		716CBE2A1F7913F80034981A /* Entities.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE291F7912C40034981A /* Entities.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		716CBE2E1F7918CA0034981A /* Enemy.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE2B1F7918990034981A /* Enemy.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		716CBE311F7918F40034981A /* Enemy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE2F1F7918F40034981A /* Enemy.cpp */; };
 		716CBE371F79385B0034981A /* Bullet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 716CBE351F79385B0034981A /* Bullet.cpp */; };
-		716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE341F7936420034981A /* Bullet.png */; };
-		717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
-		717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 717293DC1F8D09FB00734F1D /* wall.png */; };
+		716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 716CBE341F7936420034981A /* Bullet.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 717293DC1F8D09FB00734F1D /* wall.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		71A5EEA51FB1DCDD006BAE30 /* Item.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EEA31FB1DCDD006BAE30 /* Item.cpp */; };
 		71A5EEA81FB1DE24006BAE30 /* Obtainable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71A5EEA61FB1DE24006BAE30 /* Obtainable.cpp */; };
-		71A5EEAA1FB1E5C7006BAE30 /* Items.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A5EEA91FB1E37A006BAE30 /* Items.ini */; };
+		71A5EEAA1FB1E5C7006BAE30 /* Items.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71A5EEA91FB1E37A006BAE30 /* Items.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		71BB1DFB1F90E27400EBC58F /* liborx.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 71ED0E681F6FF0F90095D601 /* liborx.dylib */; };
-		71E2A3921FA5EC5D000B3764 /* Died.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3911FA5EC55000B3764 /* Died.png */; };
+		71E2A3921FA5EC5D000B3764 /* Died.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3911FA5EC55000B3764 /* Died.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		71E2A3951FA5F013000B3764 /* Character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71E2A3931FA5F013000B3764 /* Character.cpp */; };
-		71E2A3971FA5F5FC000B3764 /* UI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3961FA5F57D000B3764 /* UI.ini */; };
+		71E2A3971FA5F5FC000B3764 /* UI.ini in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71E2A3961FA5F57D000B3764 /* UI.ini */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		71ED0E6C1F6FF24B0095D601 /* StandAlone.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6B1F6FF24B0095D601 /* StandAlone.cpp */; };
 		71ED0E6E1F6FF3400095D601 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71ED0E6D1F6FF3400095D601 /* Main.cpp */; };
 		71F019681FB2E15C00170DC8 /* Powerup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 71F019661FB2E15C00170DC8 /* Powerup.cpp */; };
-		71F019691FB2E39300170DC8 /* Speed.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71F019651FB2DDFA00170DC8 /* Speed.png */; };
+		71F019691FB2E39300170DC8 /* Speed.png in CopyFiles */ = {isa = PBXBuildFile; fileRef = 71F019651FB2DDFA00170DC8 /* Speed.png */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,7 +48,6 @@
 				717293DD1F8D0A1000734F1D /* wall.png in CopyFiles */,
 				71E2A3921FA5EC5D000B3764 /* Died.png in CopyFiles */,
 				717293DB1F8CFE2E00734F1D /* liborx.dylib in CopyFiles */,
-				7105BE2B1F7CF5D900331E6D /* liborxd.dylib in CopyFiles */,
 				716CBE381F793A8C0034981A /* Bullet.png in CopyFiles */,
 				716CBE2E1F7918CA0034981A /* Enemy.png in CopyFiles */,
 				716CBE2A1F7913F80034981A /* Entities.ini in CopyFiles */,
