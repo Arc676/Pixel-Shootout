@@ -22,7 +22,7 @@
 #include "Weapon.h"
 
 Weapon* Weapon::handgun = new Weapon((char*)"Handgun", 0.5, 10, 80);
-Weapon* Weapon::fastGun = new Weapon((char*)"Laser Gun", 0.4, 10, 160);
+Weapon* Weapon::fastGun = new Weapon((char*)"Rifle", 0.4, 10, 160);
 
 Weapon::Weapon(orxSTRING name, double firingDelay, int dmg, double bulletSpeed) : Item(name, WEAPON), firingDelay(firingDelay), dmg(dmg), bulletSpeed(bulletSpeed) {}
 

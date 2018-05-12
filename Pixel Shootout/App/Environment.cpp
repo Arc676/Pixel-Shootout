@@ -88,7 +88,7 @@ void Environment::update(orxFLOAT dt) {
 	if (timeSincePowerupSpawn > powerupDelay) {
 		timeSincePowerupSpawn = 0;
 		if (orxMath_GetRandomU32(0, 100) < powerupSpawnProbability) {
-			new Obtainable((char*)"FastGun", randomPosition(-490.0f, 490.0f, -290.0f, 290.0f, orxFALSE), Weapon::copyOf(FASTGUN));
+			new Obtainable(randomPosition(-490.0f, 490.0f, -290.0f, 290.0f, orxFALSE), Weapon::copyOf(FASTGUN));
 		}
 	}
 }

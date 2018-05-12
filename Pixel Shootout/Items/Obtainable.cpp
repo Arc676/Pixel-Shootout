@@ -21,10 +21,10 @@
 
 #include "Obtainable.h"
 
-Obtainable::Obtainable(orxSTRING name, orxVECTOR pos, Item* item) {
+Obtainable::Obtainable(orxVECTOR pos, Item* item) {
 	position = pos;
 	this->item = item;
-	entity = orxObject_CreateFromConfig(name);
+	entity = orxObject_CreateFromConfig(item->getName());
     orxObject_SetUserData(entity, this);
 }
 

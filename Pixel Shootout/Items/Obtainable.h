@@ -29,7 +29,7 @@
 class Obtainable : public Entity {
 	Item* item;
 public:
-	Obtainable(orxSTRING, orxVECTOR, Item*);
+	Obtainable(orxVECTOR, Item*);
 	Item* getItem();
 };
 
