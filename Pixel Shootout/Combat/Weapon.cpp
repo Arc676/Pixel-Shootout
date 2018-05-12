@@ -24,6 +24,7 @@
 Weapon* Weapon::handgun = new Weapon((char*)"Handgun", 0.5, 10, 80);
 Weapon* Weapon::fastGun = new Weapon((char*)"Rifle", 0.4, 10, 160);
 Weapon* Weapon::shotgun = new Weapon((char*)"Shotgun", 1, 30, 250);
+Weapon* Weapon::gatling = new Weapon((char*)"Gatling", 0.2, 30, 200);
 
 Weapon::Weapon(orxSTRING name, double firingDelay, int dmg, double bulletSpeed) : Item(name, WEAPON), firingDelay(firingDelay), dmg(dmg), bulletSpeed(bulletSpeed) {}
 
@@ -47,6 +48,8 @@ Weapon* Weapon::copyOf(WeaponType type) {
 			return fastGun->copy();
 		case SHOTGUN:
 			return shotgun->copy();
+		case GATLING:
+			return gatling->copy();
 		default:
 			return nullptr;
 	}

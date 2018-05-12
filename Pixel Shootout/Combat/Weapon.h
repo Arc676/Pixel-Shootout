@@ -24,17 +24,19 @@
 
 #include "../Items/Item.h"
 
-#define WEAPONCOUNT 2
+#define WEAPONCOUNT 3
 enum WeaponType {
 	HANDGUN = 0,
 	FASTGUN = 1,
-	SHOTGUN = 2
+	SHOTGUN = 2,
+	GATLING = 3
 };
 
 class Weapon : public Item {
 	static Weapon* handgun;
 	static Weapon* fastGun;
 	static Weapon* shotgun;
+	static Weapon* gatling;
 	
 	Weapon* copy();
 protected:
