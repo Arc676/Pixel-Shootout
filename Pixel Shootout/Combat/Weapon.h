@@ -26,12 +26,15 @@
 
 enum WeaponType {
 	HANDGUN,
-	FASTGUN
+	FASTGUN,
+	SHOTGUN
 };
 
 class Weapon : public Item {
 	static Weapon* handgun;
 	static Weapon* fastGun;
+	static Weapon* shotgun;
+	
 	Weapon* copy();
 protected:
 	double firingDelay;
