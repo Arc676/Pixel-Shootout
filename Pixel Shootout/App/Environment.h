@@ -37,6 +37,10 @@ class Environment {
 	orxFLOAT powerupDelay = 30;
 	int powerupSpawnProbability = 60;
 
+	orxFLOAT timeSinceItemSpawn = 0;
+	orxFLOAT itemDelay = 30;
+	int itemSpawnProbability = 60;
+
 	int enemiesPresent = 0;
 	orxFLOAT timeSinceWavePast = 0;
 	orxFLOAT waveDelay = 3;

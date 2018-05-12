@@ -24,10 +24,11 @@
 
 #include "../Items/Item.h"
 
+#define WEAPONCOUNT 2
 enum WeaponType {
-	HANDGUN,
-	FASTGUN,
-	SHOTGUN
+	HANDGUN = 0,
+	FASTGUN = 1,
+	SHOTGUN = 2
 };
 
 class Weapon : public Item {
