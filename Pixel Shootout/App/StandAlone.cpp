@@ -28,6 +28,7 @@ int StandAlone::paused = 0;
 
 orxOBJECT* StandAlone::deathScreen = nullptr;
 orxOBJECT* StandAlone::scoreLabel = nullptr;
+orxOBJECT* StandAlone::weaponLabel = nullptr;
 
 StandAlone* StandAlone::Instance() {
 	if (m_Instance != nullptr) {
@@ -51,6 +52,7 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 
 	orxConfig_Load("UI.ini");
 	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
+	weaponLabel = orxObject_CreateFromConfig("WeaponLabel");
 
 	orxConfig_Load("Items.ini");
 
@@ -147,11 +149,10 @@ orxVECTOR orxFASTCALL StandAlone::GetMouseWorldPosition() {
 
 void StandAlone::bulletEvent(orxOBJECT* bulletObj, orxOBJECT* otherObj) {
 	Bullet* bullet = (Bullet*)orxObject_GetUserData(bulletObj);
-	Character* character = nullptr;
 	orxSTRING name = (orxSTRING)orxObject_GetName(otherObj);
 	if (orxString_Compare(name, "Enemy") == 0 ||
 		orxString_Compare(name, "Player") == 0) {
-		character = (Character*)orxObject_GetUserData(otherObj);
+		Character* character = (Character*)orxObject_GetUserData(otherObj);
 		character->takeHit(bullet);
 		if (orxString_Compare(name, "Enemy") == 0) {
 			player->earnPoints(10);
@@ -166,11 +167,15 @@ void StandAlone::bulletEvent(orxOBJECT* bulletObj, orxOBJECT* otherObj) {
 }
 
 void StandAlone::itemEvent(orxOBJECT* itemObj, orxOBJECT* characterObj) {
+	// enemies can't obtain items due to the collision mask for item hitboxes
     Obtainable* obtainable = (Obtainable*) orxObject_GetUserData(itemObj);
     Character* character = (Character*) orxObject_GetUserData(characterObj);
     character->obtainItem(obtainable->getItem());
     obtainable->despawn();
     player->earnPoints(20);
+	orxCHAR newtext[40];
+	orxString_Print(newtext, "Weapon: %s", player->getCurrentWeapon()->getName());
+	orxObject_SetTextString(weaponLabel, newtext);
 }
 
 orxSTATUS orxFASTCALL StandAlone::EventHandler(const orxEVENT* currentEvent) {

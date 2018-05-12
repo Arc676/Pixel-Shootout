@@ -60,6 +60,7 @@ private:
 	static int paused;
 	static orxOBJECT* deathScreen;
 	static orxOBJECT* scoreLabel;
+	static orxOBJECT* weaponLabel;
 };
 
 #endif /* StandAlone_h */
