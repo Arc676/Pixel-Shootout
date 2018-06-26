@@ -23,6 +23,7 @@
 
 StandAlone* StandAlone::m_Instance = nullptr;
 Player* StandAlone::player = nullptr;
+orxCAMERA* StandAlone::camera = nullptr;
 Environment* StandAlone::environment = nullptr;
 int StandAlone::paused = 0;
 
@@ -41,7 +42,8 @@ StandAlone* StandAlone::Instance() {
 StandAlone::StandAlone() {}
 
 orxSTATUS orxFASTCALL StandAlone::Init() {
-	orxViewport_CreateFromConfig("Viewport");
+	orxVIEWPORT* viewport = orxViewport_CreateFromConfig("Viewport");
+	camera = orxViewport_GetCamera(viewport);
 	orxConfig_Load("StaticScene.ini");
 	orxObject_CreateFromConfig("Scene");
 
@@ -53,6 +55,9 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("UI.ini");
 	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 	weaponLabel = orxObject_CreateFromConfig("WeaponLabel");
+
+	orxObject_SetParent(scoreLabel, camera);
+	orxObject_SetParent(weaponLabel, camera);
 
 	orxConfig_Load("Items.ini");
 
@@ -133,9 +138,10 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 	}
 	environment->updateEnemyCount(enemiesStillPresent);
 	environment->update(delta);
-	if (orxInput_IsActive("Spawn")) {
-		new Enemy(mouse);
-	}
+	orxVECTOR pos;
+	orxObject_GetPosition(player->getEntity(), &pos);
+	pos.fZ = -1;
+	orxCamera_SetPosition(camera, &pos);
 }
 
 orxVECTOR orxFASTCALL StandAlone::GetMouseWorldPosition() {

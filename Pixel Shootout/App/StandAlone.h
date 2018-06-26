@@ -56,6 +56,7 @@ protected:
 private:
 	static StandAlone* m_Instance;
 	static Player* player;
+	static orxCAMERA* camera;
 	static Environment* environment;
 	static int paused;
 	static orxOBJECT* deathScreen;
