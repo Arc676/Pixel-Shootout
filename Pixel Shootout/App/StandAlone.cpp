@@ -55,9 +55,12 @@ orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxConfig_Load("UI.ini");
 	scoreLabel = orxObject_CreateFromConfig("ScoreLabel");
 	weaponLabel = orxObject_CreateFromConfig("WeaponLabel");
+	deathScreen = orxObject_CreateFromConfig("YouDied");
+	orxObject_Enable(deathScreen, orxFALSE);
 
 	orxObject_SetParent(scoreLabel, camera);
 	orxObject_SetParent(weaponLabel, camera);
+	orxObject_SetParent(deathScreen, camera);
 
 	orxConfig_Load("Items.ini");
 
@@ -98,7 +101,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 		if (player->getHP() <= 0 && orxInput_IsActive("Fire")) {
 			paused = 0;
 			orxPhysics_EnableSimulation(orxTRUE);
-			orxObject_SetLifeTime(deathScreen, 0);
+			orxObject_Enable(deathScreen, orxFALSE);
 			player->respawn();
 			environment->resetWorld();
 			orxObject_SetTextString(scoreLabel, "Score: 0");
@@ -108,7 +111,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 	if (player->getHP() <= 0) {
 		paused = 1;
 		orxPhysics_EnableSimulation(orxFALSE);
-		deathScreen = orxObject_CreateFromConfig("YouDied");
+		orxObject_Enable(deathScreen, orxTRUE);
 		return;
 	}
 	int enemiesStillPresent = 0;
