@@ -49,10 +49,6 @@ public:
 	static orxSTATUS orxFASTCALL EventHandler(const orxEVENT*);
 
 	static orxVECTOR orxFASTCALL GetMouseWorldPosition();
-protected:
-	StandAlone();
-	StandAlone(const StandAlone&);
-	StandAlone& operator= (const StandAlone&);
 private:
 	static StandAlone* m_Instance;
 	static Player* player;

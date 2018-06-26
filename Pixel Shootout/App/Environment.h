@@ -44,8 +44,8 @@ class Environment {
 	int itemSpawnProbability = 60;
 
 	int enemiesPresent = 0;
-	orxFLOAT timeSinceWavePast = 0;
-	orxFLOAT waveDelay = 3;
+	orxFLOAT timeSinceLastSpawn = 0;
+	orxFLOAT spawnDelay = 3;
 public:
 	int getEnemyCount();
 	void updateEnemyCount(int);

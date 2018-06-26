@@ -39,8 +39,6 @@ StandAlone* StandAlone::Instance() {
 	return m_Instance;
 }
 
-StandAlone::StandAlone() {}
-
 orxSTATUS orxFASTCALL StandAlone::Init() {
 	orxVIEWPORT* viewport = orxViewport_CreateFromConfig("Viewport");
 	camera = orxViewport_GetCamera(viewport);
@@ -105,6 +103,10 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 			player->respawn();
 			environment->resetWorld();
 			orxObject_SetTextString(scoreLabel, "Score: 0");
+
+			orxCHAR newtext[40];
+			orxString_Print(newtext, "Weapon: %s", player->getCurrentWeapon()->getName());
+			orxObject_SetTextString(weaponLabel, newtext);
 		}
 		return;
 	}

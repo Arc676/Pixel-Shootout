@@ -31,7 +31,7 @@ int Environment::getEnemyCount() {
 
 void Environment::resetWorld() {
 	enemiesPresent = 0;
-	timeSinceWavePast = 0;
+	timeSinceLastSpawn = 0;
 	for (
 		 orxOBJECT *obj = (orxOBJECT*)orxStructure_GetFirst(orxSTRUCTURE_ID_OBJECT);
 		 obj != orxNULL;
@@ -78,13 +78,13 @@ orxVECTOR Environment::randomPosition(orxFLOAT xmin, orxFLOAT xmax, orxFLOAT ymi
 
 void Environment::update(orxFLOAT dt, orxVECTOR ppos) {
 	orxVector_Copy(&playerPos, &ppos);
-	if (enemiesPresent <= 0) {
-		timeSinceWavePast += dt;
+	if (enemiesPresent < 10) {
+		timeSinceLastSpawn += dt;
 	}
-	if (timeSinceWavePast > waveDelay) {
-		timeSinceWavePast = 0;
-		enemiesPresent = orxMath_GetRandomU32(1, 10);
-		for (int i = 0; i < enemiesPresent; i++) {
+	if (timeSinceLastSpawn > spawnDelay) {
+		timeSinceLastSpawn = 0;
+		int spawnCount = orxMath_GetRandomU32(1, 5);
+		for (int i = 0; i < spawnCount; i++) {
 			new Enemy(randomPosition(-490.0f, 490.0f, -290.0f, 290.0f, orxTRUE));
 		}
 	}
