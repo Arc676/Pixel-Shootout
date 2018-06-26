@@ -67,6 +67,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7100096620E1FCF50063A91B /* ZLIB */ = {isa = PBXFileReference; lastKnownFileType = text; path = ZLIB; sourceTree = "<group>"; };
 		7105BE291F7CF5CE00331E6D /* liborxd.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = liborxd.dylib; sourceTree = "<group>"; };
 		711187411F7E28C80013A56F /* Environment.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
 		711187421F7E28C80013A56F /* Environment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Environment.h; sourceTree = "<group>"; };
@@ -444,6 +445,7 @@
 			children = (
 				71614D181F6FFA7700932B46 /* LICENSE */,
 				71614D161F6FF9CC00932B46 /* README.md */,
+				7100096620E1FCF50063A91B /* ZLIB */,
 				7142767020A28543005268A2 /* CREDITS */,
 			);
 			name = Meta;
