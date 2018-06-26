@@ -37,6 +37,8 @@ class Environment {
 	orxFLOAT powerupDelay = 30;
 	int powerupSpawnProbability = 60;
 
+	orxVECTOR playerPos;
+
 	orxFLOAT timeSinceItemSpawn = 0;
 	orxFLOAT itemDelay = 30;
 	int itemSpawnProbability = 60;
@@ -48,10 +50,10 @@ public:
 	int getEnemyCount();
 	void updateEnemyCount(int);
 
-	void update(orxFLOAT);
+	void update(orxFLOAT, orxVECTOR);
 	void resetWorld();
 
-	static orxVECTOR randomPosition(orxFLOAT, orxFLOAT, orxFLOAT, orxFLOAT, orxBOOL);
+	orxVECTOR randomPosition(orxFLOAT, orxFLOAT, orxFLOAT, orxFLOAT, orxBOOL);
 };
 
 #endif

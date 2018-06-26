@@ -65,7 +65,6 @@ void Character::takeHit(Bullet* bullet) {
 }
 
 void Character::despawn() {
-    delete currentWeapon;
     Entity::despawn();
 }
 

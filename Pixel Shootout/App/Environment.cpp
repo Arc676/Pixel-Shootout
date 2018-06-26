@@ -70,10 +70,14 @@ orxVECTOR Environment::randomPosition(orxFLOAT xmin, orxFLOAT xmax, orxFLOAT ymi
 				break;
 		}
 	}
-	return {x, y, 0};
+	orxVECTOR pos;
+	orxVector_Set(&pos, x, y, 0);
+	orxVector_Add(&pos, &playerPos, &pos);
+	return pos;
 }
 
-void Environment::update(orxFLOAT dt) {
+void Environment::update(orxFLOAT dt, orxVECTOR ppos) {
+	orxVector_Copy(&playerPos, &ppos);
 	if (enemiesPresent <= 0) {
 		timeSinceWavePast += dt;
 	}

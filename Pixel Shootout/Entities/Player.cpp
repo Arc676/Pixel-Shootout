@@ -32,7 +32,6 @@ void Player::respawn() {
 	orxVECTOR pos = {0, 0, 0};
 	orxObject_SetPosition(entity, &pos);
 	HP = 1;
-    delete currentWeapon;
     currentWeapon = Weapon::copyOf(HANDGUN);
 	timeSinceLastShot = 0;
 	score = 0;

@@ -140,7 +140,7 @@ void orxFASTCALL StandAlone::Update(const orxCLOCK_INFO* clockInfo, void* contex
 		}
 	}
 	environment->updateEnemyCount(enemiesStillPresent);
-	environment->update(delta);
+	environment->update(delta, player->getPosition());
 	orxVECTOR pos;
 	orxObject_GetPosition(player->getEntity(), &pos);
 	pos.fZ = -1;
