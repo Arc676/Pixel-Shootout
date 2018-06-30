@@ -1,6 +1,6 @@
 /* Orx - Portable Game Engine
  *
- * Copyright (c) 2008-2017 Orx-Project
+ * Copyright (c) 2008-2018 Orx-Project
  *
  * This software is provided 'as-is', without any express or implied
  * warranty. In no event will the authors be held liable for any damages
@@ -89,7 +89,7 @@
   #define orx2F(V)                ((orxFLOAT)(V))
   #define orx2D(V)                ((orxDOUBLE)(V))
 
-  #define orxENUM_NONE            0xFFFFFFFFL
+  #define orxENUM_NONE            0xFFFFFFFF
 
   /* Compiler specific */
   #ifdef __orxGCC__
@@ -159,7 +159,7 @@
     #define orx2F(V)              ((orxFLOAT)(V))
     #define orx2D(V)              ((orxDOUBLE)(V))
 
-    #define orxENUM_NONE          0xFFFFFFFFL
+    #define orxENUM_NONE          0xFFFFFFFF
 
   #endif /* __orxLINUX__ || __orxMAC__ || __orxIOS__ || __orxANDROID__ */
 

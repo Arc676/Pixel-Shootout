@@ -10,13 +10,9 @@ xcuserdata
 .*
 XCFs
 Version History
-*.o
-linux/
-*.so
-*.a
-cb*
-*.layout
+obj
 *.layout
 *.user
 xcshareddata
 ignore*
+Build
